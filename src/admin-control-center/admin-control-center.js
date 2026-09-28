@@ -6291,12 +6291,17 @@ document.addEventListener("click", async (event)=>{
   window.s2LoadStaffAccounts =
     s2LoadAccounts;
 
-  document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-      s2BindEvents();
-    }
-  );
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+        s2BindEvents();
+      },
+      { once: true }
+    );
+  } else {
+    s2BindEvents();
+  }
 
   const s2ResetClose =
     $("s2ResetPasswordClose");
