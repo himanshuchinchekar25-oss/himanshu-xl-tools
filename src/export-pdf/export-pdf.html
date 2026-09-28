@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=Edge"
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Export PDF</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: #6b7280;
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .option {
+      display: block;
+      padding: 11px 12px;
+      margin-bottom: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .option input {
+      margin-right: 8px;
+    }
+
+    .field {
+      margin-top: 18px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 7px;
+    }
+
+    .field input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      border: none;
+      border-radius: 8px;
+      padding: 12px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #217346;
+      color: white;
+    }
+
+    button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      min-height: 44px;
+    }
+
+    .note {
+      margin-top: 15px;
+      color: #6b7280;
+      font-size: 12px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Export PDF</h1>
+
+      <p class="subtitle">
+        Export the current Excel workbook as a PDF file.
+      </p>
+
+      <div class="section-title">
+        Export
+      </div>
+
+      <label class="option">
+        <input
+          type="radio"
+          name="exportMode"
+          value="workbook"
+          checked
+        >
+        Entire Workbook
+      </label>
+
+      <div class="field">
+        <label for="pdfFileName">
+          PDF File Name
+        </label>
+
+        <input
+          id="pdfFileName"
+          type="text"
+          value="HimanshuXLTools_Export"
+        >
+      </div>
+
+      <button
+        id="exportPdfBtn"
+        type="button"
+      >
+        Export PDF
+      </button>
+
+      <div id="status">
+        Ready to export.
+      </div>
+
+      <div class="note">
+        Version 1 exports the complete workbook to one PDF file.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

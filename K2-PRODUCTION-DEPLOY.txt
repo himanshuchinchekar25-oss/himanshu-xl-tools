@@ -1,0 +1,118 @@
+=== K2 PRODUCTION DEPLOY ===
+Started=2026-09-20 23:24:53
+
+=== FINAL BUILD ===
+
+> office-addin-taskpane-js@0.0.1 build
+> webpack --mode production
+
+assets by status 571 KiB [1m[32m[cached][39m[22m 7 assets
+assets by path [1m[32massets/[39m[22m 995 KiB 215 assets
+assets by path [1m[32m*.html[39m[22m 198 KiB
+  asset [1m[32mpower-dashboard.html[39m[22m 58.3 KiB [1m[33m[compared for emit][39m[22m
+  asset [1m[32madmin-control-center.html[39m[22m 31.6 KiB [1m[33m[compared for emit][39m[22m
+  + 25 assets
+assets by path [1m[32m*.js[39m[22m 1.6 MiB
+  assets by status [1m[33m999 KiB[39m[22m [1m[33m[big][39m[22m 3 assets
+  + 22 assets
+assets by path [1m[32m*.css[39m[22m 88.7 KiB
+  asset [1m[32mpowerDashboard.css[39m[22m 52.6 KiB [1m[33m[compared for emit][39m[22m (name: powerDashboard) 1 related asset
+  asset [1m[32mdashboardView.css[39m[22m 21.8 KiB [1m[33m[compared for emit][39m[22m (name: dashboardView) 1 related asset
+  asset [1m[32madminControlCenter.css[39m[22m 14.3 KiB [1m[33m[compared for emit][39m[22m (name: adminControlCenter) 1 related asset
+asset [1m[33mvendor/pptxgen.bundle.js[39m[22m [1m[33m449 KiB[39m[22m [1m[33m[compared for emit][39m[22m [from: src/export-ppt/vendor/pptxgen.bundle.js] [1m[32m[copied][39m[22m [1m[32m[minimized][39m[22m [1m[33m[big][39m[22m
+asset [1m[32mmanifest.xml[39m[22m 53.3 KiB [1m[33m[compared for emit][39m[22m [from: manifest.xml] [1m[32m[copied][39m[22m
+orphan modules 958 KiB [1m[33m[orphan][39m[22m 12 modules
+runtime modules 221 bytes 4 modules
+modules by path [1m./node_modules/core-js/[39m[22m 726 KiB
+  modules by path [1m./node_modules/core-js/modules/*.js[39m[22m 441 KiB 343 modules
+  modules by path [1m./node_modules/core-js/internals/*.js[39m[22m 271 KiB 290 modules
+  [1m./node_modules/core-js/stable/index.js[39m[22m 13.6 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+modules by path [1m./src/[39m[22m 3.83 MiB
+  [1m./src/taskpane/taskpane.js + 11 modules[39m[22m 1.12 MiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1m./src/commands/commands.js + 4 modules[39m[22m 472 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  + 22 modules
+css modules 88.6 KiB
+  [1mcss ./src/power-dashboard/power-dashboard.css[39m[22m 52.5 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mcss ./src/dashboard-view/dashboard-view.css[39m[22m 21.7 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+  [1mcss ./src/admin-control-center/admin-control-center.css[39m[22m 14.3 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+[1m./node_modules/regenerator-runtime/runtime.js[39m[22m 24.7 KiB [1m[33m[built][39m[22m [1m[33m[code generated][39m[22m
+
+[1m[33mWARNING[39m[22m in [1masset size limit: The following asset(s) exceed the recommended size limit (244 KiB).
+This can impact web performance.
+Assets: 
+  dc1a7b852013e211e321.js (467 KiB)
+  taskpane.js (397 KiB)
+  mergeFiles.js (326 KiB)
+  splitWorkbook.js (275 KiB)
+  vendor/pptxgen.bundle.js (449 KiB)[39m[22m
+
+[1m[33mWARNING[39m[22m in [1mentrypoint size limit: The following entrypoint(s) combined asset size exceeds the recommended limit (244 KiB). This can impact web performance.
+Entrypoints:
+  taskpane (397 KiB)
+      taskpane.js
+  mergeFiles (326 KiB)
+      mergeFiles.js
+  splitWorkbook (275 KiB)
+      splitWorkbook.js
+[39m[22m
+
+[1m[33mWARNING[39m[22m in [1mwebpack performance recommendations: 
+You can limit the size of your bundles by using import() or require.ensure to lazy load some parts of your application.
+For more info visit https://webpack.js.org/guides/code-splitting/[39m[22m
+
+webpack 5.109.2 compiled with [1m[33m3 warnings[39m[22m in 97694 ms
+BUILD_EXIT=0
+
+=== STATIC WORKER DEPLOY ===
+
+ G¢àn+Å wrangler 4.135.0
+GöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇGöÇ
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not read file: wrangler-static.jsonc[0m
+
+  ENOENT: no such file or directory, open 'C:\Users\MY COMPUTER\HimanshuXLTools\C:\Users\MY COMPUTER\HimanshuXLTools\wrangler-static.jsonc'
+  
+  If you think this is a bug, please open an issue at: [4mhttps://github.com/cloudflare/workers-sdk/issues/new/choose[0m
+
+
+
+=ƒ¬¦  Logs were written to "C:\Users\MY COMPUTER\AppData\Roaming\xdg.config\.wrangler\logs\wrangler-2026-09-20_17-56-48_406.log"
+
+A
+ssertion failed: !(han
+d
+le->fl
+ags 
+& UV_HA
+NDL
+E_C
+LOS
+IN
+G),
+ fi
+le 
+src
+\wi
+n\asy
+nc.
+c, 
+lin
+e 
+94
+
+DEPLOY_EXIT=-1073740791
+
+=== LIVE ADMIN CHECK ===
+ADMIN_HTTP=200
+LIVE_PRICING_NAV=False
+LIVE_PRICING_PAGE=False
+LIVE_PRICING_FORM=False
+
+=== SAFETY ===
+PRICE_WRITE_PERFORMED=False
+D1_WRITE_PERFORMED=False
+CUSTOMER_WRITE=False
+LICENSE_WRITE=False
+DEVICE_WRITE=False
+
+=== DEPLOY COMPLETE ===

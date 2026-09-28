@@ -1,0 +1,2623 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width,initial-scale=1"
+  />
+  <title>Himanshu XL Tools Admin Control Center</title>
+</head>
+
+<body>
+
+<div id="loginView" class="login-shell">
+  <div class="login-card">
+    <div class="brand-mark">HXL</div>
+
+    <h1>Himanshu XL Tools</h1>
+    <h2>Admin Control Center</h2>
+
+    <p class="muted">
+      Secure owner access for customers, licenses and devices.
+    </p>
+
+    <label for="adminSecret">Admin Secret</label>
+
+    <input
+      id="adminSecret"
+      type="password"
+      autocomplete="current-password"
+      placeholder="Enter admin secret"
+    />
+
+    <button id="loginButton" class="primary full">
+      Sign In
+    </button>
+
+    <div id="loginStatus" class="status"></div>
+  </div>
+</div>
+
+
+<div id="appView" class="app hidden">
+
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="brand-mark small">HXL</div>
+
+      <div>
+        <strong>Himanshu XL Tools</strong>
+        <span>Admin Control Center</span>
+      </div>
+    </div>
+
+    <nav class="reference-nav" aria-label="Admin navigation">
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">MAIN</div>
+
+    <button class="nav-item active" data-page="dashboard">
+      <span class="nav-glyph">&#9635;</span>
+      <span class="nav-text">Dashboard</span>
+    </button>
+
+    <button class="nav-item" data-page="customers">
+      <span class="nav-glyph">&#128100;</span>
+      <span class="nav-text">Customers</span>
+    </button>
+
+    <button class="nav-item" data-page="licenses">
+      <span class="nav-glyph">&#128273;</span>
+      <span class="nav-text">Licenses</span>
+    </button>
+
+    <button class="nav-item" data-page="devices">
+      <span class="nav-glyph">&#9632;</span>
+      <span class="nav-text">Devices</span>
+    </button>
+
+    <button class="nav-item" data-page="payments">
+      <span class="nav-glyph">&#8377;</span>
+      <span class="nav-text">Payments</span>
+    </button>
+
+    <button class="nav-item" data-page="orders">
+      <span class="nav-glyph">&#9776;</span>
+      <span class="nav-text">Orders</span>
+    </button>
+
+    <button class="nav-item" data-page="renewals">
+      <span class="nav-glyph">&#8635;</span>
+      <span class="nav-text">Renewals</span>
+    </button>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">COMMUNICATION</div>
+
+    <button class="nav-item" data-page="notifications">
+      <span class="nav-glyph">&#9993;</span>
+      <span class="nav-text">Emails &amp; Notifications</span>
+    </button>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">ANALYTICS</div>
+
+    <button class="nav-item" data-page="reports">
+      <span class="nav-glyph">&#9638;</span>
+      <span class="nav-text">Reports</span>
+    </button>
+
+    <button class="nav-item" data-page="downloads">
+      <span class="nav-glyph">&#8595;</span>
+      <span class="nav-text">Download Management</span>
+    </button>
+  </div>
+
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">BUSINESS</div>
+
+    <button class="nav-item" data-page="pricing">
+      <span class="nav-glyph">&#9670;</span>
+      <span class="nav-text">Products &amp; Pricing</span>
+    </button>
+  </div>
+
+</nav>
+
+<div class="sidebar-system-fixed">
+  <div class="sidebar-section-label">SYSTEM</div>
+
+  <button class="nav-item" data-page="settings">
+    <span class="nav-glyph">&#9881;</span>
+    <span class="nav-text">System Settings</span>
+  </button>
+</div>
+
+    <div class="sidebar-admin-profile"><div class="sidebar-admin-avatar">HC</div><div><strong>Himanshu</strong><span>Administrator</span></div></div>
+    <div class="sidebar-bottom">
+      <div class="api-indicator">
+        <span id="apiDot" class="dot"></span>
+        <span id="apiStatus">API</span>
+      </div>
+
+      <button id="logoutButton" class="logout">
+        Sign Out
+      </button>
+    </div>
+  </aside>
+
+
+  <main class="main">
+
+    <header class="topbar admin-master-header">
+
+  <div class="admin-header-title">
+    <h1 id="pageTitle">Dashboard</h1>
+    <p id="pageSubtitle">Overview of your business, customers and licenses</p>
+  </div>
+
+  <div class="admin-header-tools">
+
+    <label class="admin-search">
+      <span class="admin-search-icon">&#128269;</span>
+      <input
+        id="adminGlobalSearch"
+        type="search"
+        placeholder="Search customers, licenses, devices..."
+        autocomplete="off"
+      />
+    </label>
+
+    <button
+      id="adminNotificationButton"
+      class="admin-icon-button"
+      type="button"
+      title="Notifications"
+      aria-label="Notifications"
+    >
+      &#128276;
+      <span id="adminNotificationBadge" class="admin-notification-badge hidden">0</span>
+    </button>
+
+    <button
+      id="refreshButton"
+      class="admin-icon-button"
+      type="button"
+      title="Refresh"
+      aria-label="Refresh"
+    >
+      &#8635;
+    </button>
+
+    <div class="admin-profile">
+      <div class="admin-avatar">A</div>
+      <div class="admin-profile-copy">
+        <strong>Admin</strong>
+        <span>Administrator</span>
+      </div>
+    </div>
+
+    <button id="newCustomerButton" class="primary admin-new-customer">
+      + Add Customer
+    </button>
+
+  </div>
+
+</header>
+
+
+    <section id="globalMessage" class="global-message hidden"></section>
+
+
+    <!-- DASHBOARD -->
+    <section id="page-dashboard" class="page active admin-dashboard-page">
+
+  <section class="dashboard-kpi-grid">
+
+    <article class="dashboard-kpi-card">
+      <div class="dashboard-kpi-icon customers-icon">C</div>
+      <div class="dashboard-kpi-content">
+        <span>Total Customers</span>
+        <strong id="statCustomers">0</strong>
+        <small>Registered customers</small>
+      </div>
+    </article>
+
+    <article class="dashboard-kpi-card">
+      <div class="dashboard-kpi-icon licenses-icon">L</div>
+      <div class="dashboard-kpi-content">
+        <span>Active Licenses</span>
+        <strong id="statActiveLicenses">0</strong>
+        <small>Currently active</small>
+      </div>
+    </article>
+
+    <article class="dashboard-kpi-card">
+      <div class="dashboard-kpi-icon expired-icon">E</div>
+      <div class="dashboard-kpi-content">
+        <span>Expired</span>
+        <strong id="statExpired">0</strong>
+        <small>Expired licenses</small>
+      </div>
+    </article>
+
+    <article class="dashboard-kpi-card">
+      <div class="dashboard-kpi-icon revenue-icon">&#8377;</div>
+      <div class="dashboard-kpi-content">
+        <span>Total Revenue</span>
+        <strong id="statRevenue">&#8377;0</strong>
+        <small>Verified fulfilled orders</small>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="dashboard-secondary-stats">
+    <div>
+      <span>Expiring Soon</span>
+      <strong id="statExpiring">0</strong>
+    </div>
+
+    <div>
+      <span>Blocked</span>
+      <strong id="statBlocked">0</strong>
+    </div>
+
+    <div>
+      <span>License Utilization</span>
+      <strong id="dashboardUtilization">0%</strong>
+    </div>
+  </section>
+
+  <section class="dashboard-analytics-grid">
+
+    <article class="panel dashboard-activity-card">
+      <div class="panel-header">
+        <div>
+          <h2>Sales &amp; Activations</h2>
+          <p>Verified order sales and activations</p>
+        </div>
+        <select id="dashboardPeriod" class="dashboard-period" aria-label="Dashboard period"><option value="30">Last 30 Days</option><option value="90">Last 90 Days</option><option value="365">Last 12 Months</option></select>
+      </div>
+
+      <div id="dashboardActivityChart" class="dashboard-bars"></div>
+    </article>
+
+    <article class="panel dashboard-license-card">
+      <div class="panel-header">
+        <div>
+          <h2>License Status</h2>
+          <p>Current license distribution</p>
+        </div>
+      </div>
+
+      <div class="dashboard-donut-layout">
+        <div id="dashboardLicenseDonut" class="dashboard-donut">
+          <div class="dashboard-donut-center">
+            <strong id="dashboardLicenseTotal">0</strong>
+            <span>Total</span>
+          </div>
+        </div>
+
+        <div id="dashboardLicenseLegend" class="dashboard-license-legend"></div>
+      </div>
+    </article>
+
+  </section>
+
+  <section class="dashboard-table-grid">
+
+    <article class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Recent Customers</h2>
+          <p>Latest registered customers</p>
+        </div>
+
+        <button
+          class="dashboard-link-button"
+          type="button"
+          data-dashboard-nav="customers"
+        >
+          View All
+        </button>
+      </div>
+
+      <div id="recentCustomers"></div>
+    </article>
+
+    <article class="panel">
+      <div class="panel-header">
+        <div>
+          <h2>Recent Activations</h2>
+          <p>License and device activity</p>
+        </div>
+
+        <button
+          class="dashboard-link-button"
+          type="button"
+          data-dashboard-nav="licenses"
+        >
+          View All
+        </button>
+      </div>
+
+      <div id="licenseAttention"></div>
+    </article>
+
+  </section>
+
+  <section class="panel dashboard-quick-panel">
+
+    <div class="panel-header">
+      <div>
+        <h2>Quick Actions</h2>
+        <p>Common administration tasks</p>
+      </div>
+    </div>
+
+    <div class="dashboard-quick-grid">
+
+      <button
+        id="dashboardAddCustomer"
+        class="dashboard-action-card"
+        type="button"
+      >
+        <span class="dashboard-action-icon">+</span>
+        <strong>Add Customer</strong>
+        <small>Create customer account</small>
+      </button>
+
+      <button
+        class="dashboard-action-card"
+        type="button"
+        data-dashboard-nav="licenses"
+      >
+        <span class="dashboard-action-icon">L</span>
+        <strong>Generate License</strong>
+        <small>Open license management</small>
+      </button>
+
+      <button
+        class="dashboard-action-card"
+        type="button"
+        data-dashboard-nav="notifications"
+      >
+        <span class="dashboard-action-icon">@</span>
+        <strong>Resend Email</strong>
+        <small>Open email &amp; notification center</small>
+      </button>
+
+      <button
+        class="dashboard-action-card"
+        type="button"
+        data-dashboard-nav="devices"
+      >
+        <span class="dashboard-action-icon">D</span>
+        <strong>Reset Device</strong>
+        <small>Review or reset safely</small>
+      </button>
+
+    </div>
+
+  </section>
+
+</section><!-- CUSTOMERS -->
+    <section id="page-customers" class="page admin-business-page admin-page-customers">
+
+      <section class="panel">
+        <div class="panel-header responsive">
+          <div>
+            <h2>Customers</h2>
+            <p>Manage customer accounts</p>
+          </div>
+
+          <div class="filters">
+            <input
+              id="customerSearch"
+              type="search"
+              placeholder="Search customer..."
+            />
+
+            <select id="customerStatusFilter">
+              <option value="">All Status</option>
+              <option value="ACTIVE">Active</option>
+              <option value="BLOCKED">Blocked</option>
+              <option value="INACTIVE">Inactive</option>
+            </select>
+        <button
+          id="archivedCustomersButton"
+          type="button"
+          class="action-button"
+        >
+          Archived Customers
+        </button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Customer</th>
+                <th>Contact</th>
+                <th>Company</th>
+                <th>Status</th>
+                <th>License</th>
+                <th>Expiry</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody id="customersBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+
+    <!-- LICENSES -->
+    <section id="page-licenses" class="page admin-business-page admin-page-licenses">
+
+      <section class="panel">
+        <div class="panel-header responsive">
+          <div>
+            <h2>Licenses</h2>
+            <p>Plans, expiry and renewals</p>
+          </div>
+
+          <div class="filters">
+            <input
+              id="licenseSearch"
+              type="search"
+              placeholder="Search license..."
+            />
+
+            <select id="licenseStatusFilter">
+              <option value="">All Status</option>
+              <option value="ACTIVE">Active</option>
+              <option value="PENDING">Pending</option>
+              <option value="EXPIRED">Expired</option>
+              <option value="BLOCKED">Blocked</option>
+              <option value="DEACTIVATED">Deactivated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>License ID</th>
+                <th>Customer</th>
+                <th>License Key</th>
+                <th>Plan</th>
+                <th>Status</th>
+                <th>Devices</th>
+                <th>Expiry</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody id="licensesBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+
+    
+      <!-- REPORTS -->
+      <section id="page-reports" class="page admin-business-page admin-page-reports">
+        <section class="panel">
+          <div class="panel-header responsive">
+            <div>
+              <h2>Dashboard & Reports</h2>
+              <p>License health, renewals, customers and devices</p>
+            </div>
+
+            <div class="filters report-filters">
+              <input id="reportFrom" type="date" title="From date" />
+              <input id="reportTo" type="date" title="To date" />
+
+              <select id="reportRenewalStatus">
+                <option value="">All Renewal Status</option>
+                <option value="COMPLETED">Completed</option>
+                <option value="PENDING">Pending</option>
+                <option value="FAILED">Failed</option>
+              </select>
+
+              <button id="reportApplyButton" class="secondary">
+                Apply
+              </button>
+            </div>
+          </div>
+
+          <div class="stats-grid report-stats">
+            <article class="stat-card">
+              <span>Total Customers</span>
+              <strong id="reportCustomers">0</strong>
+              <small>Registered</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Active Licenses</span>
+              <strong id="reportActiveLicenses">0</strong>
+              <small>Currently active</small>
+            </article>
+
+            <article class="stat-card warning-card">
+              <span>Expiring 30 Days</span>
+              <strong id="reportExpiring">0</strong>
+              <small>Renewal attention</small>
+            </article>
+
+            <article class="stat-card danger-card">
+              <span>Expired</span>
+              <strong id="reportExpired">0</strong>
+              <small>Expired licenses</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Active Devices</span>
+              <strong id="reportActiveDevices">0</strong>
+              <small>Bound devices</small>
+            </article>
+
+            <article class="stat-card">
+              <span>Renewal Revenue</span>
+              <strong id="reportRevenue">&#8377;0.00</strong>
+              <small>Completed renewals</small>
+            </article>
+          </div>
+        </section>
+
+        <div class="panel-grid report-grid">
+          <section class="panel">
+            <div class="panel-header responsive">
+              <div>
+                <h2>License Health</h2>
+                <p>Current license status summary</p>
+              </div>
+              <button id="exportLicensesCsv" class="secondary">
+                Export Licenses CSV
+              </button>
+            </div>
+            <div id="reportLicenseHealth"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-header responsive">
+              <div>
+                <h2>Customer & Device Report</h2>
+                <p>Current account and binding totals</p>
+              </div>
+              <div class="report-actions">
+                <button id="exportCustomersCsv" class="secondary">
+                  Customers CSV
+                </button>
+                <button id="exportDevicesCsv" class="secondary">
+                  Devices CSV
+                </button>
+              </div>
+            </div>
+            <div id="reportCustomerDevice"></div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <div class="panel-header responsive">
+            <div>
+              <h2>Renewal / Revenue Report</h2>
+              <p>Filtered renewal history and payment references</p>
+            </div>
+
+            <button id="exportRenewalsCsv" class="primary">
+              Export Renewals CSV
+            </button>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Customer</th>
+                  <th>License</th>
+                  <th>Days</th>
+                  <th>Old Expiry</th>
+                  <th>New Expiry</th>
+                  <th>Amount</th>
+                  <th>Payment Ref</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="renewalReportBody"></tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+
+      <!-- ====================================================
+           PHASE 6.10H - NOTIFICATIONS PAGE
+           ==================================================== -->
+
+      <section id="page-notifications" class="page admin-business-page admin-page-notifications">
+
+        <section class="panel">
+
+          <div class="panel-header responsive">
+
+            <div>
+              <h2>Notification Center</h2>
+              <p>
+                Manage customer Email, WhatsApp and SMS
+                communication.
+              </p>
+            </div>
+
+            <button
+              id="notificationRefreshButton"
+              class="secondary"
+              type="button"
+            >
+              Refresh History
+            </button>
+
+          </div>
+
+          <div class="notification-status-grid">
+
+            <article class="notification-channel-card">
+              <strong>Email</strong>
+              <span class="status-badge active">
+                Enabled
+              </span>
+              <small>Provider: Resend</small>
+            </article>
+
+            <article class="notification-channel-card">
+              <strong>WhatsApp</strong>
+              <span class="status-badge pending">
+                Mock Only
+              </span>
+              <small>No real provider connected</small>
+            </article>
+
+            <article class="notification-channel-card">
+              <strong>SMS</strong>
+              <span class="status-badge pending">
+                Mock Only
+              </span>
+              <small>No real provider connected</small>
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <div class="panel-grid notification-grid">
+
+          <section class="panel">
+
+            <div class="panel-header">
+              <div>
+                <h2>Send / Test Notification</h2>
+                <p>
+                  Email uses the existing safe email API.
+                  WhatsApp and SMS remain mock-only.
+                </p>
+              </div>
+            </div>
+
+            <form
+              id="notificationForm"
+              class="form-grid notification-form"
+            >
+
+              <label>
+                Channel
+
+                <select id="notificationChannel">
+                  <option value="EMAIL">
+                    Email
+                  </option>
+
+                  <option value="WHATSAPP">
+                    WhatsApp - Mock
+                  </option>
+
+                  <option value="SMS">
+                    SMS - Mock
+                  </option>
+                </select>
+              </label>
+
+
+              <label>
+                Customer Name
+
+                <input
+                  id="notificationCustomerName"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Customer name"
+                />
+              </label>
+
+
+              <label>
+                Destination
+
+                <input
+                  id="notificationDestination"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Email or mobile number"
+                />
+
+                <small id="notificationDestinationHelp">
+                  Enter customer email address.
+                </small>
+              </label>
+
+
+              <label id="notificationSubjectRow">
+                Subject
+
+                <input
+                  id="notificationSubject"
+                  type="text"
+                  autocomplete="off"
+                  placeholder="Notification subject"
+                />
+              </label>
+
+
+              <label class="notification-message-field">
+                Message
+
+                <textarea
+                  id="notificationMessage"
+                  rows="6"
+                  placeholder="Enter notification message"
+                ></textarea>
+              </label>
+
+
+              <div class="notification-form-actions">
+
+                <button
+                  id="notificationSendButton"
+                  class="primary"
+                  type="submit"
+                >
+                  Send Email
+                </button>
+
+                <button
+                  id="notificationClearButton"
+                  class="secondary"
+                  type="button"
+                >
+                  Clear
+                </button>
+
+              </div>
+
+            </form>
+
+            <div
+              id="notificationResult"
+              class="notification-result hidden"
+            ></div>
+
+          </section>
+
+
+          <section class="panel">
+
+            <div class="panel-header responsive">
+
+              <div>
+                <h2>Quick Tests</h2>
+                <p>
+                  Existing notification engine test controls.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="notification-test-actions">
+
+              <button
+                id="testEmailProviderButton"
+                class="secondary"
+                type="button"
+              >
+                Test Email Provider
+              </button>
+
+              <button
+                id="testExpiryReminderButton"
+                class="secondary"
+                type="button"
+              >
+                Test Expiry Reminder
+              </button>
+
+              <button
+                id="testExpiredEmailButton"
+                class="secondary"
+                type="button"
+              >
+                Test Expired Email
+              </button>
+
+              <button
+                id="testRenewalEmailButton"
+                class="secondary"
+                type="button"
+              >
+                Test Renewal Email
+              </button>
+
+            </div>
+
+
+            <div class="notification-safety-note">
+
+              <strong>Messaging Safety</strong>
+
+              <p>
+                WhatsApp and SMS providers are disabled.
+                Their controls use local mock mode only and
+                do not contact a paid messaging provider.
+              </p>
+
+            </div>
+
+          </section>
+
+        </div>
+
+
+        <section class="panel">
+
+          <div class="panel-header responsive">
+
+            <div>
+              <h2>Notification History</h2>
+              <p>
+                Recent notification queue and delivery records.
+              </p>
+            </div>
+
+          </div>
+
+
+          <div class="table-wrap">
+
+            <table>
+
+              <thead>
+                <tr>
+                  <th>Created</th>
+                  <th>Customer</th>
+                  <th>Channel</th>
+                  <th>Type</th>
+                  <th>Status</th>
+                  <th>Destination</th>
+                </tr>
+              </thead>
+
+              <tbody id="notificationsBody">
+
+                <tr>
+                  <td colspan="6">
+                    <div class="empty">
+                      Open Notifications to load history.
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+
+            </table>
+
+          </div>
+
+        </section>
+
+      </section>
+
+<!-- DEVICES -->
+    <section id="page-devices" class="page admin-business-page admin-page-devices">
+
+      <section class="panel">
+        <div class="panel-header responsive">
+          <div>
+            <h2>Devices</h2>
+            <p>Customer device bindings</p>
+          </div>
+
+          <div class="filters">
+            <input
+              id="deviceSearch"
+              type="search"
+              placeholder="Search device..."
+            />
+
+            <select id="deviceStatusFilter">
+              <option value="">All Status</option>
+              <option value="ACTIVE">Active</option>
+              <option value="RESET">Reset</option>
+              <option value="DEACTIVATED">Deactivated</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Device</th>
+                <th>Customer</th>
+                <th>License</th>
+                <th>Platform</th>
+                <th>Version</th>
+                <th>Status</th>
+                <th>Last Seen</th>
+                <th></th>
+              </tr>
+            </thead>
+
+            <tbody id="devicesBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+
+  
+
+    <!-- BUSINESS PLATFORM: STEP 3 -->
+    <section id="page-payments" class="page admin-business-page admin-page-payments">
+      <section class="panel portal-hero"><div><span class="eyebrow">COMMERCE</span><h2>Payments</h2><p>Server-verified payment records from website orders.</p></div><span class="phase-badge">Verified only</span></section>
+      
+
+      <div class="business-grid"><section class="panel business-card"><span class="business-icon">&#8377;</span><h3>Verified Revenue</h3><p>Fulfilled or paid orders only.</p><strong id="paymentRevenue">&#8377;0</strong></section><section class="panel business-card"><span class="business-icon">&#10003;</span><h3>Fulfilled Payments</h3><p>Verified fulfilled transactions.</p><strong id="paidOrderCount">0 fulfilled</strong></section></div>
+      <section class="panel table-panel"><div class="panel-head"><div><small>PAYMENT HISTORY</small><h3>Verified Payments</h3></div></div><div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Amount</th><th>Status</th><th>Payment Ref</th><th>Date</th></tr></thead><tbody id="paymentsBody"><tr><td colspan="6">No payments loaded.</td></tr></tbody></table></div></section>
+    </section>
+
+    <section id="page-orders" class="page admin-business-page admin-page-orders">
+      <section class="panel portal-hero"><div><span class="eyebrow">COMMERCE</span><h2>Orders</h2><p>Customer purchase orders from the website checkout.</p></div><span class="phase-badge">Live order data</span></section>
+      <div class="business-grid"><section class="panel business-card"><span class="business-icon">&#9776;</span><h3>Orders</h3><p>Website checkout orders.</p><strong id="orderCount">0 orders</strong></section></div>
+      <section class="panel table-panel"><div class="panel-head"><div><small>ORDER HISTORY</small><h3>Website Orders</h3></div></div><div class="table-wrap"><table><thead><tr><th>Order</th><th>Customer</th><th>Plan</th><th>Amount</th><th>Status</th><th>Payment Ref</th><th>License</th><th>Date</th><th>Action</th></tr></thead><tbody id="ordersBody"><tr><td colspan="9">No orders loaded.</td></tr></tbody></table></div></section>
+    </section>
+
+    <section id="page-renewals" class="page admin-business-page admin-page-renewals">
+      <section class="panel portal-hero"><div><span class="eyebrow">CUSTOMER LIFECYCLE</span><h2>Renewals</h2><p>Renewal history from the existing protected renewal engine.</p></div><span class="phase-badge">License API protected</span></section>
+      <section class="panel table-panel"><div class="panel-head"><div><small>RENEWAL HISTORY</small><h3>Completed Renewals</h3></div></div><div class="table-wrap"><table><thead><tr><th>Customer</th><th>License</th><th>Days</th><th>Old Expiry</th><th>New Expiry</th><th>Amount</th><th>Payment Ref</th><th>Date</th></tr></thead><tbody id="dashboardRenewalsBody"><tr><td colspan="8">No renewals loaded.</td></tr></tbody></table></div></section>
+    </section>
+
+    <section id="page-downloads" class="page admin-business-page admin-page-downloads">
+      <section class="panel portal-hero">
+        <div><span class="eyebrow">RELEASE CENTER</span><h2>Download Management</h2><p>One official Himanshu XL Tools installer for all customers. Customer-specific access is controlled by account and license, not by separate installer copies.</p></div>
+        <span class="phase-badge">Secure delivery</span>
+      </section>
+      <div class="business-grid">
+        <section class="panel business-card"><span class="business-icon">&#8595;</span><h3>Current Release</h3><p id="adminReleaseMeta">Load the published installer metadata from the production API.</p><strong id="adminReleaseStatus">Production source</strong></section>
+        <section class="panel business-card"><span class="business-icon">&#10003;</span><h3>Customer Access</h3><p>Authenticated customers with an ACTIVE, unexpired license can access the release.</p><strong>Customer Portal protected</strong></section>
+        <section class="panel business-card"><span class="business-icon">&#8599;</span><h3>Download Activity</h3><p>Successful protected download requests are recorded for release reporting.</p><strong id="adminDownloadCount">0 downloads</strong></section>
+      </div>
+
+      <!-- K4 RELEASE MANAGER -->
+      <section class="panel release-manager-panel">
+        <div class="panel-header responsive">
+          <div>
+            <span class="eyebrow">RELEASE MANAGER</span>
+            <h2>Publish Installer Release</h2>
+            <p>Manage version, installer metadata, release notes and customer download publishing.</p>
+          </div>
+          <button id="releaseRefreshButton" class="secondary" type="button">Reload Releases</button>
+        </div>
+
+        <form id="releaseManagerForm" class="form-grid">
+          <label>
+            Version
+            <input id="releaseVersion" type="text" placeholder="1.0.0" required />
+          </label>
+
+
+          <label class="span-2">
+            Installer File
+            <input
+              id="releaseInstallerFile"
+              type="file"
+              accept=".exe,application/vnd.microsoft.portable-executable,application/octet-stream"
+            />
+            <small>
+              Select the Himanshu XL Tools installer.
+              SHA-256, file name, size and protected download URL
+              will be generated automatically.
+            </small>
+          </label>
+
+          <div class="span-2">
+            <button
+              id="releaseUploadButton"
+              type="button"
+              class="secondary">
+              Upload Installer
+            </button>
+            <span id="releaseUploadStatus" class="status"></span>
+          </div>
+
+          <label>
+            Installer Size
+            <input
+              id="releaseFileSize"
+              type="text"
+              readonly
+              placeholder="Auto after upload"
+            />
+          </label>
+          <label>
+            Installer File Name
+            <input id="releaseFileName" type="text" readonly placeholder="HimanshuXLTools-v1.0-Setup.exe" required />
+          </label>
+
+          <label class="span-2">
+            SHA-256
+            <input id="releaseSha256" type="text" readonly placeholder="64-character SHA-256" />
+          </label>
+
+          <label>
+            Release Date
+            <input id="releaseDate" type="date" />
+          </label>
+
+          <label>
+            Status
+            <select id="releasePublishStatus">
+              <option value="DRAFT">DRAFT</option>
+              <option value="PUBLISHED">PUBLISHED</option>
+              <option value="ARCHIVED">ARCHIVED</option>
+            </select>
+          </label>
+
+          <label class="span-2">
+            Download URL
+            <input id="releaseDownloadUrl" type="url" readonly placeholder="https://..." />
+          </label>
+
+          <label class="span-2">
+            Release Notes
+            <textarea id="releaseNotes" rows="4" placeholder="What's new in this release?"></textarea>
+          </label>
+
+          <div class="span-2">
+            <div id="releaseManagerMessage" class="status"></div>
+          </div>
+
+          <div class="modal-actions span-2">
+            <button id="releaseSaveButton" type="submit" class="primary">Save Release</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel table-panel release-history-panel">
+        <div class="panel-head">
+          <div>
+            <small>RELEASE HISTORY</small>
+            <h3>Installer Releases</h3>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Version</th>
+                <th>Installer</th>
+                <th>Status</th>
+                <th>Release Date</th>
+                <th>SHA-256</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="releaseHistoryBody">
+              <tr><td colspan="6">No releases loaded.</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </section>
+
+    <!-- CENTRAL BUSINESS PLATFORM: PRODUCTS & PRICING -->
+    <section id="page-pricing" class="page admin-business-page admin-page-pricing">
+
+      <section class="panel portal-hero">
+        <div>
+          <span class="eyebrow">PRODUCT MANAGEMENT</span>
+          <h2>Products & Pricing</h2>
+          <p>Manage the plans published by Himanshu XL Tools. Saved plan data is stored in the Central Business Platform and can be consumed by the public website.</p>
+        </div>
+        <span class="phase-badge">Central Plan API</span>
+      </section>
+
+      <section class="panel">
+        <div class="panel-header responsive">
+          <div>
+            <h2>STANDARD Plan</h2>
+            <p>Price, validity, device limit and website purchase availability.</p>
+          </div>
+
+          <button id="pricingRefreshButton" class="secondary" type="button">
+            Ã¢â€ Â» Reload Plan
+          </button>
+        </div>
+
+        <form id="pricingForm" class="form-grid">
+
+          <label>
+            Plan Code
+            <input id="pricingPlanCode" value="STANDARD" readonly />
+          </label>
+
+          <label>
+            Display Name
+            <input id="pricingDisplayName" value="Standard" required />
+          </label>
+
+          <label>
+            Price (Ã¢â€šÂ¹)
+            <input
+              id="pricingPrice"
+              type="number"
+              min="0"
+              step="1"
+              required
+            />
+          </label>
+
+          <label>
+            Currency
+            <select id="pricingCurrency">
+              <option value="INR">INR</option>
+            </select>
+          </label>
+
+          <label>
+            Validity (Days)
+            <input
+              id="pricingValidityDays"
+              type="number"
+              min="1"
+              max="3650"
+              required
+            />
+          </label>
+
+          <label>
+            Maximum Devices
+            <input
+              id="pricingMaxDevices"
+              type="number"
+              min="1"
+              max="100"
+              required
+            />
+          </label>
+
+          <label>
+            Status
+            <select id="pricingStatus">
+              <option value="ACTIVE">ACTIVE</option>
+              <option value="INACTIVE">INACTIVE</option>
+            </select>
+          </label>
+
+          <label>
+            Website Purchase
+            <select id="pricingBuyEnabled">
+              <option value="1">Enabled</option>
+              <option value="0">Disabled</option>
+            </select>
+          </label>
+
+          <div class="span-2">
+            <div id="pricingStatusMessage" class="status"></div>
+          </div>
+
+          <div class="modal-actions span-2">
+            <button id="pricingSaveButton" type="submit" class="primary">
+              Save Plan
+            </button>
+          </div>
+
+        </form>
+      </section>
+
+      
+      <section class="panel festival-offer-panel">
+        <div class="panel-header responsive"><div><span class="eyebrow">FESTIVAL OFFER MANAGER</span><h2>Website Offer & Discount</h2><p>Create scheduled Indian festival offers without changing the regular plan price.</p></div><span id="offerLiveBadge" class="phase-badge">Offer OFF</span></div>
+        <form id="offerForm" class="form-grid">
+          <label>Offer Status<select id="offerEnabled"><option value="0">OFF</option><option value="1">ON</option></select></label>
+          <label>Offer Name<input id="offerName" placeholder="Diwali Offer" required /></label>
+          <label>Offer Badge<input id="offerBadge" placeholder="Diwali Special" /></label>
+          <label>Discount Type<select id="offerDiscountType"><option value="PERCENT">Percent (%)</option><option value="FLAT">Flat Ã¢â€šÂ¹</option></select></label>
+          <label id="offerPercentWrap">Discount (%)<input id="offerDiscountPercent" type="number" min="0.01" max="100" step="0.01" value="20" /></label>
+          <label id="offerFlatWrap" class="hidden">Flat Discount (Ã¢â€šÂ¹)<input id="offerDiscountFlat" type="number" min="1" step="1" value="100" /></label>
+          <label>Start Date & Time<input id="offerStartsAt" type="datetime-local" /></label>
+          <label>End Date & Time<input id="offerEndsAt" type="datetime-local" /></label>
+          <div class="offer-preview span-2"><span>Regular Price <strong id="offerRegularPrice">Ã¢â‚¬â€</strong></span><span>Offer Price <strong id="offerFinalPrice">Ã¢â‚¬â€</strong></span><span>Saving <strong id="offerSaving">Ã¢â‚¬â€</strong></span></div>
+          <div class="span-2"><div id="offerStatusMessage" class="status"></div></div>
+          <div class="modal-actions span-2"><button id="offerSaveButton" type="submit" class="primary">Save & Publish Offer</button></div>
+        </form>
+      </section>
+
+      <div class="business-grid">
+        <section class="panel business-card">
+          <span class="business-icon">Ã¢â€šÂ¹</span>
+          <h3>Current Price</h3>
+          <p>Price stored in the Central Business Platform.</p>
+          <strong id="pricingCurrentPrice">Ã¢â‚¬â€</strong>
+        </section>
+
+        <section class="panel business-card">
+          <span class="business-icon">Ã¢â€”Â·</span>
+          <h3>Validity</h3>
+          <p>License duration for new purchases.</p>
+          <strong id="pricingCurrentValidity">Ã¢â‚¬â€</strong>
+        </section>
+
+        <section class="panel business-card">
+          <span class="business-icon">Ã°Å¸â€™Â»</span>
+          <h3>Device Limit</h3>
+          <p>Maximum devices allowed by this plan.</p>
+          <strong id="pricingCurrentDevices">Ã¢â‚¬â€</strong>
+        </section>
+      </div>
+
+    </section>
+    <section id="page-settings" class="page admin-business-page admin-page-settings">
+
+        <!-- HXL_LOCKED_SETTINGS_V1 -->
+        <div class="hxl-settings-console">
+
+          <aside class="hxl-settings-sidebar">
+            <div class="hxl-settings-sidebar-head">
+              <span class="hxl-settings-sidebar-icon">&#9881;</span>
+              <div>
+                <strong>Settings Console</strong>
+                <small>Admin Control Center</small>
+              </div>
+            </div>
+
+            <nav class="hxl-settings-nav" aria-label="System Settings">
+              <button type="button" class="hxl-settings-nav-item active" data-settings-target="overview">
+                <span>&#8962;</span><div><strong>Overview</strong><small>System health &amp; quick actions</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="staff">
+                <span>&#128101;</span><div><strong>Staff &amp; Access</strong><small>Staff, teams &amp; permissions</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="security">
+                <span>&#128737;</span><div><strong>Security</strong><small>MFA, sessions &amp; policies</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="licensing">
+                <span>&#128273;</span><div><strong>Licensing</strong><small>Vault, rules &amp; activation</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="notifications">
+                <span>&#9993;</span><div><strong>Notifications</strong><small>Email, WhatsApp &amp; SMS</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="production">
+                <span>&#9729;</span><div><strong>Production</strong><small>Environment &amp; deployment</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="data">
+                <span>&#128451;</span><div><strong>Data Management</strong><small>Protected business data</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item" data-settings-target="audit">
+                <span>&#8801;</span><div><strong>Audit &amp; Logs</strong><small>Admin &amp; security activity</small></div>
+              </button>
+
+              <button type="button" class="hxl-settings-nav-item danger" data-settings-target="danger">
+                <span>&#9888;</span><div><strong>Danger Zone</strong><small>Protected destructive actions</small></div>
+              </button>
+            </nav>
+
+            <div class="hxl-settings-secure-card">
+              <span class="hxl-secure-dot"></span>
+              <div>
+                <strong>Secure Console</strong>
+                <small>Admin-only protected access</small>
+              </div>
+            </div>
+          </aside>
+
+          <main class="hxl-settings-main">
+
+            <header class="hxl-settings-top">
+              <div>
+                <div class="hxl-settings-breadcrumb">Admin Control Center / System Settings</div>
+                <h1>System Settings</h1>
+                <p>Manage platform configuration, access, security and production operations.</p>
+              </div>
+
+              <div class="hxl-settings-top-actions">
+                <span class="hxl-settings-status-pill">
+                  <span></span> Systems Operational
+                </span>
+                <button type="button"
+                        class="hxl-settings-refresh"
+                        onclick="location.reload()"
+                        title="Refresh">
+                  &#8594;
+                </button>
+              </div>
+            </header>
+
+            <section class="hxl-settings-overview hxl-settings-pane active" data-settings-pane="overview">
+
+              <div class="hxl-settings-kpis">
+                <article class="hxl-settings-kpi">
+                  <div class="hxl-kpi-icon blue">&#128101;</div>
+                  <div>
+                    <small>Staff & Access</small>
+                    <strong id="hxlSettingsStaffSummary">Protected</strong>
+                    <span>Staff management enabled</span>
+                  </div>
+                </article>
+
+                <article class="hxl-settings-kpi">
+                  <div class="hxl-kpi-icon green">&#10003;</div>
+                  <div>
+                    <small>Security</small>
+                    <strong>Protected</strong>
+                    <span>Admin authorization active</span>
+                  </div>
+                </article>
+
+                <article class="hxl-settings-kpi">
+                  <div class="hxl-kpi-icon purple">&#128273;</div>
+                  <div>
+                    <small>Licensing</small>
+                    <strong>Available</strong>
+                    <span>License Vault connected</span>
+                  </div>
+                </article>
+
+                <article class="hxl-settings-kpi">
+                  <div class="hxl-kpi-icon orange">&#9729;</div>
+                  <div>
+                    <small>Production</small>
+                    <strong>Cloud</strong>
+                    <span>Cloudflare environment</span>
+                  </div>
+                </article>
+                <article class="hxl-settings-kpi">
+                  <div class="hxl-kpi-icon cyan">&#9993;</div>
+                  <div>
+                    <small>Notifications</small>
+                    <strong>Configured</strong>
+                    <span>Email, WhatsApp &amp; SMS</span>
+                  </div>
+                </article>
+
+                <article class="hxl-settings-kpi">
+                  <div class="hxl-kpi-icon indigo">&#128451;</div>
+                  <div>
+                    <small>Data Management</small>
+                    <strong>Protected</strong>
+                    <span>Business data controls</span>
+                  </div>
+                </article>
+              </div>
+
+              <section class="hxl-settings-hero">
+                <div class="hxl-settings-hero-copy">
+                  <span class="hxl-hero-eyebrow">SETTINGS CONSOLE</span>
+
+                  <h2>System Settings</h2>
+
+                  <p>
+                    Manage your platform configuration, security, licensing,
+                    notifications and all administrative controls from one place.
+                  </p>
+
+                  <div class="hxl-target-hero-checks">
+                    <span>&#10003; Secure</span>
+                    <span>&#10003; Scalable</span>
+                    <span>&#10003; Production Ready</span>
+                    <span>&#10003; Future Ready</span>
+                  </div>
+                </div>
+
+                <div class="hxl-settings-hero-visual" aria-hidden="true">
+                  <div class="hxl-target-gear">&#9881;</div>
+
+                  <div class="hxl-target-server">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+
+                  <div class="hxl-target-dashboard">
+                    <i></i>
+                    <i></i>
+                    <i></i>
+                  </div>
+                </div>
+              </section>
+
+              <div class="hxl-settings-dashboard-grid">
+
+                <section class="hxl-settings-card">
+                  <div class="hxl-settings-card-head">
+                    <div>
+                      <small>CONTROL CENTER</small>
+                      <h3>Quick Actions</h3>
+                    </div>
+                    <span class="hxl-card-badge">Admin</span>
+                  </div>
+
+                  <div class="hxl-quick-grid">
+                    <button type="button" data-settings-jump="staff">
+                      <span>&#43;</span>
+                      <div><strong>Add Staff</strong><small>Manage staff directory</small></div>
+                    </button>
+
+                    <button type="button" data-settings-jump="licensing">
+                      <span>&#128273;</span>
+                      <div><strong>License Vault</strong><small>Manage licensing</small></div>
+                    </button>
+
+                    <button type="button" data-settings-jump="notifications">
+                      <span>&#9993;</span>
+                      <div><strong>Notifications</strong><small>Provider settings</small></div>
+                    </button>
+
+                    <button type="button" data-settings-jump="data">
+                      <span>&#128451;</span>
+                      <div><strong>Data Management</strong><small>Protected operations</small></div>
+                    </button>
+                  </div>
+                </section>
+
+                <section class="hxl-settings-card">
+                  <div class="hxl-settings-card-head">
+                    <div>
+                      <small>LIVE HEALTH</small>
+                      <h3>System Status</h3>
+                    </div>
+                    <span class="hxl-card-badge green">Operational</span>
+                  </div>
+
+                  <div class="hxl-status-list">
+                    <div><span><i class="ok"></i>Admin Control Center</span><strong>Online</strong></div>
+                    <div><span><i class="ok"></i>Customer Portal</span><strong>Configured</strong></div>
+                    <div><span><i class="ok"></i>License Services</span><strong>Available</strong></div>
+                    <div><span><i class="ok"></i>Protected Admin API</span><strong>Enabled</strong></div>
+                  </div>
+                </section>
+
+                <section class="hxl-settings-card">
+                  <div class="hxl-settings-card-head">
+                    <div>
+                      <small>SECURITY</small>
+                      <h3>Access Protection</h3>
+                    </div>
+                  </div>
+
+                  <div class="hxl-security-score">
+                    <div class="hxl-security-ring"><span>&#10003;</span></div>
+                    <div>
+                      <strong>Admin Protected</strong>
+                      <p>Protected authorization is required for management operations.</p>
+                    </div>
+                  </div>
+                </section>
+
+                <section class="hxl-settings-card">
+                  <div class="hxl-settings-card-head">
+                    <div>
+                      <small>ATTENTION</small>
+                      <h3>Upcoming & Alerts</h3>
+                    </div>
+                  </div>
+
+                  <div class="hxl-alert-list">
+                    <div class="info"><span>i</span><p><strong>Configuration</strong><small>Review production settings before major releases.</small></p></div>
+                    <div class="safe"><span>&#10003;</span><p><strong>Protected actions</strong><small>Dangerous operations remain confirmation protected.</small></p></div>
+                  </div>
+                </section>
+
+              </div>
+            </section>
+
+            <div class="hxl-existing-settings-label">
+              <span>Existing Configuration</span>
+              <p>Current working controls are preserved below while the new console is integrated.</p>
+            </div>
+
+          </main>
+        </div>
+      <section class="panel portal-hero">
+        <div><span class="eyebrow">OWNER CONTROL</span><h2>Business Settings</h2><p>Central configuration for the Himanshu XL Tools web platform. Secrets remain server-side and are never displayed here.</p></div>
+        <span class="phase-badge">Admin only</span>
+      </section>
+      <div class="business-grid">
+        <section class="panel business-card"><span class="business-icon">&#128272;</span><h3>License Vault</h3><p>Secure license recovery and customer-key management.</p><strong>Available</strong></section>
+        <section class="panel business-card"><span class="business-icon">&#9993;</span><h3>Email</h3><p>License delivery, expiry reminders and renewal notifications.</p><strong>Existing notification engine</strong></section>
+        <section class="panel business-card"><span class="business-icon">ÃƒÂ¢Ã‹Å“Ã‚Â</span><h3>Production</h3><p>Admin and customer portals are configured for production cloud hosting.</p><strong>Production</strong></section>
+
+
+
+      <!-- S1_STAFF_TEAM_UI_V1 -->
+      <section class="panel" id="staffTeamManagementPanel" style="margin-top:20px; grid-column:1 / -1; width:100%;">
+        <div class="panel-header responsive">
+          <div>
+            <span class="eyebrow">TEAM &amp; ACCESS</span>
+            <h2>Staff &amp; Team Management</h2>
+            <p>Manage staff records, teams and team membership. Individual accounts, roles and MFA are handled in the next security phases.</p>
+          </div>
+          <button id="staffTeamRefreshButton" class="secondary" type="button">Refresh</button>
+        </div>
+
+        <div class="business-grid" style="margin-top:16px;">
+          <section class="panel business-card">
+            <span class="business-icon">&#128101;</span>
+            <h3>Staff</h3>
+            <p>Active and inactive staff records.</p>
+            <strong id="staffManagementCount">0 staff</strong>
+          </section>
+
+          <section class="panel business-card">
+            <span class="business-icon">&#9783;</span>
+            <h3>Teams</h3>
+            <p>Operational staff teams.</p>
+            <strong id="teamManagementCount">0 teams</strong>
+          </section>
+
+          <section class="panel business-card">
+            <span class="business-icon">&#10003;</span>
+            <h3>Security</h3>
+            <p>All management requests use protected Admin API authorization.</p>
+            <strong>Protected</strong>
+          </section>
+        </div>
+
+        <section class="panel table-panel" style="margin-top:18px;">
+          <div class="panel-head">
+            <div>
+              <small>STAFF MANAGEMENT</small>
+              <h3>Staff Directory</h3>
+            </div>
+          </div>
+
+          <form id="staffManagementForm" class="form-grid">
+            <input id="staffManagementEditId" type="hidden" />
+
+            <label>
+              Full Name
+              <input id="staffManagementName" required />
+            </label>
+
+            <label>
+              Email
+              <input id="staffManagementEmail" type="email" required />
+            </label>
+
+            <div class="modal-actions span-2">
+              <button id="staffManagementCancelEdit" type="button" class="secondary hidden">
+                Cancel Edit
+              </button>
+              <button id="staffManagementSave" type="submit" class="primary">
+                Add Staff
+              </button>
+            </div>
+          </form>
+
+          <p id="staffManagementMessage" class="table-sub"></p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Created</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="staffManagementBody">
+                <tr><td colspan="5">Loading staff...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="panel table-panel" style="margin-top:18px;">
+          <div class="panel-head">
+            <div>
+              <small>TEAM MANAGEMENT</small>
+              <h3>Teams &amp; Membership</h3>
+            </div>
+          </div>
+
+          <form id="teamManagementForm" class="form-grid">
+            <input id="teamManagementEditId" type="hidden" />
+
+            <label>
+              Team Name
+              <input id="teamManagementName" required />
+            </label>
+
+            <label>
+              Description
+              <input id="teamManagementDescription" />
+            </label>
+
+            <div class="modal-actions span-2">
+              <button id="teamManagementCancelEdit" type="button" class="secondary hidden">
+                Cancel Edit
+              </button>
+              <button id="teamManagementSave" type="submit" class="primary">
+                Add Team
+              </button>
+            </div>
+          </form>
+
+          <p id="teamManagementMessage" class="table-sub"></p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Team</th>
+                  <th>Description</th>
+                  <th>Status</th>
+                  <th>Members</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="teamManagementBody">
+                <tr><td colspan="5">Loading teams...</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="teamMembershipPanel" class="panel table-panel hidden" style="margin-top:18px;">
+          <div class="panel-head">
+            <div>
+              <small>TEAM MEMBERS</small>
+              <h3 id="teamMembershipTitle">Team Members</h3>
+            </div>
+          </div>
+
+          <input id="teamMembershipTeamId" type="hidden" />
+
+          <form id="teamMembershipForm" class="form-grid">
+            <label class="span-2">
+              Add Active Staff Member
+              <select id="teamMembershipStaffId" required>
+                <option value="">Select staff</option>
+              </select>
+            </label>
+
+            <div class="modal-actions span-2">
+              <button id="teamMembershipClose" type="button" class="secondary">
+                Close
+              </button>
+              <button type="submit" class="primary">
+                Add Member
+              </button>
+            </div>
+          </form>
+
+          <p id="teamMembershipMessage" class="table-sub"></p>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Status</th>
+                  <th>Added</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="teamMembershipBody">
+                <tr><td colspan="5">No team selected.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </section>
+
+      <!-- S2_INDIVIDUAL_STAFF_ACCOUNTS_UI_V1 -->
+      <section
+        class="panel table-panel"
+        id="staffAccountsPanel"
+        style="margin-top:18px;"
+      >
+        <div class="panel-head">
+          <div>
+            <small>INDIVIDUAL STAFF ACCESS</small>
+            <h3>Staff User Accounts</h3>
+            <p class="table-sub">
+              Create and manage individual staff login accounts.
+              Password hashes and salts are never displayed.
+            </p>
+          </div>
+
+          <button
+            id="staffAccountsRefreshButton"
+            type="button"
+            class="secondary"
+          >
+            Refresh Accounts
+          </button>
+        </div>
+
+        <div class="business-grid" style="margin-top:16px;">
+          <section class="panel business-card">
+            <span class="business-icon">&#128100;</span>
+            <h3>Accounts</h3>
+            <p>Individual staff login accounts.</p>
+            <strong id="staffAccountsCount">0 accounts</strong>
+          </section>
+
+          <section class="panel business-card">
+            <span class="business-icon">&#128274;</span>
+            <h3>Authentication</h3>
+            <p>PBKDF2-SHA256 protected staff passwords.</p>
+            <strong>Protected</strong>
+          </section>
+
+          <section class="panel business-card">
+            <span class="business-icon">&#128737;</span>
+            <h3>Sessions</h3>
+            <p>Session issuance belongs to S11.</p>
+            <strong>Not issued in S2</strong>
+          </section>
+        </div>
+
+        <form
+          id="staffAccountCreateForm"
+          class="form-grid"
+          style="margin-top:18px;"
+        >
+          <label>
+            Staff
+            <select id="staffAccountStaffId" required>
+              <option value="">Select active staff</option>
+            </select>
+          </label>
+
+          <label>
+            Login Email
+            <input
+              id="staffAccountLoginEmail"
+              type="email"
+              autocomplete="off"
+              required
+            />
+          </label>
+
+          <label>
+            Initial Password
+            <input
+              id="staffAccountPassword"
+              type="password"
+              minlength="12"
+              maxlength="128"
+              autocomplete="new-password"
+              required
+            />
+          </label>
+
+          <div class="modal-actions">
+            <button
+              id="staffAccountCreateButton"
+              type="submit"
+              class="primary"
+            >
+              Create Staff Account
+            </button>
+          </div>
+        </form>
+
+        <p
+          id="staffAccountsMessage"
+          class="table-sub"
+        ></p>
+
+        <div class="table-wrap" style="margin-top:14px;">
+          <table>
+            <thead>
+              <tr>
+                <th>Staff</th>
+                <th>Login Email</th>
+                <th>Status</th>
+                <th>Failed Logins</th>
+                <th>Last Login</th>
+                <th>Created</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+
+            <tbody id="staffAccountsBody">
+              <tr>
+                <td colspan="7">
+                  No staff accounts loaded.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <!-- END S2_INDIVIDUAL_STAFF_ACCOUNTS_UI_V1 -->
+      <!-- K7_DATA_MANAGEMENT_UI_V1 -->
+      <section
+        class="panel"
+        id="dataManagementPanel"
+        style="margin-top: 20px;"
+      >
+        <div class="panel-header responsive">
+          <div>
+            <span class="eyebrow">
+              DATA MANAGEMENT
+            </span>
+
+            <h2>
+              Business Data Management
+            </h2>
+
+            <p>
+              Review business-data impact before any
+              protected destructive operation.
+              Products, pricing, releases, system
+              configuration and audit history are preserved.
+            </p>
+          </div>
+
+          <button
+            id="dataManagementPreviewButton"
+            class="secondary"
+            type="button"
+          >
+            Preview Business Data
+          </button>
+        </div>
+
+        <div
+          id="dataManagementPreview"
+          class="business-grid"
+          style="margin-top: 16px;"
+        >
+          <section class="panel business-card">
+            <span class="business-icon">
+              &#128101;
+            </span>
+
+            <h3>Customers</h3>
+
+            <p>
+              Customer accounts currently stored
+              in business data.
+            </p>
+
+            <strong id="dmCustomers">
+              Preview required
+            </strong>
+          </section>
+
+          <section class="panel business-card">
+            <span class="business-icon">
+              &#128273;
+            </span>
+
+            <h3>Licenses &amp; Devices</h3>
+
+            <p>
+              Linked licenses and registered devices.
+            </p>
+
+            <strong id="dmLicensesDevices">
+              Preview required
+            </strong>
+          </section>
+
+          <section class="panel business-card">
+            <span class="business-icon">
+              &#9776;
+            </span>
+
+            <h3>Orders &amp; Payments</h3>
+
+            <p>
+              Website orders and related payment activity.
+            </p>
+
+            <strong id="dmOrdersPayments">
+              Preview required
+            </strong>
+          </section>
+        </div>
+
+        <section id="factoryResetBusinessDataPanel"
+          class="panel danger-card"
+          style="margin-top: 18px;"
+        >
+          <div class="panel-header responsive">
+            <div>
+              <span class="eyebrow">
+                PROTECTED ACTION
+              </span>
+
+              <h3>
+                Factory Reset Business Data
+              </h3>
+
+              <p>
+                Deletes customer/business transactional
+                data only after preview and exact typed
+                confirmation.
+              </p>
+
+              <strong>
+                Products, pricing, releases, system
+                configuration and audit logs are preserved.
+              </strong>
+            </div>
+
+            <button
+              id="factoryResetBusinessDataButton"
+              class="danger"
+              type="button"
+              disabled
+            >
+              Factory Reset Business Data
+            </button>
+          </div>
+
+          <p
+            id="dataManagementMessage"
+            class="table-sub"
+          ></p>
+        </section>
+      </section>
+
+      </div>
+    </section>
+</main>
+</div>
+
+
+<!-- CUSTOMER MODAL -->
+<div id="customerModal" class="modal hidden">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h2 id="customerModalTitle">New Customer</h2>
+      <button class="icon-button" data-close="customerModal">ÃƒÆ’Ã¢â‚¬â€</button>
+    </div>
+
+    <form id="customerForm" class="form-grid">
+
+      <input id="editCustomerId" type="hidden" />
+
+      <label>
+        Full Name *
+        <input id="customerFullName" required />
+      </label>
+
+      <label>
+        Email
+        <input id="customerEmail" type="email" />
+      </label>
+
+      <label>
+        Mobile
+        <input id="customerMobile" />
+      </label>
+
+      <label>
+        Company
+        <input id="customerCompany" />
+      </label>
+
+      <label>
+        Country
+        <input id="customerCountry" value="IN" maxlength="2" />
+      </label>
+
+      <label>
+        Status
+        <select id="customerFormStatus">
+          <option value="ACTIVE">Active</option>
+          <option value="BLOCKED">Blocked</option>
+          <option value="INACTIVE">Inactive</option>
+        </select>
+      </label>
+
+      <label class="span-2">
+        Notes
+        <textarea id="customerNotes" rows="3"></textarea>
+      </label>
+
+      <div class="modal-actions span-2">
+        <button
+          type="button"
+          class="secondary"
+          data-close="customerModal"
+        >
+          Cancel
+        </button>
+
+        <button type="submit" class="primary">
+          Save Customer
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+<!-- RENEW MODAL -->
+<div id="renewModal" class="modal hidden">
+  <div class="modal-card">
+
+    <div class="modal-header">
+      <h2>Renew License</h2>
+      <button class="icon-button" data-close="renewModal">ÃƒÆ’Ã¢â‚¬â€</button>
+    </div>
+
+    <form id="renewForm" class="form-grid">
+
+      <input id="renewLicenseId" type="hidden" />
+
+      <div class="info-box span-2">
+        <strong id="renewLicenseLabel"></strong>
+      </div>
+
+      <label>
+        Renewal Days *
+        <input
+          id="renewalDays"
+          type="number"
+          min="1"
+          max="3650"
+          value="365"
+          required
+        />
+      </label>
+
+      <label>
+        Amount (INR)
+        <input
+          id="renewAmount"
+          type="number"
+          min="0"
+          step="1"
+        />
+      </label>
+
+      <label class="span-2">
+        Payment Reference
+        <input id="renewPaymentReference" />
+      </label>
+
+      <label class="span-2">
+        Notes
+        <textarea id="renewNotes" rows="3"></textarea>
+      </label>
+
+      <div class="modal-actions span-2">
+        <button
+          type="button"
+          class="secondary"
+          data-close="renewModal"
+        >
+          Cancel
+        </button>
+
+        <button type="submit" class="primary">
+          Renew License
+        </button>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+
+<div id="confirmModal" class="modal hidden">
+  <div class="modal-card compact">
+    <div class="modal-header">
+      <h2>Confirm Device Reset</h2>
+    </div>
+
+    <p id="confirmText"></p>
+
+    <div class="modal-actions">
+      <button id="confirmCancel" class="secondary">
+        Cancel
+      </button>
+
+      <button id="confirmReset" class="danger">
+        Reset Device
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<!-- K7 PREMIUM SECURE LICENSE VAULT -->
+<div id="vaultModal" class="modal hidden">
+  <div class="modal-card vault-premium-card">
+
+    <div class="vault-premium-header">
+      <div class="vault-header-main">
+        <div class="vault-shield" aria-hidden="true">
+          <span>&#128274;</span>
+        </div>
+
+        <div>
+          <span class="eyebrow">SECURE LICENSE VAULT</span>
+          <h2 id="vaultTitle">License Vault</h2>
+          <p class="vault-header-subtitle">
+            Protected license-key recovery and management
+          </p>
+        </div>
+      </div>
+
+      <button
+        class="vault-close-button"
+        id="vaultClose"
+        type="button"
+        aria-label="Close"
+        title="Close"
+      >&times;</button>
+    </div>
+
+    <div class="vault-premium-body">
+
+      <div class="vault-security-banner">
+        <div class="vault-security-icon">&#10003;</div>
+        <div>
+          <strong>Encrypted License Storage</strong>
+          <span>
+            License keys are stored securely and revealed only for the current authorized admin session.
+          </span>
+        </div>
+      </div>
+
+      <div class="vault-license-meta">
+        <span class="vault-meta-label">LICENSE ID</span>
+        <strong id="vaultLicenseIdDisplay">-</strong>
+        <span class="vault-secure-badge">
+          <span>&#128274;</span>
+          Secure Vault
+        </span>
+      </div>
+
+      <div class="vault-field-group">
+        <label for="vaultLicenseKey">
+          License Key
+          <span class="vault-field-hint">Sensitive credential</span>
+        </label>
+
+        <div class="vault-key-control">
+          <input
+            id="vaultLicenseKey"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="HXL-XXXX-XXXX-XXXX-XXXX"
+          />
+
+          <button
+            id="vaultReveal"
+            class="vault-inline-action"
+            type="button"
+            title="Reveal license key"
+          >
+            Show
+          </button>
+
+          <button
+            id="vaultCopy"
+            class="vault-inline-action"
+            type="button"
+            title="Copy license key"
+          >
+            Copy
+          </button>
+        </div>
+      </div>
+
+      <div id="vaultMessage" class="vault-status-message" aria-live="polite"></div>
+
+      <div class="vault-privacy-note">
+        <span class="vault-privacy-icon">&#9432;</span>
+        <p>
+          Never share a customer license key publicly. Reveal or copy it only when required for authorized support or activation.
+        </p>
+      </div>
+
+    </div>
+
+    <div class="vault-premium-footer">
+      <button
+        id="vaultStore"
+        class="secondary-button vault-store-button"
+        type="button"
+      >
+        Store Securely
+      </button>
+
+      <button
+        id="vaultDone"
+        class="primary-button vault-done-button"
+        type="button"
+      >
+        Done
+      </button>
+    </div>
+
+  </div>
+</div>
+
+<!-- K7 CUSTOMER 360 -->
+<div id="customer360Modal" class="modal hidden"><div class="modal-card customer360-modal-card"><div class="modal-header"><div><span class="eyebrow">CUSTOMER 360</span><h2 id="customer360Title">Customer 360</h2></div><button type="button" class="icon-button" data-close="customer360Modal" aria-label="Close">Ãƒâ€”</button></div><div id="customer360Body" class="customer360-body"><div class="customer360-loading">Loading Customer 360...</div></div><div class="modal-actions"><button
+  type="button"
+  id="customer360DeactivateCustomer"
+  class="secondary hidden"
+>
+  Deactivate Customer
+</button>
+<button
+  type="button"
+  id="customer360ArchiveCustomer"
+  class="secondary hidden"
+>
+  Archive Customer
+</button>
+<button
+  type="button"
+  id="customer360RestoreCustomer"
+  class="secondary hidden"
+>
+  Reactivate Customer
+</button>
+<button
+  type="button"
+  id="customer360IssueLicense"
+  class="primary-button hidden"
+>
+  Issue License
+</button>
+<button
+  type="button"
+  id="customer360DeleteCustomer"
+  class="danger"
+>
+  Delete Customer
+</button>
+<button type="button" class="secondary" data-close="customer360Modal">Close</button></div></div></div>
+
+
+
+<!-- K7 ADMIN ISSUE LICENSE -->
+<div id="issueLicenseModal" class="modal hidden">
+  <div class="modal-card compact">
+    <div class="modal-header">
+      <div>
+        <span class="eyebrow">ADMIN LICENSE</span>
+        <h2>Issue License</h2>
+      </div>
+      <button
+        type="button"
+        class="icon-button"
+        data-close="issueLicenseModal"
+        aria-label="Close"
+      >&times;</button>
+    </div>
+
+    <p class="table-sub">
+      Issue a new license to this active customer.
+    </p>
+
+    <input
+      id="issueLicenseCustomerId"
+      type="hidden"
+    />
+
+    <label>
+      Plan
+      <select id="issueLicensePlan">
+        <option value="STANDARD">STANDARD</option>
+        <option value="PRO">PRO</option>
+      </select>
+    </label>
+
+    <label>
+      Validity (days)
+      <input
+        id="issueLicenseValidityDays"
+        type="number"
+        min="1"
+        max="3650"
+        value="365"
+      />
+    </label>
+
+    <label>
+      Device Limit
+      <input
+        id="issueLicenseMaxDevices"
+        type="number"
+        min="1"
+        max="100"
+        value="1"
+      />
+    </label>
+
+    <p
+      id="issueLicenseMessage"
+      class="table-sub"
+    ></p>
+
+    <div class="modal-actions">
+      <button
+        id="issueLicenseConfirm"
+        type="button"
+        class="primary-button"
+      >
+        Issue License
+      </button>
+
+      <button
+        type="button"
+        class="secondary"
+        data-close="issueLicenseModal"
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+<!-- K7 DATA MANAGEMENT CONFIRMATION -->
+<div
+  id="dataManagementConfirmModal"
+  class="modal hidden"
+>
+  <div class="modal-card compact">
+
+    <div class="modal-header">
+      <div>
+        <span class="eyebrow">
+          PROTECTED ACTION
+        </span>
+
+        <h2 id="dataManagementConfirmTitle">
+          Confirm Action
+        </h2>
+      </div>
+
+      <button
+        type="button"
+        class="icon-button"
+        data-close="dataManagementConfirmModal"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+    </div>
+
+    <p id="dataManagementConfirmText"></p>
+
+    <label>
+      Type the confirmation exactly
+
+      <input
+        id="dataManagementConfirmationInput"
+        type="text"
+        autocomplete="off"
+      />
+    </label>
+
+    <p
+      id="dataManagementConfirmationRequired"
+      class="table-sub"
+    ></p>
+
+    <div class="modal-actions">
+      <button
+        type="button"
+        class="secondary"
+        data-close="dataManagementConfirmModal"
+      >
+        Cancel
+      </button>
+
+      <button
+        id="dataManagementConfirmAction"
+        type="button"
+        class="danger"
+        disabled
+      >
+        Confirm
+      </button>
+    </div>
+
+    <p
+      id="dataManagementConfirmMessage"
+      class="table-sub"
+    ></p>
+  </div>
+</div>
+
+
+<!-- S2 SECURE RESET PASSWORD MODAL -->
+<div
+  id="s2ResetPasswordModal"
+  class="modal hidden"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="s2ResetPasswordTitle"
+>
+  <div class="modal-card compact s2-password-modal">
+
+    <div class="modal-header">
+      <div>
+        <span class="eyebrow">
+          STAFF SECURITY
+        </span>
+
+        <h2 id="s2ResetPasswordTitle">
+          Reset Password
+        </h2>
+      </div>
+
+      <button
+        type="button"
+        class="icon-button"
+        id="s2ResetPasswordClose"
+        aria-label="Close"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div class="s2-password-modal-body">
+
+      <p class="s2-password-help">
+        Set a new password for this staff login account.
+        Password must contain 12-128 characters.
+      </p>
+
+      <label for="s2ResetPasswordNew">
+        New Password
+      </label>
+
+      <div class="s2-password-field">
+        <input
+          id="s2ResetPasswordNew"
+          type="password"
+          minlength="12"
+          maxlength="128"
+          autocomplete="new-password"
+          placeholder="Enter new password"
+        />
+
+        <button
+          type="button"
+          class="s2-password-toggle"
+          id="s2ResetPasswordToggleNew"
+          aria-label="Show new password"
+        >
+          Show
+        </button>
+      </div>
+
+      <label for="s2ResetPasswordConfirm">
+        Confirm Password
+      </label>
+
+      <div class="s2-password-field">
+        <input
+          id="s2ResetPasswordConfirm"
+          type="password"
+          minlength="12"
+          maxlength="128"
+          autocomplete="new-password"
+          placeholder="Confirm new password"
+        />
+
+        <button
+          type="button"
+          class="s2-password-toggle"
+          id="s2ResetPasswordToggleConfirm"
+          aria-label="Show confirmed password"
+        >
+          Show
+        </button>
+      </div>
+
+      <p
+        id="s2ResetPasswordMessage"
+        class="s2-password-message"
+        aria-live="polite"
+      ></p>
+
+      <div class="modal-actions">
+        <button
+          type="button"
+          class="secondary"
+          id="s2ResetPasswordCancel"
+        >
+          Cancel
+        </button>
+
+        <button
+          type="button"
+          class="primary"
+          id="s2ResetPasswordSubmit"
+        >
+          Reset Password
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+﻿{
+    "$schema":  "node_modules/wrangler/config-schema.json",
+    "name":  "himanshu-xl-tools-license-api",
+    "compatibility_date":  "2026-09-17",
+    "d1_databases":  [
+                         {
+                             "binding":  "DB",
+                             "database_name":  "himanshu-xl-tools-licenses",
+                             "database_id":  "6b97685a-6cd6-4ed9-ac9f-5c6b62379d61"
+                         }
+                     ],
+    "kv_namespaces": [
+  {
+    "binding": "INSTALLER_STORAGE",
+    "id": "59f4ee61d8c244a8bee04cc3e4d6fde5"
+  }
+],
+"vars":  {
+                 "RELEASE_VERSION":  "1.0.0",
+                 "RELEASE_FILE_NAME":  "HimanshuXLTools-v1.0-Setup.exe",
+                 "RELEASE_SHA256":  "6E074EFF79CF0F55B12EE41A957637E601ABA18B3C652C8DF26E7B9EC386802F",
+                 "RELEASE_DATE":  "2026-09-20",
+                 "RELEASE_NOTES":  "Himanshu XL Tools v1.0 production release",
+                 "RELEASE_DOWNLOAD_URL":  "https://restless-shape-bea9.himanshuchinchekar25.workers.dev/downloads/HimanshuXLTools-v1.0-Setup.exe",
+                 "RELEASE_PUBLISHED":  "true"
+             }
+}
+

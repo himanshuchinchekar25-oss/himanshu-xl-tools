@@ -1,0 +1,1113 @@
+﻿
+InputObject                                                                                                            
+-----------                                                                                                            
+  <IconUrl DefaultValue="https://localhost:3000/assets/common/icon-32.png"/>                                           
+  <IconUrl DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-32.png"/>     
+<HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/common/icon-80.png"/>                               
+<HighResolutionIconUrl DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon...
+    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>                                              
+    <SourceLocation DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html"/>        
+<!-- ============================= -->                                                                                 
+<Label resid="HimanshuXLTools.TabLabel"/>                                                                              
+<!-- TOOLS -->                                                                                                         
+                                                                                                                       
+<!-- ============================= -->                                                                                 
+</CustomTab>                                                                                                           
+<Group id="ToolsGroup">                                                                                                
+        </ExtensionPoint>                                                                                              
+  <Label resid="Tools.Group"/>                                                                                         
+      </DesktopFormFactor>                                                                                             
+  <Icon>                                                                                                               
+    </Host>                                                                                                            
+    <bt:Image size="16" resid="Icon.16x16"/>                                                                           
+                                                                                                                       
+    <bt:Image size="32" resid="Icon.32x32"/>                                                                           
+  </Hosts>                                                                                                             
+    <bt:Image size="80" resid="Icon.80x80"/>                                                                           
+ <Resources>                                                                                                           
+  </Icon>                                                                                                              
+  <bt:Images>                                                                                                          
+  <Control                                                                                                             
+                                                                                                                       
+    xsi:type="Menu"                                                                                                    
+  <!-- ============================= -->                                                                               
+    id="Tools.Menu">                                                                                                   
+<!-- AI TOOLS ICONS -->                                                                                                
+    <Label resid="Tools.Button"/>                                                                                      
+<!-- ============================= -->                                                                                 
+    <Supertip>                                                                                                         
+<bt:Image                                                                                                              
+      <Title resid="Tools.Button"/>                                                                                    
+  id="AIFormula.16"                                                                                                    
+      <Description resid="Tools.Tooltip"/>                                                                             
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-formula-16.png"/>      
+    </Supertip>                                                                                                        
+<bt:Image                                                                                                              
+    <Icon>                                                                                                             
+  id="AIFormula.32"                                                                                                    
+      <bt:Image size="16" resid="Icon.16x16"/>                                                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-formula-32.png"/>      
+      <bt:Image size="32" resid="Icon.32x32"/>                                                                         
+<bt:Image                                                                                                              
+      <bt:Image size="80" resid="Icon.80x80"/>                                                                         
+  id="AIFormula.80"                                                                                                    
+    </Icon>                                                                                                            
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-formula-80.png"/>      
+    <Items>                                                                                                            
+<bt:Image                                                                                                              
+      <Item id="Tools.Menu.ActivateLicense">                                                                           
+  id="ExplainFormula.16"                                                                                               
+        <Label resid="License.Activate.Label"/>                                                                        
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/explain-formula-16.png"/> 
+        <Supertip>                                                                                                     
+<bt:Image                                                                                                              
+          <Title resid="License.Activate.Label"/>                                                                      
+  id="ExplainFormula.32"                                                                                               
+          <Description resid="License.Activate.Tip"/>                                                                  
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/explain-formula-32.png"/> 
+        </Supertip>                                                                                                    
+<bt:Image                                                                                                              
+        <Icon>                                                                                                         
+  id="ExplainFormula.80"                                                                                               
+          <bt:Image size="16" resid="AIFormula.16"/>                                                                   
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/explain-formula-80.png"/> 
+          <bt:Image size="32" resid="AIFormula.32"/>                                                                   
+                                                                                                                       
+          <bt:Image size="80" resid="AIFormula.80"/>                                                                   
+<bt:Image                                                                                                              
+        </Icon>                                                                                                        
+  id="FixFormula.16"                                                                                                   
+        <Action xsi:type="ShowTaskpane">                                                                               
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/fix-formula-16.png"/>     
+          <TaskpaneId>HimanshuXLTools.LicensePane</TaskpaneId>                                                         
+<bt:Image                                                                                                              
+          <SourceLocation resid="Taskpane.Url"/>                                                                       
+  id="FixFormula.32"                                                                                                   
+        </Action>                                                                                                      
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/fix-formula-32.png"/>     
+      </Item>                                                                                                          
+<bt:Image                                                                                                              
+    </Items>                                                                                                           
+  id="FixFormula.80"                                                                                                   
+  </Control>                                                                                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/fix-formula-80.png"/>     
+</Group>                                                                                                               
+<bt:Image                                                                                                              
+<Label resid="HimanshuXLTools.TabLabel"/>                                                                              
+  id="AIAnalysis.16"                                                                                                   
+</CustomTab>                                                                                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-analysis-16.png"/>     
+        </ExtensionPoint>                                                                                              
+<bt:Image                                                                                                              
+      </DesktopFormFactor>                                                                                             
+  id="AIAnalysis.32"                                                                                                   
+                                                                                                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-analysis-32.png"/>     
+    </Host>                                                                                                            
+<bt:Image                                                                                                              
+  </Hosts>                                                                                                             
+  id="AIAnalysis.80"                                                                                                   
+                                                                                                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-analysis-80.png"/>     
+ <Resources>                                                                                                           
+<!-- AUTOMATION ICONS -->                                                                                              
+  <bt:Images>                                                                                                          
+  id="QuickClean.16"                                                                                                   
+<!-- AI TOOLS ICONS -->                                                                                                
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/quick-clean-16.png"/>   
+  id="AIFormula.16"                                                                                                    
+  id="QuickClean.32"                                                                                                   
+  DefaultValue="https://localhost:3000/assets/ai-tools/ai-formula-16.png"/>                                            
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/quick-clean-32.png"/>   
+                                                                                                                       
+<bt:Image                                                                                                              
+  id="AIFormula.32"                                                                                                    
+  id="QuickClean.80"                                                                                                   
+  DefaultValue="https://localhost:3000/assets/ai-tools/ai-formula-32.png"/>                                            
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/quick-clean-80.png"/>   
+  id="AIFormula.80"                                                                                                    
+  id="FillBlanks.16"                                                                                                   
+  DefaultValue="https://localhost:3000/assets/ai-tools/ai-formula-80.png"/>                                            
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/fill-blanks-16.png"/>   
+  id="ExplainFormula.16"                                                                                               
+  id="FillBlanks.32"                                                                                                   
+  DefaultValue="https://localhost:3000/assets/ai-tools/explain-formula-16.png"/>                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/fill-blanks-32.png"/>   
+  id="ExplainFormula.32"                                                                                               
+  id="FillBlanks.80"                                                                                                   
+  DefaultValue="https://localhost:3000/assets/ai-tools/explain-formula-32.png"/>                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/fill-blanks-80.png"/>   
+  id="ExplainFormula.80"                                                                                               
+  id="FormulaTools.16"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/ai-tools/explain-formula-80.png"/>                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/formula-tools-16.png"/> 
+  id="FixFormula.16"                                                                                                   
+  id="FormulaTools.32"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/ai-tools/fix-formula-16.png"/>                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/formula-tools-32.png"/> 
+  id="FixFormula.32"                                                                                                   
+  id="FormulaTools.80"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/ai-tools/fix-formula-32.png"/>                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/formula-tools-80.png"/> 
+  id="FixFormula.80"                                                                                                   
+  id="AutoRefresh.16"                                                                                                  
+  DefaultValue="https://localhost:3000/assets/ai-tools/fix-formula-80.png"/>                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/auto-refresh-16.png"/>  
+  id="AIAnalysis.16"                                                                                                   
+  id="AutoRefresh.32"                                                                                                  
+  DefaultValue="https://localhost:3000/assets/ai-tools/ai-analysis-16.png"/>                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/auto-refresh-32.png"/>  
+  id="AIAnalysis.32"                                                                                                   
+  id="AutoRefresh.80"                                                                                                  
+  DefaultValue="https://localhost:3000/assets/ai-tools/ai-analysis-32.png"/>                                           
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/auto-refresh-80.png"/>  
+  id="AIAnalysis.80"                                                                                                   
+  <!-- SHEET / WORKBOOK TOOLS ICONS -->                                                                                
+  DefaultValue="https://localhost:3000/assets/ai-tools/ai-analysis-80.png"/>                                           
+  id="HideUnhideSheets.16"                                                                                             
+  <!-- ============================= -->                                                                               
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/hide-unhide-sheet...
+<!-- AUTOMATION ICONS -->                                                                                              
+  id="HideUnhideSheets.32"                                                                                             
+<!-- ============================= -->                                                                                 
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/hide-unhide-sheet...
+  id="QuickClean.16"                                                                                                   
+  id="HideUnhideSheets.80"                                                                                             
+  DefaultValue="https://localhost:3000/assets/automation/quick-clean-16.png"/>                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/hide-unhide-sheet...
+  id="QuickClean.32"                                                                                                   
+  id="ProtectSheet.16"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/automation/quick-clean-32.png"/>                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/protect-sheet-16....
+  id="QuickClean.80"                                                                                                   
+  id="ProtectSheet.32"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/automation/quick-clean-80.png"/>                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/protect-sheet-32....
+  id="FillBlanks.16"                                                                                                   
+  id="ProtectSheet.80"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/automation/fill-blanks-16.png"/>                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/protect-sheet-80....
+  id="FillBlanks.32"                                                                                                   
+  id="RenameSheets.16"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/automation/fill-blanks-32.png"/>                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/rename-sheets-16....
+  id="FillBlanks.80"                                                                                                   
+  id="RenameSheets.32"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/automation/fill-blanks-80.png"/>                                         
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/rename-sheets-32....
+  id="FormulaTools.16"                                                                                                 
+  id="RenameSheets.80"                                                                                                 
+  DefaultValue="https://localhost:3000/assets/automation/formula-tools-16.png"/>                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/rename-sheets-80....
+  id="FormulaTools.32"                                                                                                 
+  id="CopyMoveSheet.16"                                                                                                
+  DefaultValue="https://localhost:3000/assets/automation/formula-tools-32.png"/>                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/copy-move-sheet-1...
+  id="FormulaTools.80"                                                                                                 
+  id="CopyMoveSheet.32"                                                                                                
+  DefaultValue="https://localhost:3000/assets/automation/formula-tools-80.png"/>                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/copy-move-sheet-3...
+  id="AutoRefresh.16"                                                                                                  
+  id="CopyMoveSheet.80"                                                                                                
+  DefaultValue="https://localhost:3000/assets/automation/auto-refresh-16.png"/>                                        
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/copy-move-sheet-8...
+  id="AutoRefresh.32"                                                                                                  
+    <!-- COMMON ICONS -->                                                                                              
+  DefaultValue="https://localhost:3000/assets/automation/auto-refresh-32.png"/>                                        
+    <bt:Image id="Icon.16x16"                                                                                          
+<bt:Image                                                                                                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-16.png"/>          
+  id="AutoRefresh.80"                                                                                                  
+    <bt:Image id="Icon.32x32"                                                                                          
+  DefaultValue="https://localhost:3000/assets/automation/auto-refresh-80.png"/>                                        
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-32.png"/>          
+  <!-- SHEET / WORKBOOK TOOLS ICONS -->                                                                                
+    <bt:Image id="Icon.80x80"                                                                                          
+<bt:Image                                                                                                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-80.png"/>          
+  id="HideUnhideSheets.16"                                                                                             
+                                                                                                                       
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/hide-unhide-sheets-16.png"/>                              
+    <!-- DATA TOOLS ICONS -->                                                                                          
+<bt:Image                                                                                                              
+                                                                                                                       
+  id="HideUnhideSheets.32"                                                                                             
+    <bt:Image id="DataToolsGroup.16"                                                                                   
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/hide-unhide-sheets-32.png"/>                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-16.png"/>          
+<bt:Image                                                                                                              
+    <bt:Image id="DataToolsGroup.32"                                                                                   
+  id="HideUnhideSheets.80"                                                                                             
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-32.png"/>          
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/hide-unhide-sheets-80.png"/>                              
+    <bt:Image id="DataToolsGroup.80"                                                                                   
+<bt:Image                                                                                                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-80.png"/>          
+  id="ProtectSheet.16"                                                                                                 
+    <bt:Image id="SortFilter.16"                                                                                       
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/protect-sheet-16.png"/>                                   
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/sort-filter-16.pn...
+<bt:Image                                                                                                              
+    <bt:Image id="SortFilter.32"                                                                                       
+  id="ProtectSheet.32"                                                                                                 
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/sort-filter-32.pn...
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/protect-sheet-32.png"/>                                   
+    <bt:Image id="SortFilter.80"                                                                                       
+<bt:Image                                                                                                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/sort-filter-80.pn...
+  id="ProtectSheet.80"                                                                                                 
+    <bt:Image id="RemoveDuplicates.16"                                                                                 
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/protect-sheet-80.png"/>                                   
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/remove-duplicates...
+<bt:Image                                                                                                              
+    <bt:Image id="RemoveDuplicates.32"                                                                                 
+  id="RenameSheets.16"                                                                                                 
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/remove-duplicates...
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/rename-sheets-16.png"/>                                   
+    <bt:Image id="RemoveDuplicates.80"                                                                                 
+<bt:Image                                                                                                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/remove-duplicates...
+  id="RenameSheets.32"                                                                                                 
+    <bt:Image id="TextColumns.16"                                                                                      
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/rename-sheets-32.png"/>                                   
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/text-columns-16.p...
+<bt:Image                                                                                                              
+    <bt:Image id="TextColumns.32"                                                                                      
+  id="RenameSheets.80"                                                                                                 
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/text-columns-32.p...
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/rename-sheets-80.png"/>                                   
+    <bt:Image id="TextColumns.80"                                                                                      
+<bt:Image                                                                                                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/text-columns-80.p...
+  id="CopyMoveSheet.16"                                                                                                
+    <bt:Image id="FlashFill.16"                                                                                        
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/copy-move-sheet-16.png"/>                                 
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/flash-fill-16.png"/>
+<bt:Image                                                                                                              
+                                                                                                                       
+  id="CopyMoveSheet.32"                                                                                                
+    <bt:Image id="FlashFill.32"                                                                                        
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/copy-move-sheet-32.png"/>                                 
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/flash-fill-32.png"/>
+<bt:Image                                                                                                              
+    <bt:Image id="FlashFill.80"                                                                                        
+  id="CopyMoveSheet.80"                                                                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/flash-fill-80.png"/>
+  DefaultValue="https://localhost:3000/assets/sheet-workbook/copy-move-sheet-80.png"/>                                 
+                                                                                                                       
+    <!-- COMMON ICONS -->                                                                                              
+    <!-- ANALYSIS ICONS -->                                                                                            
+    <bt:Image id="Icon.16x16"                                                                                          
+    <bt:Image id="Dashboard.16"                                                                                        
+      DefaultValue="https://localhost:3000/assets/common/icon-16.png"/>                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/dashboard-16.png"/>   
+    <bt:Image id="Icon.32x32"                                                                                          
+    <bt:Image id="Dashboard.32"                                                                                        
+      DefaultValue="https://localhost:3000/assets/common/icon-32.png"/>                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/dashboard-32.png"/>   
+    <bt:Image id="Icon.80x80"                                                                                          
+    <bt:Image id="Dashboard.80"                                                                                        
+      DefaultValue="https://localhost:3000/assets/common/icon-80.png"/>                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/dashboard-80.png"/>   
+                                                                                                                       
+    <bt:Image id="KPI.16"                                                                                              
+    <!-- DATA TOOLS ICONS -->                                                                                          
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/kpi-cards-16.png"/>   
+    <bt:Image id="DataToolsGroup.16"                                                                                   
+    <bt:Image id="KPI.32"                                                                                              
+      DefaultValue="https://localhost:3000/assets/common/icon-16.png"/>                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/kpi-cards-32.png"/>   
+    <bt:Image id="DataToolsGroup.32"                                                                                   
+    <bt:Image id="KPI.80"                                                                                              
+      DefaultValue="https://localhost:3000/assets/common/icon-32.png"/>                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/kpi-cards-80.png"/>   
+    <bt:Image id="DataToolsGroup.80"                                                                                   
+    <bt:Image id="Pivot.16"                                                                                            
+      DefaultValue="https://localhost:3000/assets/common/icon-80.png"/>                                                
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/pivot-table-16.png"/> 
+    <bt:Image id="SortFilter.16"                                                                                       
+    <bt:Image id="Pivot.32"                                                                                            
+      DefaultValue="https://localhost:3000/assets/data-tools/sort-filter-16.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/pivot-table-32.png"/> 
+    <bt:Image id="SortFilter.32"                                                                                       
+    <bt:Image id="Pivot.80"                                                                                            
+      DefaultValue="https://localhost:3000/assets/data-tools/sort-filter-32.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/pivot-table-80.png"/> 
+    <bt:Image id="SortFilter.80"                                                                                       
+    <bt:Image id="Charts.16"                                                                                           
+      DefaultValue="https://localhost:3000/assets/data-tools/sort-filter-80.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/charts-16.png"/>      
+    <bt:Image id="RemoveDuplicates.16"                                                                                 
+    <bt:Image id="Charts.32"                                                                                           
+      DefaultValue="https://localhost:3000/assets/data-tools/remove-duplicates-16.png"/>                               
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/charts-32.png"/>      
+    <bt:Image id="RemoveDuplicates.32"                                                                                 
+    <bt:Image id="Charts.80"                                                                                           
+      DefaultValue="https://localhost:3000/assets/data-tools/remove-duplicates-32.png"/>                               
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/charts-80.png"/>      
+    <bt:Image id="RemoveDuplicates.80"                                                                                 
+                                                                                                                       
+      DefaultValue="https://localhost:3000/assets/data-tools/remove-duplicates-80.png"/>                               
+    <!-- LOOKUP & FORMULA ICONS -->                                                                                    
+    <bt:Image id="TextColumns.16"                                                                                      
+    <bt:Image id="XLOOKUP.16"                                                                                          
+      DefaultValue="https://localhost:3000/assets/data-tools/text-columns-16.png"/>                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/xlookup-16.pn...
+    <bt:Image id="TextColumns.32"                                                                                      
+    <bt:Image id="XLOOKUP.32"                                                                                          
+      DefaultValue="https://localhost:3000/assets/data-tools/text-columns-32.png"/>                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/xlookup-32.pn...
+    <bt:Image id="TextColumns.80"                                                                                      
+    <bt:Image id="XLOOKUP.80"                                                                                          
+      DefaultValue="https://localhost:3000/assets/data-tools/text-columns-80.png"/>                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/xlookup-80.pn...
+    <bt:Image id="FlashFill.16"                                                                                        
+    <bt:Image id="VLOOKUP.16"                                                                                          
+      DefaultValue="https://localhost:3000/assets/data-tools/flash-fill-16.png"/>                                      
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/vlookup-16.pn...
+    <bt:Image id="FlashFill.32"                                                                                        
+    <bt:Image id="VLOOKUP.32"                                                                                          
+      DefaultValue="https://localhost:3000/assets/data-tools/flash-fill-32.png"/>                                      
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/vlookup-32.pn...
+    <bt:Image id="FlashFill.80"                                                                                        
+    <bt:Image id="VLOOKUP.80"                                                                                          
+      DefaultValue="https://localhost:3000/assets/data-tools/flash-fill-80.png"/>                                      
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/vlookup-80.pn...
+                                                                                                                       
+    <bt:Image id="SUMIFS.16"                                                                                           
+    <!-- ANALYSIS ICONS -->                                                                                            
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/sumifs-16.png"/>
+    <bt:Image id="Dashboard.16"                                                                                        
+    <bt:Image id="SUMIFS.32"                                                                                           
+      DefaultValue="https://localhost:3000/assets/analysis/dashboard-16.png"/>                                         
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/sumifs-32.png"/>
+    <bt:Image id="Dashboard.32"                                                                                        
+    <bt:Image id="SUMIFS.80"                                                                                           
+      DefaultValue="https://localhost:3000/assets/analysis/dashboard-32.png"/>                                         
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/sumifs-80.png"/>
+    <bt:Image id="Dashboard.80"                                                                                        
+    <bt:Image id="COUNTIFS.16"                                                                                         
+      DefaultValue="https://localhost:3000/assets/analysis/dashboard-80.png"/>                                         
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/countifs-16.p...
+    <bt:Image id="KPI.16"                                                                                              
+    <bt:Image id="COUNTIFS.32"                                                                                         
+      DefaultValue="https://localhost:3000/assets/analysis/kpi-cards-16.png"/>                                         
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/countifs-32.p...
+    <bt:Image id="KPI.32"                                                                                              
+    <bt:Image id="COUNTIFS.80"                                                                                         
+      DefaultValue="https://localhost:3000/assets/analysis/kpi-cards-32.png"/>                                         
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/countifs-80.p...
+    <bt:Image id="KPI.80"                                                                                              
+                                                                                                                       
+      DefaultValue="https://localhost:3000/assets/analysis/kpi-cards-80.png"/>                                         
+    <!-- EXCEL FORMATTING ICONS -->                                                                                    
+    <bt:Image id="Pivot.16"                                                                                            
+    <bt:Image id="ConditionalFormatting.16"                                                                            
+      DefaultValue="https://localhost:3000/assets/analysis/pivot-table-16.png"/>                                       
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/conditional...
+    <bt:Image id="Pivot.32"                                                                                            
+    <bt:Image id="ConditionalFormatting.32"                                                                            
+      DefaultValue="https://localhost:3000/assets/analysis/pivot-table-32.png"/>                                       
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/conditional...
+    <bt:Image id="Pivot.80"                                                                                            
+    <bt:Image id="ConditionalFormatting.80"                                                                            
+      DefaultValue="https://localhost:3000/assets/analysis/pivot-table-80.png"/>                                       
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/conditional...
+    <bt:Image id="Charts.16"                                                                                           
+    <bt:Image id="DataValidation.16"                                                                                   
+      DefaultValue="https://localhost:3000/assets/analysis/charts-16.png"/>                                            
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/data-valida...
+    <bt:Image id="Charts.32"                                                                                           
+    <bt:Image id="DataValidation.32"                                                                                   
+      DefaultValue="https://localhost:3000/assets/analysis/charts-32.png"/>                                            
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/data-valida...
+    <bt:Image id="Charts.80"                                                                                           
+    <bt:Image id="DataValidation.80"                                                                                   
+      DefaultValue="https://localhost:3000/assets/analysis/charts-80.png"/>                                            
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/data-valida...
+                                                                                                                       
+    <bt:Image id="FreezePanes.16"                                                                                      
+    <!-- LOOKUP & FORMULA ICONS -->                                                                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/freeze-pane...
+    <bt:Image id="XLOOKUP.16"                                                                                          
+    <bt:Image id="FreezePanes.32"                                                                                      
+      DefaultValue="https://localhost:3000/assets/lookup-formula/xlookup-16.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/freeze-pane...
+    <bt:Image id="XLOOKUP.32"                                                                                          
+    <bt:Image id="FreezePanes.80"                                                                                      
+      DefaultValue="https://localhost:3000/assets/lookup-formula/xlookup-32.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/freeze-pane...
+    <bt:Image id="XLOOKUP.80"                                                                                          
+    <bt:Image id="ExcelTable.16"                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/xlookup-80.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/excel-table...
+    <bt:Image id="VLOOKUP.16"                                                                                          
+    <bt:Image id="ExcelTable.32"                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/vlookup-16.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/excel-table...
+    <bt:Image id="VLOOKUP.32"                                                                                          
+    <bt:Image id="ExcelTable.80"                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/vlookup-32.png"/>                                     
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/excel-table...
+    <bt:Image id="VLOOKUP.80"                                                                                          
+                                                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/vlookup-80.png"/>                                     
+    <!-- SMART VISUAL ICONS -->                                                                                        
+    <bt:Image id="SUMIFS.16"                                                                                           
+    <bt:Image id="SmartChart.16"                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/sumifs-16.png"/>                                      
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/smart-chart-16....
+    <bt:Image id="SUMIFS.32"                                                                                           
+    <bt:Image id="SmartChart.32"                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/sumifs-32.png"/>                                      
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/smart-chart-32....
+    <bt:Image id="SUMIFS.80"                                                                                           
+    <bt:Image id="SmartChart.80"                                                                                       
+      DefaultValue="https://localhost:3000/assets/lookup-formula/sumifs-80.png"/>                                      
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/smart-chart-80....
+    <bt:Image id="COUNTIFS.16"                                                                                         
+    <bt:Image id="PowerDashboard.16"                                                                                   
+      DefaultValue="https://localhost:3000/assets/lookup-formula/countifs-16.png"/>                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/power-dashboard...
+    <bt:Image id="COUNTIFS.32"                                                                                         
+    <bt:Image id="PowerDashboard.32"                                                                                   
+      DefaultValue="https://localhost:3000/assets/lookup-formula/countifs-32.png"/>                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/power-dashboard...
+    <bt:Image id="COUNTIFS.80"                                                                                         
+    <bt:Image id="PowerDashboard.80"                                                                                   
+      DefaultValue="https://localhost:3000/assets/lookup-formula/countifs-80.png"/>                                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/power-dashboard...
+    <!-- EXCEL FORMATTING ICONS -->                                                                                    
+    <!-- FILE TOOLS ICONS -->                                                                                          
+    <bt:Image id="ConditionalFormatting.16"                                                                            
+    <bt:Image id="MergeFiles.16"                                                                                       
+      DefaultValue="https://localhost:3000/assets/excel-formatting/conditional-formatting-16.png"/>                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/merge-files-16.pn...
+    <bt:Image id="ConditionalFormatting.32"                                                                            
+    <bt:Image id="MergeFiles.32"                                                                                       
+      DefaultValue="https://localhost:3000/assets/excel-formatting/conditional-formatting-32.png"/>                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/merge-files-32.pn...
+    <bt:Image id="ConditionalFormatting.80"                                                                            
+    <bt:Image id="MergeFiles.80"                                                                                       
+      DefaultValue="https://localhost:3000/assets/excel-formatting/conditional-formatting-80.png"/>                    
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/merge-files-80.pn...
+    <bt:Image id="DataValidation.16"                                                                                   
+    <bt:Image id="SplitWorkbook.16"                                                                                    
+      DefaultValue="https://localhost:3000/assets/excel-formatting/data-validation-16.png"/>                           
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/split-workbook-16...
+    <bt:Image id="DataValidation.32"                                                                                   
+    <bt:Image id="SplitWorkbook.32"                                                                                    
+      DefaultValue="https://localhost:3000/assets/excel-formatting/data-validation-32.png"/>                           
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/split-workbook-32...
+    <bt:Image id="DataValidation.80"                                                                                   
+    <bt:Image id="SplitWorkbook.80"                                                                                    
+      DefaultValue="https://localhost:3000/assets/excel-formatting/data-validation-80.png"/>                           
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/split-workbook-80...
+    <bt:Image id="FreezePanes.16"                                                                                      
+    <bt:Image id="ExportPDF.16"                                                                                        
+      DefaultValue="https://localhost:3000/assets/excel-formatting/freeze-panes-16.png"/>                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/export-pdf-16.png"/>
+    <bt:Image id="FreezePanes.32"                                                                                      
+    <bt:Image id="ExportPDF.32"                                                                                        
+      DefaultValue="https://localhost:3000/assets/excel-formatting/freeze-panes-32.png"/>                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/export-pdf-32.png"/>
+    <bt:Image id="FreezePanes.80"                                                                                      
+    <bt:Image id="ExportPDF.80"                                                                                        
+      DefaultValue="https://localhost:3000/assets/excel-formatting/freeze-panes-80.png"/>                              
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/export-pdf-80.png"/>
+    <bt:Image id="ExcelTable.16"                                                                                       
+    <bt:Image id="BatchRename.16"                                                                                      
+      DefaultValue="https://localhost:3000/assets/excel-formatting/excel-table-16.png"/>                               
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/batch-rename-16.p...
+    <bt:Image id="ExcelTable.32"                                                                                       
+    <bt:Image id="BatchRename.32"                                                                                      
+      DefaultValue="https://localhost:3000/assets/excel-formatting/excel-table-32.png"/>                               
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/batch-rename-32.p...
+    <bt:Image id="ExcelTable.80"                                                                                       
+    <bt:Image id="BatchRename.80"                                                                                      
+      DefaultValue="https://localhost:3000/assets/excel-formatting/excel-table-80.png"/>                               
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/batch-rename-80.p...
+    <!-- SMART VISUAL ICONS -->                                                                                        
+  </bt:Images>                                                                                                         
+    <bt:Image id="SmartChart.16"                                                                                       
+  <bt:Urls>                                                                                                            
+      DefaultValue="https://localhost:3000/assets/smart-visual/smart-chart-16.png"/>                                   
+                                                                                                                       
+    <bt:Image id="SmartChart.32"                                                                                       
+    <bt:Url                                                                                                            
+      DefaultValue="https://localhost:3000/assets/smart-visual/smart-chart-32.png"/>                                   
+      id="LearnMore.Url"                                                                                               
+    <bt:Image id="SmartChart.80"                                                                                       
+      DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>                                                  
+      DefaultValue="https://localhost:3000/assets/smart-visual/smart-chart-80.png"/>                                   
+    <bt:Url                                                                                                            
+    <bt:Image id="PowerDashboard.16"                                                                                   
+      id="Taskpane.Url"                                                                                                
+      DefaultValue="https://localhost:3000/assets/smart-visual/power-dashboard-16.png"/>                               
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html"/>                      
+                                                                                                                       
+      <bt:Url                                                                                                          
+    <bt:Image id="PowerDashboard.32"                                                                                   
+  id="PowerDashboard.Url"                                                                                              
+      DefaultValue="https://localhost:3000/assets/smart-visual/power-dashboard-32.png"/>                               
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html?action=powerDashboard"/>    
+    <bt:Image id="PowerDashboard.80"                                                                                   
+      <bt:Url                                                                                                          
+      DefaultValue="https://localhost:3000/assets/smart-visual/power-dashboard-80.png"/>                               
+  id="Commands.Url"                                                                                                    
+    <!-- FILE TOOLS ICONS -->                                                                                          
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/commands.html"/>                          
+    <bt:Image id="MergeFiles.16"                                                                                       
+  <bt:Url                                                                                                              
+      DefaultValue="https://localhost:3000/assets/file-tools/merge-files-16.png"/>                                     
+  id="MergeFiles.Url"                                                                                                  
+    <bt:Image id="MergeFiles.32"                                                                                       
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/merge-files.html"/>                       
+      DefaultValue="https://localhost:3000/assets/file-tools/merge-files-32.png"/>                                     
+  </bt:Urls>                                                                                                           
+    <bt:Image id="MergeFiles.80"                                                                                       
+                                                                                                                       
+      DefaultValue="https://localhost:3000/assets/file-tools/merge-files-80.png"/>                                     
+  <bt:ShortStrings>                                                                                                    
+    <bt:Image id="SplitWorkbook.16"                                                                                    
+  <!-- AI TOOLS -->                                                                                                    
+      DefaultValue="https://localhost:3000/assets/file-tools/split-workbook-16.png"/>                                  
+<bt:String                                                                                                             
+    <bt:Image id="SplitWorkbook.32"                                                                                    
+  id="AITools.GroupLabel"                                                                                              
+      DefaultValue="https://localhost:3000/assets/file-tools/split-workbook-32.png"/>                                  
+  DefaultValue="AI Tools"/>                                                                                            
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:Image id="SplitWorkbook.80"                                                                                    
+  id="AITools.Formula.Label"                                                                                           
+      DefaultValue="https://localhost:3000/assets/file-tools/split-workbook-80.png"/>                                  
+  DefaultValue="AI Formula"/>                                                                                          
+    <bt:Image id="ExportPDF.16"                                                                                        
+<bt:String                                                                                                             
+      DefaultValue="https://localhost:3000/assets/file-tools/export-pdf-16.png"/>                                      
+  id="AITools.Explain.Label"                                                                                           
+    <bt:Image id="ExportPDF.32"                                                                                        
+  DefaultValue="Explain Formula"/>                                                                                     
+      DefaultValue="https://localhost:3000/assets/file-tools/export-pdf-32.png"/>                                      
+<bt:String                                                                                                             
+    <bt:Image id="ExportPDF.80"                                                                                        
+  id="AITools.Fix.Label"                                                                                               
+      DefaultValue="https://localhost:3000/assets/file-tools/export-pdf-80.png"/>                                      
+  DefaultValue="Fix Formula"/>                                                                                         
+    <bt:Image id="BatchRename.16"                                                                                      
+<bt:String                                                                                                             
+      DefaultValue="https://localhost:3000/assets/file-tools/batch-rename-16.png"/>                                    
+  id="AITools.Analysis.Label"                                                                                          
+    <bt:Image id="BatchRename.32"                                                                                      
+  DefaultValue="AI Analysis"/>                                                                                         
+      DefaultValue="https://localhost:3000/assets/file-tools/batch-rename-32.png"/>                                    
+  <!-- AUTOMATION -->                                                                                                  
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:Image id="BatchRename.80"                                                                                      
+  id="Automation.GroupLabel"                                                                                           
+      DefaultValue="https://localhost:3000/assets/file-tools/batch-rename-80.png"/>                                    
+  DefaultValue="Automation"/>                                                                                          
+  </bt:Images>                                                                                                         
+<bt:String                                                                                                             
+  <bt:Urls>                                                                                                            
+  id="Automation.QuickClean.Label"                                                                                     
+                                                                                                                       
+  DefaultValue="Quick Clean"/>                                                                                         
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:Url                                                                                                            
+  id="Automation.FillBlanks.Label"                                                                                     
+      id="LearnMore.Url"                                                                                               
+  DefaultValue="Fill Blanks"/>                                                                                         
+      DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>                                                  
+<bt:String                                                                                                             
+    <bt:Url                                                                                                            
+  id="Automation.FormulaTools.Label"                                                                                   
+      id="Taskpane.Url"                                                                                                
+  DefaultValue="Formula Tools"/>                                                                                       
+      DefaultValue="https://localhost:3000/taskpane.html"/>                                                            
+<bt:String                                                                                                             
+      <bt:Url                                                                                                          
+  id="Automation.AutoRefresh.Label"                                                                                    
+  id="PowerDashboard.Url"                                                                                              
+  DefaultValue="Auto Refresh"/>                                                                                        
+  DefaultValue="https://localhost:3000/taskpane.html?action=powerDashboard"/>                                          
+      <!-- SHEET / WORKBOOK TOOLS -->                                                                                  
+      <bt:Url                                                                                                          
+<bt:String                                                                                                             
+  id="Commands.Url"                                                                                                    
+  id="SW.GroupLabel"                                                                                                   
+  DefaultValue="https://localhost:3000/commands.html"/>                                                                
+  DefaultValue="Sheet / Workbook"/>                                                                                    
+  <bt:Url                                                                                                              
+<bt:String                                                                                                             
+  id="MergeFiles.Url"                                                                                                  
+  id="SW.HideUnhide.Label"                                                                                             
+  DefaultValue="https://localhost:3000/merge-files.html"/>                                                             
+  DefaultValue="Hide / Unhide"/>                                                                                       
+  </bt:Urls>                                                                                                           
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.Protect.Label"                                                                                                
+                                                                                                                       
+  DefaultValue="Protect Sheet"/>                                                                                       
+  <bt:ShortStrings>                                                                                                    
+  id="SW.Rename.Label"                                                                                                 
+  <!-- AI TOOLS -->                                                                                                    
+  DefaultValue="Rename Sheets"/>                                                                                       
+  id="AITools.GroupLabel"                                                                                              
+  id="SW.CopyMove.Label"                                                                                               
+  DefaultValue="AI Tools"/>                                                                                            
+  DefaultValue="Copy / Move Sheet"/>                                                                                   
+  id="AITools.Formula.Label"                                                                                           
+    <bt:String id="GetStarted.Title"                                                                                   
+  DefaultValue="AI Formula"/>                                                                                          
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+<bt:String                                                                                                             
+    <bt:String id="HimanshuXLTools.TabLabel"                                                                           
+  id="AITools.Explain.Label"                                                                                           
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+  DefaultValue="Explain Formula"/>                                                                                     
+    <bt:String id="Tools.TabLabel"                                                                                     
+<bt:String                                                                                                             
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+  id="AITools.Fix.Label"                                                                                               
+    <bt:String id="Tools.Group"                                                                                        
+  DefaultValue="Fix Formula"/>                                                                                         
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+<bt:String                                                                                                             
+    <bt:String id="Tools.Button"                                                                                       
+  id="AITools.Analysis.Label"                                                                                          
+      DefaultValue="Open Tools"/>                                                                                      
+  DefaultValue="AI Analysis"/>                                                                                         
+    <!-- DATA TOOLS -->                                                                                                
+  <!-- AUTOMATION -->                                                                                                  
+    <bt:String id="DataTools.GroupLabel"                                                                               
+<bt:String                                                                                                             
+      DefaultValue="Data Tools"/>                                                                                      
+  id="Automation.GroupLabel"                                                                                           
+    <bt:String id="DataTools.SortFilter.Label"                                                                         
+  DefaultValue="Automation"/>                                                                                          
+      DefaultValue="Sort &amp; Filter"/>                                                                               
+<bt:String                                                                                                             
+                                                                                                                       
+  id="Automation.QuickClean.Label"                                                                                     
+    <bt:String id="DataTools.RemoveDuplicates.Label"                                                                   
+  DefaultValue="Quick Clean"/>                                                                                         
+      DefaultValue="Remove Duplicates"/>                                                                               
+<bt:String                                                                                                             
+                                                                                                                       
+  id="Automation.FillBlanks.Label"                                                                                     
+    <bt:String id="DataTools.TextColumns.Label"                                                                        
+  DefaultValue="Fill Blanks"/>                                                                                         
+      DefaultValue="Text to Columns"/>                                                                                 
+<bt:String                                                                                                             
+    <bt:String id="DataTools.FlashFill.Label"                                                                          
+  id="Automation.FormulaTools.Label"                                                                                   
+      DefaultValue="Flash Fill"/>                                                                                      
+  DefaultValue="Formula Tools"/>                                                                                       
+    <!-- ANALYSIS -->                                                                                                  
+<bt:String                                                                                                             
+    <bt:String id="Analysis.GroupLabel"                                                                                
+  id="Automation.AutoRefresh.Label"                                                                                    
+      DefaultValue="Analysis"/>                                                                                        
+  DefaultValue="Auto Refresh"/>                                                                                        
+    <bt:String id="Analysis.Dashboard.Label"                                                                           
+      <!-- SHEET / WORKBOOK TOOLS -->                                                                                  
+      DefaultValue="Dashboard"/>                                                                                       
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.GroupLabel"                                                                                                   
+    <bt:String id="Analysis.KPI.Label"                                                                                 
+  DefaultValue="Sheet / Workbook"/>                                                                                    
+      DefaultValue="KPI Cards"/>                                                                                       
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.HideUnhide.Label"                                                                                             
+    <bt:String id="Analysis.Pivot.Label"                                                                               
+  DefaultValue="Hide / Unhide"/>                                                                                       
+      DefaultValue="Pivot Table"/>                                                                                     
+<bt:String                                                                                                             
+    <bt:String id="Analysis.Charts.Label"                                                                              
+  id="SW.Protect.Label"                                                                                                
+      DefaultValue="Charts"/>                                                                                          
+  DefaultValue="Protect Sheet"/>                                                                                       
+    <!-- LOOKUP & FORMULA -->                                                                                          
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.Rename.Label"                                                                                                 
+    <bt:String id="LookupFormula.GroupLabel"                                                                           
+  DefaultValue="Rename Sheets"/>                                                                                       
+      DefaultValue="Lookup &amp; Formula"/>                                                                            
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.CopyMove.Label"                                                                                               
+    <bt:String id="LookupFormula.XLOOKUP.Label"                                                                        
+  DefaultValue="Copy / Move Sheet"/>                                                                                   
+      DefaultValue="XLOOKUP"/>                                                                                         
+    <bt:String id="GetStarted.Title"                                                                                   
+    <bt:String id="LookupFormula.VLOOKUP.Label"                                                                        
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+      DefaultValue="VLOOKUP"/>                                                                                         
+    <bt:String id="HimanshuXLTools.TabLabel"                                                                           
+    <bt:String id="LookupFormula.SUMIFS.Label"                                                                         
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+      DefaultValue="SUMIFS"/>                                                                                          
+    <bt:String id="Tools.TabLabel"                                                                                     
+    <bt:String id="LookupFormula.COUNTIFS.Label"                                                                       
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+      DefaultValue="COUNTIFS"/>                                                                                        
+    <bt:String id="Tools.Group"                                                                                        
+    <!-- EXCEL FORMATTING -->                                                                                          
+      DefaultValue="Himanshu XL Tools"/>                                                                               
+    <bt:String id="ExcelFormatting.GroupLabel"                                                                         
+    <bt:String id="Tools.Button"                                                                                       
+      DefaultValue="Excel Formatting"/>                                                                                
+      DefaultValue="Open Tools"/>                                                                                      
+    <bt:String id="EF.Conditional.Label"                                                                               
+    <!-- DATA TOOLS -->                                                                                                
+      DefaultValue="Conditional Formatting"/>                                                                          
+    <bt:String id="DataTools.GroupLabel"                                                                               
+    <bt:String id="EF.Validation.Label"                                                                                
+      DefaultValue="Data Tools"/>                                                                                      
+      DefaultValue="Data Validation"/>                                                                                 
+    <bt:String id="DataTools.SortFilter.Label"                                                                         
+    <bt:String id="EF.Freeze.Label"                                                                                    
+      DefaultValue="Sort &amp; Filter"/>                                                                               
+      DefaultValue="Freeze Panes"/>                                                                                    
+    <bt:String id="DataTools.RemoveDuplicates.Label"                                                                   
+    <bt:String id="EF.Table.Label"                                                                                     
+      DefaultValue="Remove Duplicates"/>                                                                               
+      DefaultValue="Excel Table"/>                                                                                     
+    <bt:String id="DataTools.TextColumns.Label"                                                                        
+    <!-- SMART VISUAL -->                                                                                              
+      DefaultValue="Text to Columns"/>                                                                                 
+    <bt:String id="SmartVisual.GroupLabel"                                                                             
+    <bt:String id="DataTools.FlashFill.Label"                                                                          
+      DefaultValue="Smart Visual"/>                                                                                    
+      DefaultValue="Flash Fill"/>                                                                                      
+    <bt:String id="SmartVisual.SmartChart.Label"                                                                       
+    <!-- ANALYSIS -->                                                                                                  
+      DefaultValue="Smart Chart"/>                                                                                     
+    <bt:String id="Analysis.GroupLabel"                                                                                
+    <bt:String id="SmartVisual.PowerDashboard.Label"                                                                   
+      DefaultValue="Analysis"/>                                                                                        
+      DefaultValue="Power Dashboard"/>                                                                                 
+    <bt:String id="Analysis.Dashboard.Label"                                                                           
+                                                                                                                       
+      DefaultValue="Dashboard"/>                                                                                       
+    <!-- FILE TOOLS -->                                                                                                
+    <bt:String id="Analysis.KPI.Label"                                                                                 
+    <bt:String id="FileTools.GroupLabel"                                                                               
+      DefaultValue="KPI Cards"/>                                                                                       
+      DefaultValue="File Tools"/>                                                                                      
+    <bt:String id="Analysis.Pivot.Label"                                                                               
+    <bt:String id="FileTools.MergeFiles.Label"                                                                         
+      DefaultValue="Pivot Table"/>                                                                                     
+      DefaultValue="Merge Files"/>                                                                                     
+    <bt:String id="Analysis.Charts.Label"                                                                              
+    <bt:String id="FileTools.SplitWorkbook.Label"                                                                      
+      DefaultValue="Charts"/>                                                                                          
+      DefaultValue="Split Workbook"/>                                                                                  
+    <!-- LOOKUP & FORMULA -->                                                                                          
+    <bt:String id="FileTools.ExportPDF.Label"                                                                          
+    <bt:String id="LookupFormula.GroupLabel"                                                                           
+      DefaultValue="Export PDF"/>                                                                                      
+      DefaultValue="Lookup &amp; Formula"/>                                                                            
+    <bt:String id="FileTools.BatchRename.Label"                                                                        
+    <bt:String id="LookupFormula.XLOOKUP.Label"                                                                        
+      DefaultValue="Batch Rename"/>                                                                                    
+      DefaultValue="XLOOKUP"/>                                                                                         
+  </bt:ShortStrings>                                                                                                   
+    <bt:String id="LookupFormula.VLOOKUP.Label"                                                                        
+  <bt:LongStrings>                                                                                                     
+      DefaultValue="VLOOKUP"/>                                                                                         
+  <!-- AI TOOLS -->                                                                                                    
+    <bt:String id="LookupFormula.SUMIFS.Label"                                                                         
+  <bt:String                                                                                                           
+      DefaultValue="SUMIFS"/>                                                                                          
+  id="AITools.Menu.Tip"                                                                                                
+    <bt:String id="LookupFormula.COUNTIFS.Label"                                                                       
+  DefaultValue="Open AI-powered Excel tools"/>                                                                         
+      DefaultValue="COUNTIFS"/>                                                                                        
+<bt:String                                                                                                             
+    <!-- EXCEL FORMATTING -->                                                                                          
+  id="AITools.Formula.Tip"                                                                                             
+    <bt:String id="ExcelFormatting.GroupLabel"                                                                         
+  DefaultValue="Generate Excel formulas using AI assistance"/>                                                         
+      DefaultValue="Excel Formatting"/>                                                                                
+<bt:String                                                                                                             
+    <bt:String id="EF.Conditional.Label"                                                                               
+  id="AITools.Explain.Tip"                                                                                             
+      DefaultValue="Conditional Formatting"/>                                                                          
+  DefaultValue="Explain the selected Excel formula in simple language"/>                                               
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:String id="EF.Validation.Label"                                                                                
+  id="AITools.Fix.Tip"                                                                                                 
+      DefaultValue="Data Validation"/>                                                                                 
+  DefaultValue="Detect and help fix problems in Excel formulas"/>                                                      
+    <bt:String id="EF.Freeze.Label"                                                                                    
+<bt:String                                                                                                             
+      DefaultValue="Freeze Panes"/>                                                                                    
+  id="AITools.Analysis.Tip"                                                                                            
+    <bt:String id="EF.Table.Label"                                                                                     
+  DefaultValue="Analyze selected Excel data and generate useful insights"/>                                            
+      DefaultValue="Excel Table"/>                                                                                     
+  <!-- AUTOMATION -->                                                                                                  
+    <!-- SMART VISUAL -->                                                                                              
+  <bt:String                                                                                                           
+    <bt:String id="SmartVisual.GroupLabel"                                                                             
+  id="Automation.Menu.Tip"                                                                                             
+      DefaultValue="Smart Visual"/>                                                                                    
+  DefaultValue="Open Automation tools"/>                                                                               
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:String id="SmartVisual.SmartChart.Label"                                                                       
+  id="Automation.QuickClean.Tip"                                                                                       
+      DefaultValue="Smart Chart"/>                                                                                     
+  DefaultValue="Quickly clean and prepare selected Excel data"/>                                                       
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:String id="SmartVisual.PowerDashboard.Label"                                                                   
+  id="Automation.FillBlanks.Tip"                                                                                       
+      DefaultValue="Power Dashboard"/>                                                                                 
+  DefaultValue="Fill blank cells using smart automation options"/>                                                     
+    <!-- FILE TOOLS -->                                                                                                
+<bt:String                                                                                                             
+    <bt:String id="FileTools.GroupLabel"                                                                               
+  id="Automation.FormulaTools.Tip"                                                                                     
+      DefaultValue="File Tools"/>                                                                                      
+  DefaultValue="Manage and automate common Excel formula tasks"/>                                                      
+    <bt:String id="FileTools.MergeFiles.Label"                                                                         
+<bt:String                                                                                                             
+      DefaultValue="Merge Files"/>                                                                                     
+  id="Automation.AutoRefresh.Tip"                                                                                      
+    <bt:String id="FileTools.SplitWorkbook.Label"                                                                      
+  DefaultValue="Refresh workbook data and connected content automatically"/>                                           
+      DefaultValue="Split Workbook"/>                                                                                  
+  <!-- SHEET / WORKBOOK TOOLS -->                                                                                      
+                                                                                                                       
+  <bt:String                                                                                                           
+    <bt:String id="FileTools.ExportPDF.Label"                                                                          
+  id="SW.Menu.Tip"                                                                                                     
+      DefaultValue="Export PDF"/>                                                                                      
+  DefaultValue="Open Sheet and Workbook tools"/>                                                                       
+                                                                                                                       
+<bt:String                                                                                                             
+    <bt:String id="FileTools.BatchRename.Label"                                                                        
+  id="SW.HideUnhide.Tip"                                                                                               
+      DefaultValue="Batch Rename"/>                                                                                    
+  DefaultValue="Hide or unhide worksheet tabs in the current workbook"/>                                               
+  </bt:ShortStrings>                                                                                                   
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.Protect.Tip"                                                                                                  
+  <bt:LongStrings>                                                                                                     
+  DefaultValue="Protect the selected worksheet and manage protection settings"/>                                       
+                                                                                                                       
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.Rename.Tip"                                                                                                   
+  <!-- AI TOOLS -->                                                                                                    
+  DefaultValue="Rename one or multiple worksheets quickly"/>                                                           
+  <bt:String                                                                                                           
+  id="SW.CopyMove.Tip"                                                                                                 
+  id="AITools.Menu.Tip"                                                                                                
+  DefaultValue="Copy or move worksheets within the workbook"/>                                                         
+  DefaultValue="Open AI-powered Excel tools"/>                                                                         
+    <bt:String id="GetStarted.Description"                                                                             
+  id="AITools.Formula.Tip"                                                                                             
+      DefaultValue="Smart Excel Productivity Toolkit"/>                                                                
+  DefaultValue="Generate Excel formulas using AI assistance"/>                                                         
+    <bt:String id="Tools.Tooltip"                                                                                      
+<bt:String                                                                                                             
+      DefaultValue="Open Himanshu XL Tools"/>                                                                          
+  id="AITools.Explain.Tip"                                                                                             
+                                                                                                                       
+  DefaultValue="Explain the selected Excel formula in simple language"/>                                               
+    <!-- DATA TOOLS -->                                                                                                
+<bt:String                                                                                                             
+                                                                                                                       
+  id="AITools.Fix.Tip"                                                                                                 
+    <bt:String id="DT.Sort.Tooltip"                                                                                    
+  DefaultValue="Detect and help fix problems in Excel formulas"/>                                                      
+      DefaultValue="Sort and filter the selected Excel data"/>                                                         
+<bt:String                                                                                                             
+    <bt:String id="DT.Duplicates.Tooltip"                                                                              
+  id="AITools.Analysis.Tip"                                                                                            
+      DefaultValue="Remove duplicate rows from the selected data"/>                                                    
+  DefaultValue="Analyze selected Excel data and generate useful insights"/>                                            
+    <bt:String id="DT.TextColumns.Tooltip"                                                                             
+  <!-- AUTOMATION -->                                                                                                  
+      DefaultValue="Split text into separate columns"/>                                                                
+  <bt:String                                                                                                           
+    <bt:String id="DT.FlashFill.Tooltip"                                                                               
+  id="Automation.Menu.Tip"                                                                                             
+      DefaultValue="Fill data automatically based on a pattern"/>                                                      
+  DefaultValue="Open Automation tools"/>                                                                               
+    <!-- ANALYSIS -->                                                                                                  
+<bt:String                                                                                                             
+                                                                                                                       
+  id="Automation.QuickClean.Tip"                                                                                       
+    <bt:String id="Analysis.Dashboard.Tooltip"                                                                         
+  DefaultValue="Quickly clean and prepare selected Excel data"/>                                                       
+      DefaultValue="Create or open dashboard tools"/>                                                                  
+<bt:String                                                                                                             
+                                                                                                                       
+  id="Automation.FillBlanks.Tip"                                                                                       
+    <bt:String id="Analysis.KPI.Tooltip"                                                                               
+  DefaultValue="Fill blank cells using smart automation options"/>                                                     
+      DefaultValue="Create KPI cards from selected Excel data"/>                                                       
+<bt:String                                                                                                             
+    <bt:String id="Analysis.Pivot.Tooltip"                                                                             
+  id="Automation.FormulaTools.Tip"                                                                                     
+      DefaultValue="Create Pivot Table analysis from selected data"/>                                                  
+  DefaultValue="Manage and automate common Excel formula tasks"/>                                                      
+    <bt:String id="Analysis.Charts.Tooltip"                                                                            
+<bt:String                                                                                                             
+      DefaultValue="Create charts from selected Excel data"/>                                                          
+  id="Automation.AutoRefresh.Tip"                                                                                      
+    <!-- LOOKUP & FORMULA -->                                                                                          
+  DefaultValue="Refresh workbook data and connected content automatically"/>                                           
+    <bt:String id="LookupFormula.XLOOKUP.Tooltip"                                                                      
+  <!-- SHEET / WORKBOOK TOOLS -->                                                                                      
+      DefaultValue="Find and return matching values using XLOOKUP"/>                                                   
+  <bt:String                                                                                                           
+                                                                                                                       
+  id="SW.Menu.Tip"                                                                                                     
+    <bt:String id="LookupFormula.VLOOKUP.Tooltip"                                                                      
+  DefaultValue="Open Sheet and Workbook tools"/>                                                                       
+      DefaultValue="Find matching values using VLOOKUP"/>                                                              
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.HideUnhide.Tip"                                                                                               
+    <bt:String id="LookupFormula.SUMIFS.Tooltip"                                                                       
+  DefaultValue="Hide or unhide worksheet tabs in the current workbook"/>                                               
+      DefaultValue="Sum values using one or more criteria"/>                                                           
+<bt:String                                                                                                             
+    <bt:String id="LookupFormula.COUNTIFS.Tooltip"                                                                     
+  id="SW.Protect.Tip"                                                                                                  
+      DefaultValue="Count rows using one or more criteria"/>                                                           
+  DefaultValue="Protect the selected worksheet and manage protection settings"/>                                       
+    <!-- EXCEL FORMATTING -->                                                                                          
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.Rename.Tip"                                                                                                   
+    <bt:String id="EF.Conditional.Tip"                                                                                 
+  DefaultValue="Rename one or multiple worksheets quickly"/>                                                           
+      DefaultValue="Apply smart conditional formatting to selected Excel data"/>                                       
+<bt:String                                                                                                             
+                                                                                                                       
+  id="SW.CopyMove.Tip"                                                                                                 
+    <bt:String id="EF.Validation.Tip"                                                                                  
+  DefaultValue="Copy or move worksheets within the workbook"/>                                                         
+      DefaultValue="Create and manage data validation rules"/>                                                         
+    <bt:String id="GetStarted.Description"                                                                             
+    <bt:String id="EF.Freeze.Tip"                                                                                      
+      DefaultValue="Smart Excel Productivity Toolkit"/>                                                                
+      DefaultValue="Freeze rows and columns for easier worksheet navigation"/>                                         
+    <bt:String id="Tools.Tooltip"                                                                                      
+    <bt:String id="EF.Table.Tip"                                                                                       
+      DefaultValue="Open Himanshu XL Tools"/>                                                                          
+      DefaultValue="Convert the selected data range into an Excel table"/>                                             
+    <!-- DATA TOOLS -->                                                                                                
+    <!-- SMART VISUAL -->                                                                                              
+    <bt:String id="DT.Sort.Tooltip"                                                                                    
+    <bt:String id="SmartVisual.SmartChart.Tip"                                                                         
+      DefaultValue="Sort and filter the selected Excel data"/>                                                         
+      DefaultValue="Create an intelligent chart from selected Excel data"/>                                            
+    <bt:String id="DT.Duplicates.Tooltip"                                                                              
+    <bt:String id="SmartVisual.PowerDashboard.Tip"                                                                     
+      DefaultValue="Remove duplicate rows from the selected data"/>                                                    
+      DefaultValue="Create a smart Power Dashboard from selected Excel data"/>                                         
+    <bt:String id="DT.TextColumns.Tooltip"                                                                             
+    <!-- FILE TOOLS -->                                                                                                
+      DefaultValue="Split text into separate columns"/>                                                                
+      <bt:String                                                                                                       
+    <bt:String id="DT.FlashFill.Tooltip"                                                                               
+  id="FileTools.Menu.Tip"                                                                                              
+      DefaultValue="Fill data automatically based on a pattern"/>                                                      
+  DefaultValue="Open File Tools commands"/>                                                                            
+    <!-- ANALYSIS -->                                                                                                  
+    <bt:String id="FileTools.MergeFiles.Tip"                                                                           
+    <bt:String id="Analysis.Dashboard.Tooltip"                                                                         
+      DefaultValue="Merge multiple Excel files into one workbook"/>                                                    
+      DefaultValue="Create or open dashboard tools"/>                                                                  
+    <bt:String id="FileTools.SplitWorkbook.Tip"                                                                        
+    <bt:String id="Analysis.KPI.Tooltip"                                                                               
+      DefaultValue="Split workbook sheets into separate Excel files"/>                                                 
+      DefaultValue="Create KPI cards from selected Excel data"/>                                                       
+    <bt:String id="FileTools.ExportPDF.Tip"                                                                            
+    <bt:String id="Analysis.Pivot.Tooltip"                                                                             
+      DefaultValue="Export the workbook or selected sheets as PDF"/>                                                   
+      DefaultValue="Create Pivot Table analysis from selected data"/>                                                  
+    <bt:String id="FileTools.BatchRename.Tip"                                                                          
+    <bt:String id="Analysis.Charts.Tooltip"                                                                            
+      DefaultValue="Rename multiple files using a consistent naming pattern"/>                                         
+      DefaultValue="Create charts from selected Excel data"/>                                                          
+    <!-- LOOKUP & FORMULA -->                                                                                          
+    <bt:String id="LookupFormula.XLOOKUP.Tooltip"                                                                      
+      DefaultValue="Find and return matching values using XLOOKUP"/>                                                   
+    <bt:String id="LookupFormula.VLOOKUP.Tooltip"                                                                      
+      DefaultValue="Find matching values using VLOOKUP"/>                                                              
+    <bt:String id="LookupFormula.SUMIFS.Tooltip"                                                                       
+      DefaultValue="Sum values using one or more criteria"/>                                                           
+                                                                                                                       
+    <bt:String id="LookupFormula.COUNTIFS.Tooltip"                                                                     
+      DefaultValue="Count rows using one or more criteria"/>                                                           
+                                                                                                                       
+                                                                                                                       
+    <!-- EXCEL FORMATTING -->                                                                                          
+                                                                                                                       
+    <bt:String id="EF.Conditional.Tip"                                                                                 
+      DefaultValue="Apply smart conditional formatting to selected Excel data"/>                                       
+                                                                                                                       
+    <bt:String id="EF.Validation.Tip"                                                                                  
+      DefaultValue="Create and manage data validation rules"/>                                                         
+                                                                                                                       
+    <bt:String id="EF.Freeze.Tip"                                                                                      
+      DefaultValue="Freeze rows and columns for easier worksheet navigation"/>                                         
+                                                                                                                       
+    <bt:String id="EF.Table.Tip"                                                                                       
+      DefaultValue="Convert the selected data range into an Excel table"/>                                             
+                                                                                                                       
+                                                                                                                       
+    <!-- SMART VISUAL -->                                                                                              
+                                                                                                                       
+    <bt:String id="SmartVisual.SmartChart.Tip"                                                                         
+      DefaultValue="Create an intelligent chart from selected Excel data"/>                                            
+                                                                                                                       
+    <bt:String id="SmartVisual.PowerDashboard.Tip"                                                                     
+      DefaultValue="Create a smart Power Dashboard from selected Excel data"/>                                         
+                                                                                                                       
+                                                                                                                       
+    <!-- FILE TOOLS -->                                                                                                
+                                                                                                                       
+      <bt:String                                                                                                       
+  id="FileTools.Menu.Tip"                                                                                              
+  DefaultValue="Open File Tools commands"/>                                                                            
+                                                                                                                       
+    <bt:String id="FileTools.MergeFiles.Tip"                                                                           
+      DefaultValue="Merge multiple Excel files into one workbook"/>                                                    
+                                                                                                                       
+    <bt:String id="FileTools.SplitWorkbook.Tip"                                                                        
+      DefaultValue="Split workbook sheets into separate Excel files"/>                                                 
+                                                                                                                       
+    <bt:String id="FileTools.ExportPDF.Tip"                                                                            
+      DefaultValue="Export the workbook or selected sheets as PDF"/>                                                   
+                                                                                                                       
+    <bt:String id="FileTools.BatchRename.Tip"                                                                          
+      DefaultValue="Rename multiple files using a consistent naming pattern"/>                                         
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+                                                                                                                       
+
+

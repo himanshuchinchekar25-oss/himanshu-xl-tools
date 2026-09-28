@@ -1,0 +1,139 @@
+
+  src\taskpane\taskpane.js:31:     The customer must still be able to activate.
+  src\taskpane\taskpane.js:32:  */
+  src\taskpane\taskpane.js:33:
+  src\taskpane\taskpane.js:34:  connectLicensePanel();
+  src\taskpane\taskpane.js:35:
+> src\taskpane\taskpane.js:36:  await refreshLicensePanel();
+  src\taskpane\taskpane.js:37:
+  src\taskpane\taskpane.js:38:  const licenseAccess =
+  src\taskpane\taskpane.js:39:    await checkLicenseAccess();
+  src\taskpane\taskpane.js:40:
+  src\taskpane\taskpane.js:41:  if (!licenseAccess.allowed) {
+  src\taskpane\taskpane.js:42:
+  src\taskpane\taskpane.js:43:    setStatus(
+  src\taskpane\taskpane.js:44:      "?? " +
+  src\taskpane\taskpane.js:55:
+  src\taskpane\taskpane.js:56:    return;
+  src\taskpane\taskpane.js:57:  }
+  src\taskpane\taskpane.js:58:
+  src\taskpane\taskpane.js:59:  setStatus(
+> src\taskpane\taskpane.js:60:    "?? Himanshu XL Tools license is active."
+  src\taskpane\taskpane.js:61:  );
+  src\taskpane\taskpane.js:62:
+  src\taskpane\taskpane.js:63:
+  src\taskpane\taskpane.js:64:  /*
+  src\taskpane\taskpane.js:65:     Ribbon action handling remains available
+  src\taskpane\taskpane.js:66:     after successful license validation.
+  src\taskpane\taskpane.js:67:  */
+  src\taskpane\taskpane.js:68:
+  src\taskpane\taskpane.js:125:  }
+  src\taskpane\taskpane.js:126:
+  src\taskpane\taskpane.js:127:}
+  src\taskpane\taskpane.js:128:
+  src\taskpane\taskpane.js:129:
+> src\taskpane\taskpane.js:130:function renderLicenseRuntime(result) {
+  src\taskpane\taskpane.js:131:
+  src\taskpane\taskpane.js:132:  const runtime =
+  src\taskpane\taskpane.js:133:    result && typeof result === "object"
+  src\taskpane\taskpane.js:134:      ? result
+  src\taskpane\taskpane.js:135:      : {};
+  src\taskpane\taskpane.js:136:
+  src\taskpane\taskpane.js:137:  const state =
+  src\taskpane\taskpane.js:138:    runtime.state &&
+  src\taskpane\taskpane.js:198:  );
+  src\taskpane\taskpane.js:199:
+  src\taskpane\taskpane.js:200:}
+  src\taskpane\taskpane.js:201:
+  src\taskpane\taskpane.js:202:
+> src\taskpane\taskpane.js:203:async function getSafeDeviceDiagnostic() {
+  src\taskpane\taskpane.js:204:
+  src\taskpane\taskpane.js:205:  const stored =
+  src\taskpane\taskpane.js:206:    await readStoredDeviceToken();
+  src\taskpane\taskpane.js:207:
+  src\taskpane\taskpane.js:208:  if (!stored || !stored.token) {
+  src\taskpane\taskpane.js:209:    return {
+  src\taskpane\taskpane.js:210:      storage: stored ? stored.storage : null,
+  src\taskpane\taskpane.js:211:      sha256: null
+  src\taskpane\taskpane.js:230:    sha256
+  src\taskpane\taskpane.js:231:  };
+  src\taskpane\taskpane.js:232:}
+  src\taskpane\taskpane.js:233:
+  src\taskpane\taskpane.js:234:
+> src\taskpane\taskpane.js:235:async function refreshLicensePanel() {
+  src\taskpane\taskpane.js:236:
+  src\taskpane\taskpane.js:237:  try {
+  src\taskpane\taskpane.js:238:
+  src\taskpane\taskpane.js:239:    setLicenseText(
+  src\taskpane\taskpane.js:240:      "licenseStatus",
+  src\taskpane\taskpane.js:241:      "Checking license..."
+  src\taskpane\taskpane.js:242:    );
+  src\taskpane\taskpane.js:243:
+  src\taskpane\taskpane.js:244:    const result =
+  src\taskpane\taskpane.js:245:      await getLicenseRuntimeStatus();
+  src\taskpane\taskpane.js:246:
+  src\taskpane\taskpane.js:247:    const deviceDiagnostic =
+> src\taskpane\taskpane.js:248:      await getSafeDeviceDiagnostic();
+  src\taskpane\taskpane.js:249:
+  src\taskpane\taskpane.js:250:    console.log(
+  src\taskpane\taskpane.js:251:      "LICENSE DEVICE DIAGNOSTIC:",
+  src\taskpane\taskpane.js:252:      deviceDiagnostic
+  src\taskpane\taskpane.js:253:    );
+  src\taskpane\taskpane.js:254:
+> src\taskpane\taskpane.js:255:    renderLicenseRuntime(result);
+  src\taskpane\taskpane.js:256:
+  src\taskpane\taskpane.js:257:    const diagnosticMessage =
+> src\taskpane\taskpane.js:258:      document.getElementById("licenseMessage");
+  src\taskpane\taskpane.js:259:
+  src\taskpane\taskpane.js:260:    if (diagnosticMessage && deviceDiagnostic) {
+  src\taskpane\taskpane.js:261:      diagnosticMessage.textContent =
+  src\taskpane\taskpane.js:262:        "Device Storage: " +
+  src\taskpane\taskpane.js:263:        (deviceDiagnostic.storage || "-") +
+  src\taskpane\taskpane.js:264:        " | Token Hash: " +
+  src\taskpane\taskpane.js:265:        (deviceDiagnostic.sha256 || "-");
+  src\taskpane\taskpane.js:266:    }
+  src\taskpane\taskpane.js:347:        : null
+  src\taskpane\taskpane.js:348:  }
+  src\taskpane\taskpane.js:349:);
+  src\taskpane\taskpane.js:350:
+  src\taskpane\taskpane.js:351:
+> src\taskpane\taskpane.js:352:    renderLicenseRuntime(result);
+  src\taskpane\taskpane.js:353:
+  src\taskpane\taskpane.js:354:
+  src\taskpane\taskpane.js:355:    if (result.allowed) {
+  src\taskpane\taskpane.js:356:
+  src\taskpane\taskpane.js:357:      if (input) {
+  src\taskpane\taskpane.js:358:        input.value = "";
+  src\taskpane\taskpane.js:359:      }
+  src\taskpane\taskpane.js:360:
+  src\taskpane\taskpane.js:413:      "activateLicenseBtn"
+  src\taskpane\taskpane.js:414:    );
+  src\taskpane\taskpane.js:415:
+  src\taskpane\taskpane.js:416:  const refreshButton =
+  src\taskpane\taskpane.js:417:    document.getElementById(
+> src\taskpane\taskpane.js:418:      "refreshLicenseBtn"
+  src\taskpane\taskpane.js:419:    );
+  src\taskpane\taskpane.js:420:
+  src\taskpane\taskpane.js:421:  const input =
+  src\taskpane\taskpane.js:422:    document.getElementById(
+  src\taskpane\taskpane.js:423:      "licenseKeyInput"
+  src\taskpane\taskpane.js:424:    );
+  src\taskpane\taskpane.js:425:
+  src\taskpane\taskpane.js:426:
+  src\taskpane\taskpane.js:440:        setStatus(
+  src\taskpane\taskpane.js:441:          "Refreshing license status..."
+  src\taskpane\taskpane.js:442:        );
+  src\taskpane\taskpane.js:443:
+  src\taskpane\taskpane.js:444:        const result =
+> src\taskpane\taskpane.js:445:          await refreshLicensePanel();
+  src\taskpane\taskpane.js:446:
+  src\taskpane\taskpane.js:447:        if (result && result.allowed) {
+  src\taskpane\taskpane.js:448:
+  src\taskpane\taskpane.js:449:          setStatus(
+  src\taskpane\taskpane.js:450:            "?? License status refreshed."
+  src\taskpane\taskpane.js:451:          );
+  src\taskpane\taskpane.js:452:
+  src\taskpane\taskpane.js:453:        } else {
+
+
+

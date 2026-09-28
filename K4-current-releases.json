@@ -1,0 +1,36 @@
+[
+  {
+    "results": [
+      {
+        "release_id": 1,
+        "version": "1.0.0",
+        "file_name": "HimanshuXLTools-v1.0-Setup.exe",
+        "sha256": "6E074EFF79CF0F55B12EE41A957637E601ABA18B3C652C8DF26E7B9EC386802F",
+        "release_date": "2026-09-20",
+        "notes": "Himanshu XL Tools v1.0 production release",
+        "download_url": "https://restless-shape-bea9.himanshuchinchekar25.workers.dev/downloads/HimanshuXLTools-v1.0-Setup.exe",
+        "status": "PUBLISHED",
+        "created_at": "2026-09-20 17:23:46",
+        "updated_at": "2026-09-20 17:23:46"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "served_by": "v3-prod",
+      "served_by_region": "APAC",
+      "served_by_colo": "SIN",
+      "served_by_primary": true,
+      "timings": {
+        "sql_duration_ms": 0.4511
+      },
+      "duration": 0.4511,
+      "changes": 0,
+      "last_row_id": 0,
+      "changed_db": false,
+      "size_after": 401408,
+      "rows_read": 2,
+      "rows_written": 0,
+      "total_attempts": 1
+    }
+  }
+]

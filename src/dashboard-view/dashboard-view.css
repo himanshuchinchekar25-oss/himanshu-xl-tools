@@ -1,0 +1,1134 @@
+/* ============================================================
+   HIMANSHU XL TOOLS — INDEPENDENT DASHBOARD VIEW
+   ============================================================ */
+
+:root {
+  --hxl-primary: #2563eb;
+  --hxl-primary-dark: #1d4ed8;
+  --hxl-background: #f1f5f9;
+  --hxl-surface: #ffffff;
+  --hxl-border: #dbe3ee;
+  --hxl-text: #172033;
+  --hxl-muted: #64748b;
+  --hxl-success: #16a34a;
+  --hxl-warning: #d97706;
+  --hxl-danger: #dc2626;
+  --hxl-radius: 14px;
+  --hxl-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  color: var(--hxl-text);
+  background: var(--hxl-background);
+  font-family:
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* ============================================================
+   APPLICATION SHELL
+   ============================================================ */
+
+.hxl-view-app {
+  width: 100%;
+  min-height: 100vh;
+  background: var(--hxl-background);
+}
+
+.hxl-view-titlebar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+  padding: 10px 18px;
+  color: #ffffff;
+  background:
+    linear-gradient(
+      135deg,
+      #0f172a,
+      #1e3a8a
+    );
+  box-shadow:
+    0 4px 18px
+    rgba(15, 23, 42, 0.2);
+}
+
+.hxl-view-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.hxl-view-logo {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.hxl-view-product {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.hxl-view-subtitle {
+  margin-top: 2px;
+  color: #bfdbfe;
+  font-size: 12px;
+}
+
+.hxl-view-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 26px;
+  margin-left: 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #dbeafe;
+  background: rgba(255, 255, 255, 0.12);
+  font-size: 12px;
+}
+
+.hxl-window-controls {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hxl-window-controls button {
+  width: 34px;
+  height: 30px;
+  border: 0;
+  border-radius: 7px;
+  color: #ffffff;
+  background: transparent;
+  font-size: 17px;
+}
+
+.hxl-window-controls button:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+#viewCloseBtn:hover {
+  background: var(--hxl-danger);
+}
+
+/* ============================================================
+   TOOLBAR
+   ============================================================ */
+
+.hxl-view-toolbar {
+  position: sticky;
+  top: 64px;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 54px;
+  padding: 9px 18px;
+  border-bottom: 1px solid var(--hxl-border);
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 4px 14px
+    rgba(15, 23, 42, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.hxl-view-toolbar button,
+.hxl-view-toolbar select,
+#emptyEditDashboardBtn {
+  min-height: 34px;
+  padding: 7px 12px;
+  border: 1px solid var(--hxl-border);
+  border-radius: 8px;
+  color: var(--hxl-text);
+  background: #ffffff;
+}
+
+.hxl-view-toolbar button:hover,
+.hxl-view-toolbar select:hover,
+#emptyEditDashboardBtn:hover {
+  border-color: #93c5fd;
+  background: #eff6ff;
+}
+
+#editDashboardBtn {
+  border-color: var(--hxl-primary);
+  color: #ffffff;
+  background: var(--hxl-primary);
+}
+
+#editDashboardBtn:hover {
+  border-color: var(--hxl-primary-dark);
+  color: #ffffff;
+  background: var(--hxl-primary-dark);
+}
+
+#layoutEditBtn.is-active {
+  border-color: var(--hxl-warning);
+  color: #92400e;
+  background: #fef3c7;
+}
+
+#viewUpdatedAt {
+  margin-left: auto;
+  color: var(--hxl-muted);
+  font-size: 12px;
+}
+
+/* ============================================================
+   DASHBOARD HEALTH
+   ============================================================ */
+
+#healthPanel {
+  margin: 14px 18px 0;
+  padding: 14px 16px;
+  border: 1px solid #bbf7d0;
+  border-radius: var(--hxl-radius);
+  background: #f0fdf4;
+  box-shadow: var(--hxl-shadow);
+}
+
+#healthBadge {
+  display: inline-flex;
+  margin-left: 8px;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: #166534;
+  background: #dcfce7;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#healthGrid {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(120px, 1fr)
+    );
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* ============================================================
+   MAIN DASHBOARD
+   ============================================================ */
+
+.hxl-view-main {
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.hxl-view-card {
+  border: 1px solid var(--hxl-border);
+  border-radius: var(--hxl-radius);
+  background: var(--hxl-surface);
+  box-shadow: var(--hxl-shadow);
+}
+
+.hxl-view-dashboard-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+}
+
+.hxl-view-eyebrow {
+  margin-bottom: 6px;
+  color: var(--hxl-primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+#viewDashboardTitle {
+  margin: 0;
+  font-size: clamp(22px, 3vw, 34px);
+}
+
+#viewDashboardMeta {
+  margin: 7px 0 0;
+  color: var(--hxl-muted);
+}
+
+.hxl-view-head-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.hxl-view-head-meta span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  color: #1e40af;
+  background: #dbeafe;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* ============================================================
+   KPI CARDS
+   ============================================================ */
+
+.hxl-view-kpis {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(170px, 1fr)
+    );
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.hxl-view-kpi-card {
+  min-height: 120px;
+  padding: 17px;
+  border: 1px solid var(--hxl-border);
+  border-radius: var(--hxl-radius);
+  background: var(--hxl-surface);
+  box-shadow: var(--hxl-shadow);
+}
+
+.hxl-view-kpi-title {
+  color: var(--hxl-muted);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.hxl-view-kpi-value {
+  margin-top: 12px;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+/* ============================================================
+   SLICERS, CHARTS AND TABLES
+   ============================================================ */
+
+.hxl-view-content-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(260px, 0.75fr)
+    minmax(0, 2.25fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.hxl-view-content-grid > .hxl-view-card,
+.hxl-view-table-card {
+  padding: 18px;
+}
+
+.hxl-view-section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.hxl-view-section-head h2 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.hxl-view-section-head span {
+  min-width: 28px;
+  padding: 3px 8px;
+  border-radius: 999px;
+  color: var(--hxl-muted);
+  background: #f1f5f9;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+#viewSlicerContainer,
+#viewChartContainer,
+#viewTableContainer {
+  min-height: 130px;
+}
+
+.hxl-view-table-card {
+  margin-top: 16px;
+  overflow: hidden;
+}
+
+/* ============================================================
+   ARRANGE AND SELECTION STATES
+   ============================================================ */
+
+.hxl-view-object {
+  position: relative;
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.hxl-view-object:hover {
+  border-color: #93c5fd;
+}
+
+.hxl-view-object.is-selected {
+  border-color: var(--hxl-primary);
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.16);
+}
+
+.hxl-view-app.is-arranging .hxl-view-object {
+  cursor: move;
+}
+
+.hxl-view-app.is-arranging .hxl-view-object:hover {
+  transform: translateY(-2px);
+}
+
+/* ============================================================
+   EMPTY STATE
+   ============================================================ */
+
+#viewEmptyState {
+  margin-top: 18px;
+  padding: 48px 20px;
+  border: 1px dashed #94a3b8;
+  border-radius: var(--hxl-radius);
+  background: #ffffff;
+  text-align: center;
+}
+
+#viewEmptyState h2 {
+  margin: 0;
+}
+
+#viewEmptyState p {
+  margin: 10px 0 18px;
+  color: var(--hxl-muted);
+}
+
+/* ============================================================
+   SCREEN MODES
+   ============================================================ */
+
+.hxl-view-app[data-screen-mode="desktop"]
+.hxl-view-main {
+  max-width: 1440px;
+}
+
+.hxl-view-app[data-screen-mode="wide"]
+.hxl-view-main {
+  max-width: 1800px;
+}
+
+.hxl-view-app[data-screen-mode="compact"]
+.hxl-view-main {
+  max-width: 820px;
+}
+
+.hxl-view-app[data-screen-mode="compact"]
+.hxl-view-kpis,
+.hxl-view-app[data-screen-mode="compact"]
+.hxl-view-content-grid {
+  grid-template-columns: 1fr;
+}
+
+/* ============================================================
+   RESPONSIVE LAYOUT
+   ============================================================ */
+
+@media (max-width: 1050px) {
+  .hxl-view-kpis {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(160px, 1fr)
+      );
+  }
+
+  .hxl-view-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #healthGrid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(120px, 1fr)
+      );
+  }
+}
+
+@media (max-width: 700px) {
+  .hxl-view-titlebar {
+    position: static;
+  }
+
+  .hxl-view-toolbar {
+    position: static;
+    flex-wrap: wrap;
+  }
+
+  #viewUpdatedAt {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .hxl-view-main {
+    padding: 12px;
+  }
+
+  .hxl-view-dashboard-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hxl-view-head-meta {
+    justify-content: flex-start;
+  }
+
+  .hxl-view-kpis,
+  #healthGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   REAL DASHBOARD CHARTS
+   ============================================================ */
+
+#viewChartContainer {
+  display: grid;
+  grid-template-columns:
+    repeat(
+      auto-fit,
+     minmax(min(420px, 100%), 1fr)
+    );
+  gap: 14px;
+}
+
+.hxl-view-chart-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--hxl-border);
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow:
+    0 6px 18px
+    rgba(15, 23, 42, 0.06);
+  overflow: hidden;
+}
+
+.hxl-view-chart-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.hxl-view-chart-heading strong {
+  color: var(--hxl-text);
+  font-size: 15px;
+  line-height: 1.35;
+}
+
+.hxl-view-chart-heading span {
+  flex-shrink: 0;
+  padding: 4px 8px;
+  border-radius: 999px;
+  color: #1e40af;
+  background: #dbeafe;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hxl-view-chart-canvas {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  min-height: 220px;
+  border-radius: 8px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8fafc
+    );
+}
+
+.hxl-view-app.is-arranging
+.hxl-view-chart-card {
+  cursor: move;
+}
+
+.hxl-view-chart-card.is-selected {
+  border-color: var(--hxl-primary);
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.16),
+    0 8px 24px
+    rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 850px) {
+  #viewChartContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .hxl-view-chart-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+
+/* ============================================================
+   INTERACTIVE DASHBOARD SLICERS
+   ============================================================ */
+
+#viewSlicerContainer {
+  display: grid;
+  gap: 12px;
+}
+
+.hxl-view-slicer-card {
+  position: relative;
+  display: grid;
+  gap: 8px;
+  padding: 13px;
+  border: 1px solid var(--hxl-border);
+  border-radius: 11px;
+  background:
+    linear-gradient(
+      180deg,
+      #ffffff,
+      #f8fafc
+    );
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease,
+    transform 0.15s ease;
+}
+
+.hxl-view-slicer-card:hover {
+  border-color: #93c5fd;
+  box-shadow:
+    0 7px 18px
+    rgba(37, 99, 235, 0.08);
+}
+
+.hxl-view-slicer-card label {
+  padding-right: 78px;
+  color: var(--hxl-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.hxl-view-slicer-type {
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  max-width: 105px;
+  padding: 3px 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  color: #1e40af;
+  background: #dbeafe;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hxl-view-slicer-select {
+  width: 100%;
+  min-height: 36px;
+  padding: 7px 34px 7px 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  color: var(--hxl-text);
+  background: #ffffff;
+  outline: none;
+}
+
+.hxl-view-slicer-select:hover {
+  border-color: #93c5fd;
+}
+
+.hxl-view-slicer-select:focus {
+  border-color: var(--hxl-primary);
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.13);
+}
+
+.hxl-view-slicer-card.is-selected {
+  border-color: var(--hxl-primary);
+  box-shadow:
+    0 0 0 3px
+    rgba(37, 99, 235, 0.15);
+}
+
+.hxl-view-app.is-arranging
+.hxl-view-slicer-card {
+  cursor: move;
+}
+
+.hxl-view-app.is-arranging
+.hxl-view-slicer-select {
+  pointer-events: none;
+}
+
+/* PHASE 8 — RESPONSIVE FIT */
+
+.hxl-view-toolbar {
+  flex-wrap: wrap;
+}
+
+.hxl-view-toolbar > *,
+.hxl-view-brand > *,
+.hxl-view-dashboard-head > *,
+.hxl-view-content-grid > *,
+.hxl-view-kpis > * {
+  min-width: 0;
+}
+
+.hxl-view-toolbar button,
+.hxl-view-toolbar select {
+  max-width: 100%;
+}
+
+.hxl-view-card,
+#viewChartContainer,
+#viewSlicerContainer,
+#viewTableContainer {
+  min-width: 0;
+}
+
+.hxl-view-dashboard-head,
+.hxl-view-chart-heading,
+.hxl-view-kpis,
+#screenCapacitySummary,
+#viewUpdatedAt {
+  overflow-wrap: anywhere;
+}
+
+.hxl-view-chart-heading {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1050px) {
+  .hxl-view-titlebar,
+  .hxl-view-toolbar {
+    position: static;
+  }
+
+  .hxl-view-brand {
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+
+  .hxl-view-logo {
+    flex-shrink: 0;
+  }
+
+  #viewUpdatedAt {
+    flex-basis: 100%;
+    margin-left: 0;
+  }
+}
+
+
+/* ==========================================================
+   SMART TABLE RUNTIME VIEW
+   ========================================================== */
+
+.hxl-view-table-card {
+  overflow: hidden;
+}
+
+.hxl-view-table-title {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.hxl-view-table-meta {
+  margin-bottom: 12px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.hxl-view-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.hxl-view-data-table th,
+.hxl-view-data-table td {
+  padding: 9px 10px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+  text-align: left;
+}
+
+.hxl-view-data-table thead th {
+  font-weight: 700;
+}
+
+.hxl-view-data-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.hxl-view-table-value {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.hxl-view-data-table tfoot th:last-child {
+  text-align: right;
+}
+
+.hxl-view-table-error,
+.hxl-view-table-empty {
+  padding: 14px;
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+
+/* ==========================================================
+   PHASE 6 — SMART TABLE PROFESSIONAL DASHBOARD LAYOUT
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. SMART TABLE COLLECTION
+   Desktop = 2 columns
+   ---------------------------------------------------------- */
+
+#viewTableContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+
+/* ----------------------------------------------------------
+   2. INDIVIDUAL SMART TABLE CARD
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-table-card {
+  min-width: 0;
+  max-height: 440px;
+  overflow: auto;
+
+  padding: 18px;
+
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 14px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px rgba(15, 23, 42, 0.05);
+}
+
+
+/* ----------------------------------------------------------
+   3. TABLE TITLE
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-table-title {
+  margin: 0 0 4px;
+
+  font-size: 15px;
+  line-height: 1.35;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+
+/* ----------------------------------------------------------
+   4. TABLE META
+   Category • Net Sales • SUM
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-table-meta {
+  margin: 0 0 14px;
+
+  font-size: 11px;
+  line-height: 1.4;
+
+  color: #64748b;
+}
+
+
+/* ----------------------------------------------------------
+   5. ACTUAL DATA TABLE
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table {
+  width: 100%;
+
+  border-collapse: separate;
+  border-spacing: 0;
+
+  table-layout: fixed;
+
+  font-size: 12px;
+
+  color: #1e293b;
+}
+
+
+/* ----------------------------------------------------------
+   6. HEADER
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+
+  padding: 10px 9px;
+
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #cbd5e1;
+
+  background: #f8fafc;
+
+  color: #334155;
+
+  font-size: 11px;
+  font-weight: 700;
+
+  text-align: left;
+}
+
+
+/* ----------------------------------------------------------
+   7. BODY CELLS
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table tbody td {
+  padding: 9px;
+
+  border-bottom: 1px solid #edf2f7;
+
+  vertical-align: middle;
+}
+
+
+/* Alternate rows */
+
+#viewTableContainer .hxl-view-data-table tbody tr:nth-child(even) {
+  background: rgba(248, 250, 252, 0.7);
+}
+
+
+/* Hover */
+
+#viewTableContainer .hxl-view-data-table tbody tr:hover {
+  background: #f1f5f9;
+}
+
+
+/* ----------------------------------------------------------
+   8. VALUE COLUMN
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table th:last-child,
+#viewTableContainer .hxl-view-data-table td:last-child {
+  text-align: right;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ----------------------------------------------------------
+   9. GRAND TOTAL
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table tfoot th {
+  padding: 11px 9px;
+
+  border-top: 2px solid #cbd5e1;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+
+  font-size: 12px;
+  font-weight: 800;
+}
+
+
+#viewTableContainer .hxl-view-data-table tfoot th:last-child {
+  text-align: right;
+
+  font-variant-numeric: tabular-nums;
+}
+
+
+/* ----------------------------------------------------------
+   10. FIRST COLUMN
+   Keep enough room for product/customer/category names
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table th:first-child,
+#viewTableContainer .hxl-view-data-table td:first-child {
+  width: 58%;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+
+  white-space: nowrap;
+}
+
+
+/* ----------------------------------------------------------
+   11. SECOND COLUMN
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-data-table th:last-child,
+#viewTableContainer .hxl-view-data-table td:last-child {
+  width: 42%;
+}
+
+
+/* ----------------------------------------------------------
+   12. EMPTY / ERROR STATE
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-table-empty,
+#viewTableContainer .hxl-view-table-error {
+  padding: 18px;
+
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #64748b;
+
+  font-size: 12px;
+  text-align: center;
+}
+
+
+/* ----------------------------------------------------------
+   13. SCROLLBAR
+   ---------------------------------------------------------- */
+
+#viewTableContainer .hxl-view-table-card::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+
+#viewTableContainer .hxl-view-table-card::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+
+#viewTableContainer .hxl-view-table-card::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+
+/* ----------------------------------------------------------
+   14. MEDIUM SCREEN
+   ---------------------------------------------------------- */
+
+@media (max-width: 1100px) {
+
+  #viewTableContainer {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+/* ----------------------------------------------------------
+   15. SMALL SCREEN
+   ---------------------------------------------------------- */
+
+@media (max-width: 700px) {
+
+  #viewTableContainer {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+
+  #viewTableContainer .hxl-view-table-card {
+    max-height: 380px;
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+
+  #viewTableContainer .hxl-view-data-table {
+    font-size: 11px;
+  }
+
+
+  #viewTableContainer .hxl-view-data-table thead th,
+  #viewTableContainer .hxl-view-data-table tbody td,
+  #viewTableContainer .hxl-view-data-table tfoot th {
+    padding: 8px 7px;
+  }
+
+}

@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Auto Refresh</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: #6b7280;
+      line-height: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 9px;
+      font-weight: 600;
+    }
+
+    .target-grid,
+    .mode-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .option-card {
+      display: block;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafafa;
+      cursor: pointer;
+    }
+
+    .option-card input {
+      margin-right: 7px;
+    }
+
+    .option-title {
+      font-weight: 600;
+    }
+
+    .option-help {
+      display: block;
+      margin-top: 5px;
+      margin-left: 23px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #refreshNowBtn {
+      background: #217346;
+      color: #ffffff;
+    }
+
+    #startBtn {
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    #stopBtn {
+      background: #dc2626;
+      color: #ffffff;
+    }
+
+    #refreshInfoBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      line-height: 20px;
+      white-space: pre-line;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Auto Refresh</h1>
+
+      <p class="subtitle">
+        Refresh workbook connections, PivotTables and formulas now or automatically at a fixed interval.
+      </p>
+
+
+      <div class="section">
+
+        <div class="label">
+          Refresh Targets
+        </div>
+
+        <div class="target-grid">
+
+          <label class="option-card">
+            <input
+              id="refreshConnections"
+              type="checkbox"
+              checked
+            >
+            <span class="option-title">
+              Data Connections
+            </span>
+
+            <span class="option-help">
+              Refresh workbook data connections.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              id="refreshPivots"
+              type="checkbox"
+              checked
+            >
+            <span class="option-title">
+              PivotTables
+            </span>
+
+            <span class="option-help">
+              Refresh workbook PivotTables.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              id="recalculateFormulas"
+              type="checkbox"
+              checked
+            >
+            <span class="option-title">
+              Recalculate Formulas
+            </span>
+
+            <span class="option-help">
+              Run a full workbook calculation.
+            </span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div class="section">
+
+        <div class="label">
+          Refresh Mode
+        </div>
+
+        <div class="mode-grid">
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="refreshMode"
+              value="now"
+              checked
+            >
+            <span class="option-title">
+              Refresh Now
+            </span>
+
+            <span class="option-help">
+              Run one refresh immediately.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="refreshMode"
+              value="auto"
+            >
+            <span class="option-title">
+              Auto Refresh
+            </span>
+
+            <span class="option-help">
+              Refresh repeatedly while this dialog is active.
+            </span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div
+        id="intervalSection"
+        class="section"
+        style="display:none;">
+
+        <label
+          class="label"
+          for="intervalInput">
+          Interval (minutes)
+        </label>
+
+        <input
+          id="intervalInput"
+          type="number"
+          min="1"
+          max="1440"
+          step="1"
+          value="5"
+        >
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          id="refreshInfoBtn"
+          type="button">
+          Refresh Info
+        </button>
+
+        <button
+          id="refreshNowBtn"
+          type="button">
+          Refresh Now
+        </button>
+
+        <button
+          id="startBtn"
+          type="button"
+          style="display:none;">
+          Start Auto Refresh
+        </button>
+
+        <button
+          id="stopBtn"
+          type="button"
+          disabled
+          style="display:none;">
+          Stop Auto Refresh
+        </button>
+
+      </div>
+
+
+      <div id="status">
+        Reading workbook...
+      </div>
+
+
+      <div class="note">
+        Auto Refresh runs only while this dialog and add-in runtime remain active.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

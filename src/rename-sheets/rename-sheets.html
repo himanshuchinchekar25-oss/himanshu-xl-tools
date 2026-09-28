@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Rename Sheets</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: #6b7280;
+    }
+
+    .sheet-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sheet-row {
+      display: grid;
+      grid-template-columns: 1fr 30px 1fr;
+      gap: 10px;
+      align-items: center;
+      padding: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 9px;
+      background: #fafafa;
+    }
+
+    .old-name {
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .arrow {
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    .new-name-input {
+      width: 100%;
+      padding: 9px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 7px;
+      font-size: 14px;
+      background: white;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #refreshBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    #renameBtn {
+      flex: 1;
+      background: #217346;
+      color: white;
+    }
+
+    #renameBtn:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Rename Sheets</h1>
+
+      <p class="subtitle">
+        Rename one or multiple worksheets in the current workbook.
+      </p>
+
+      <div
+        id="sheetList"
+        class="sheet-list">
+        Reading workbook sheets...
+      </div>
+
+      <div class="button-row">
+
+        <button
+          id="refreshBtn"
+          type="button">
+          Refresh
+        </button>
+
+        <button
+          id="renameBtn"
+          type="button"
+          disabled>
+          Rename Sheets
+        </button>
+
+      </div>
+
+      <div id="status">
+        Reading workbook...
+      </div>
+
+      <div class="note">
+        Sheet names must be unique, non-empty, 31 characters or fewer, and cannot contain : \ / ? * [ ]
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

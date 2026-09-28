@@ -1,0 +1,137 @@
+=== K2 STATIC WORKER CONFIG DISCOVERY ===
+Generated=2026-09-20 23:28:18
+
+=== WRANGLER CONFIG FILES ===
+FILE=C:\Users\MY COMPUTER\HimanshuXLTools\wrangler.jsonc
+  NAME_MATCH=True
+  ASSETS_MATCH=False
+  DIST_MATCH=False
+  LICENSE_API_MATCH=True
+FILE=C:\Users\MY COMPUTER\HimanshuXLTools\wrangler.production.jsonc
+  NAME_MATCH=True
+  ASSETS_MATCH=True
+  DIST_MATCH=True
+  LICENSE_API_MATCH=False
+FILE=C:\Users\MY COMPUTER\HimanshuXLTools\node_modules\.cache\wrangler\wrangler-account.json
+  NAME_MATCH=False
+  ASSETS_MATCH=False
+  DIST_MATCH=False
+  LICENSE_API_MATCH=False
+
+=== PACKAGE DEPLOY SCRIPTS ===
+
+=== STATIC WORKER SOURCE CANDIDATES ===
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-FAST-READY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.10BC-CHANNEL-PROVIDER.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.10DEFG-MESSAGING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.11B-HARDENING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.4.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.5-SEMANTIC-FIX.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.5.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.6.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.7C-CORS.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9D-RESEND.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9E-EXPIRY-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9E-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9F-EXPIRED-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9F-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9G-RENEWAL-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9G-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9H-MANUAL-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9J-RENEWAL-INTEGRATION.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-6.9K-RENEWAL-DELIVERY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.BEFORE-PHASE6-FINAL-HARDENING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-DEVICE-RESET-API.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-FAST-BATCH1-APPLY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-FAST-BATCH1-NODE.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-FAST-BATCH1.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-LOCALHOST-CORS.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-PHASE6-3.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\src\license-api\worker.PRE-PHASE6-3D.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\webpack.config.js:9: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev/";
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\webpack.config.js:105: filename: "assets/[name][ext][query]",
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\webpack.config.js:290: filename: "admin-control-center.html",
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\webpack.config.js:292: "./src/admin-control-center/admin-control-center.html",
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\webpack.config.js:303: from: "assets",
+C:\Users\MY COMPUTER\HimanshuXLTools\backup\website-step10-20260920-111335\webpack.config.js:304: to: "assets",
+C:\Users\MY COMPUTER\HimanshuXLTools\PHASE6-FAST-READY\src\license-api\worker.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\render-ai-backend\server.js:26: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\server\server.js:26: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-FAST-READY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.10BC-CHANNEL-PROVIDER.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.10DEFG-MESSAGING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.11B-HARDENING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.4.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.5-SEMANTIC-FIX.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.5.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.6.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.7C-CORS.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9D-RESEND.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9E-EXPIRY-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9E-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9F-EXPIRED-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9F-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9G-RENEWAL-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9G-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9H-MANUAL-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9J-RENEWAL-INTEGRATION.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-6.9K-RENEWAL-DELIVERY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-PHASE6-FINAL-HARDENING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.BEFORE-STEP10-DUPLICATE-FIX.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-DEVICE-RESET-API.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-FAST-BATCH1-APPLY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-FAST-BATCH1-NODE.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-FAST-BATCH1.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-LOCALHOST-CORS.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-PHASE6-3.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\src\license-api\worker.PRE-PHASE6-3D.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-FAST-READY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.10BC-CHANNEL-PROVIDER.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.10DEFG-MESSAGING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.11B-HARDENING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.4.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.5-SEMANTIC-FIX.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.5.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.6.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.7C-CORS.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9D-RESEND.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9E-EXPIRY-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9E-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9F-EXPIRED-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9F-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9G-RENEWAL-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9G-RUNTIME-QA.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9H-MANUAL-EMAIL.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9J-RENEWAL-INTEGRATION.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-6.9K-RENEWAL-DELIVERY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.BEFORE-PHASE6-FINAL-HARDENING.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-DEVICE-RESET-API.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-FAST-BATCH1-APPLY.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-FAST-BATCH1-NODE.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-FAST-BATCH1.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-LOCALHOST-CORS.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-PHASE6-3.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\src\license-api\worker.PRE-PHASE6-3D.js:16: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\webpack.config.js:9: "https://restless-shape-bea9.himanshuchinchekar25.workers.dev/";
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\webpack.config.js:103: filename: "assets/[name][ext][query]",
+C:\Users\MY COMPUTER\HimanshuXLTools\STEP10-BACKUP-20260920-111331\webpack.config.js:274: filename: "admin-control-center.html",
+
+=== DIST CHECK ===
+DIST_EXISTS=True
+DIST_ADMIN_EXISTS=True
+DIST_PRICING_NAV=True
+DIST_PRICING_PAGE=True
+
+=== SAFETY ===
+DEPLOY_PERFORMED=False
+D1_WRITE=False
+PRICE_WRITE=False
+CUSTOMER_LICENSE_DEVICE_WRITE=False
+
+=== DISCOVERY COMPLETE ===

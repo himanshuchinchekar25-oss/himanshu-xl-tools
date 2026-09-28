@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=Edge"
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Split Workbook</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 620px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin-top: 0;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 12px;
+      margin-bottom: 8px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .option:hover {
+      background: #f3f4f6;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #selectAllBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    #splitWorkbookBtn {
+      flex: 1;
+      background: #2563eb;
+      color: white;
+    }
+
+    #splitWorkbookBtn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      min-height: 44px;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #6b7280;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Split Workbook</h1>
+
+      <p class="subtitle">
+        Export workbook sheets as separate Excel files.
+      </p>
+
+      <div class="section-title">
+        Select sheets to export
+      </div>
+
+      <div id="sheetList">
+        Loading workbook sheets...
+      </div>
+
+      <div class="button-row">
+
+        <button
+          id="selectAllBtn"
+          type="button">
+          Select All
+        </button>
+
+        <button
+          id="splitWorkbookBtn"
+          type="button"
+          disabled>
+          Split Workbook
+        </button>
+
+      </div>
+
+      <div id="status">
+        Reading workbook...
+      </div>
+
+      <div class="note">
+        Each selected worksheet will be downloaded as a separate .xlsx file.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

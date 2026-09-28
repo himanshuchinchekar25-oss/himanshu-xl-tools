@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=Edge"
+  />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>
+    Himanshu XL Tools - Merge Files
+  </title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+      background: #f3f6f4;
+      color: #222;
+    }
+
+    .builder-page {
+      min-height: 100vh;
+      padding: 18px;
+    }
+
+    .builder-card {
+      max-width: 620px;
+      margin: 0 auto;
+      background: white;
+      border: 1px solid #d9e1dc;
+      border-radius: 12px;
+      padding: 22px;
+      box-shadow:
+        0 6px 24px
+        rgba(0, 0, 0, 0.08);
+    }
+
+    .title {
+      margin: 0;
+      color: #217346;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      margin: 6px 0 22px;
+      color: #666;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .field {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 10px;
+      border:
+        1px solid #cfd8d3;
+      border-radius: 7px;
+      background: white;
+      font-size: 13px;
+    }
+
+    .options {
+      background: #f7faf8;
+      border:
+        1px solid #dde6e1;
+      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 16px;
+    }
+
+    .option-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0;
+      font-size: 12px;
+    }
+
+    .option-row input {
+      width: auto;
+      margin: 0;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border-radius: 7px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .secondary {
+      background: white;
+      color: #217346;
+      border:
+        1px solid #217346;
+      margin-bottom: 9px;
+    }
+
+    .primary {
+      color: white;
+      background: #217346;
+      border: none;
+    }
+
+    .primary:hover {
+      background: #185c37;
+    }
+
+    .status {
+      margin-top: 16px;
+      padding: 11px;
+      background: #fafafa;
+      border:
+        1px solid #ddd;
+      border-radius: 7px;
+      color: #555;
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .file-summary {
+      margin-top: 7px;
+      font-size: 11px;
+      color: #666;
+    }
+
+    .footer {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 10px;
+      color: #888;
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <main class="builder-page">
+
+    <section class="builder-card">
+
+      <h1 class="title">
+        Merge Files Builder
+      </h1>
+
+      <p class="subtitle">
+        Combine multiple Excel files into
+        one clean worksheet using automatic
+        column matching.
+      </p>
+
+
+      <div class="field">
+
+        <label for="mergeFilesInput">
+          Select Excel Files
+        </label>
+
+        <input
+          id="mergeFilesInput"
+          type="file"
+          accept=".xlsx,.xls"
+          multiple
+        />
+
+        <div
+          id="selectedFilesInfo"
+          class="file-summary"
+        >
+          No files selected.
+        </div>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="mergeModeSelect">
+          Merge Mode
+        </label>
+
+        <select id="mergeModeSelect">
+
+          <option value="headers">
+            Match Columns by Header
+          </option>
+
+          <option value="common">
+            Common Columns Only
+          </option>
+
+        </select>
+
+      </div>
+
+
+      <div class="field">
+
+        <label for="mergeOutputSheet">
+          Output Sheet
+        </label>
+
+        <input
+          id="mergeOutputSheet"
+          type="text"
+          value="Merged_Data"
+        />
+
+      </div>
+
+
+      <div class="options">
+
+        <div class="option-row">
+
+          <input
+            id="mergeIgnoreBlankRows"
+            type="checkbox"
+            checked
+          />
+
+          <span>
+            Ignore blank rows
+          </span>
+
+        </div>
+
+
+        <div class="option-row">
+
+          <input
+            id="mergeKeepHeaderOnce"
+            type="checkbox"
+            checked
+          />
+
+          <span>
+            Keep header only once
+          </span>
+
+        </div>
+
+
+        <div class="option-row">
+
+          <input
+            id="mergeAutoMapColumns"
+            type="checkbox"
+            checked
+          />
+
+          <span>
+            Match columns automatically
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <button
+        id="validateMergeFilesBtn"
+        class="secondary"
+      >
+        Validate Files
+      </button>
+
+
+      <button
+        id="runMergeFilesBtn"
+        class="primary"
+      >
+        Merge Files
+      </button>
+
+
+      <div
+        id="mergeFilesStatus"
+        class="status"
+      >
+        Ready. Select at least two Excel files.
+      </div>
+
+
+      <div class="footer">
+        Himanshu XL Tools • Merge Files
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+
+</html>

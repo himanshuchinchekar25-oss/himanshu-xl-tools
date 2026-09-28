@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Customer Portal | Himanshu XL Tools</title>
+  <link rel="stylesheet" href="customer-portal.css">
+</head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="index.html"><span class="logo">H</span><span><b>Himanshu XL Tools</b><small>Customer Portal</small></span></a>
+  <nav>
+    <button class="nav active" data-view="dashboard"><span class="ico">⌂</span><span>Dashboard</span></button>
+    <button class="nav" data-view="profile"><span class="ico">♙</span><span>My Profile</span></button>
+    <button class="nav" data-view="license"><span class="ico">◇</span><span>My License</span></button>
+    <button class="nav" data-view="downloads"><span class="ico">⇩</span><span>Downloads</span></button>
+    <button class="nav" data-view="devices"><span class="ico">▣</span><span>Devices</span></button>
+    <button class="nav" data-view="updates"><span class="ico">↻</span><span>Updates</span></button>
+    <button class="nav" data-view="orders"><span class="ico">▤</span><span>Orders & Payments</span></button>
+    <button class="nav" data-view="support"><span class="ico">?</span><span>Support</span></button>
+    <button class="nav" data-view="security"><span class="ico">✓</span><span>Security</span></button>
+  </nav>
+  <div class="sidebar-product"><span class="mini-xl">XL</span><strong>Excel Smarter.<br>Work Faster.<br><em>Go Further.</em></strong></div>
+  <button class="signout-nav" id="sideSignOutBtn" hidden>↪ <span>Sign Out</span></button>
+  <div class="portal-version">Himanshu XL Tools<br><small>Customer Portal v1.0</small></div>
+</aside>
+
+<main>
+<header>
+  <button class="mobile-menu" id="menuBtn" aria-label="Open menu">☰</button>
+  <div class="header-title"><small>HIMANSHU XL TOOLS</small><h1 id="pageTitle">Customer Dashboard</h1></div>
+  <div class="header-actions"><span class="status-dot"><i></i> Cloud connected</span><div class="account-chip" id="accountChip" hidden><span class="avatar" id="headerAvatar">HX</span><span><b id="headerCustomerName">Customer</b><small id="headerCustomerEmail">Secure account</small></span></div><button class="signin" id="signInBtn">Sign in</button></div>
+</header>
+
+<section class="view active" id="dashboard">
+  <div class="hero">
+    <div class="hero-copy"><span class="eyebrow">YOUR EXCEL PRODUCTIVITY HUB</span><h2 id="welcomeHeading">Welcome to your<br><em>Himanshu XL Tools</em> account.</h2><p>Your secure workspace for licenses, downloads, devices, updates, orders and support.</p><div class="hero-actions"><button class="primary gated" data-go="downloads">⇩ &nbsp; Download Latest Version</button><button class="secondary gated" data-go="license">◇ &nbsp; View My License</button></div></div>
+    <div class="hero-art"><div class="product-window"><div class="window-bar"><i></i><i></i><i></i><b>Himanshu XL Tools</b></div><div class="product-ribbon"><span>Data Tools</span><span>Analysis</span><span>Lookup</span><span>Smart Visual</span><span>AI Tools</span></div><div class="product-dashboard"><div><small>Net Sales</small><b>₹12.8L</b></div><div><small>Profit</small><b>₹3.4L</b></div><div><small>Orders</small><b>1,248</b></div><div class="bars"><i></i><i></i><i></i><i></i><i></i></div></div></div></div>
+  </div>
+
+  <div class="stats">
+    <article class="success"><div class="stat-icon">✓</div><div><small>LICENSE STATUS</small><strong id="dashboardLicenseStatus">Sign in required</strong><p id="dashboardLicenseMeta">Secure license details appear after sign in.</p></div></article>
+    <article><div class="stat-icon gold">♛</div><div><small>PLAN</small><strong id="dashboardPlanStatus">Standard</strong><p id="dashboardPlanMeta">Your licensed product plan.</p></div></article>
+    <article><div class="stat-icon blue">▣</div><div><small>REGISTERED DEVICES</small><strong id="dashboardDeviceStatus">1 device plan</strong><p id="dashboardDeviceMeta">Device status appears after sign in.</p></div></article>
+    <article><div class="stat-icon purple">▦</div><div><small>EXPIRY DATE</small><strong id="dashboardRenewalStatus">Account protected</strong><p id="dashboardRenewalMeta">Renewal information stays private.</p></div></article>
+  </div>
+
+  <div class="dashboard-panels">
+    <article class="panel product-panel"><div class="panel-head"><div><small>PRODUCT & DOWNLOAD</small><h3>Himanshu XL Tools</h3></div><span class="release-badge" id="dashboardReleaseBadge">Latest release</span></div><div class="product-row"><span class="download-logo">H</span><div><strong id="dashboardReleaseName">Official Installer</strong><p id="dashboardReleaseMeta">Sign in to load your approved release.</p></div></div><button class="primary wide gated" data-go="downloads">⇩ &nbsp; Download Installer</button></article>
+    <article class="panel"><div class="panel-head"><div><small>LATEST UPDATE</small><h3>Product status</h3></div><span class="ok-dot">✓</span></div><strong id="dashboardUpdateTitle">Stay on the latest version</strong><p id="dashboardUpdateText">Approved release notes and updates appear here automatically.</p><button class="text-button" data-go="updates">View release notes →</button></article>
+    <article class="panel"><div class="panel-head"><div><small>ACCOUNT OVERVIEW</small><h3>Your profile</h3></div></div><dl class="account-list"><div><dt>Name</dt><dd id="overviewName">Sign in required</dd></div><div><dt>Email</dt><dd id="overviewEmail">—</dd></div><div><dt>Company</dt><dd id="overviewCompany">—</dd></div><div><dt>Region</dt><dd id="overviewCountry">—</dd></div></dl><button class="secondary small" data-go="profile">Edit Profile</button></article>
+  </div>
+
+  <div class="bottom-grid">
+    <article class="panel"><div class="panel-head"><div><small>RECENT ORDER</small><h3>Orders & payments</h3></div><button class="text-button" data-go="orders">View all →</button></div><p id="purchaseStatusText">Sign in to view your website order history.</p></article>
+    <article class="panel"><div class="panel-head"><div><small>DEVICE</small><h3>Registered device</h3></div><button class="text-button" data-go="devices">Manage →</button></div><p id="dashboardDeviceSummary">Device activation information will appear after sign in.</p></article>
+    <article class="panel"><div class="panel-head"><div><small>SUPPORT</small><h3>Need help?</h3></div><button class="text-button" data-go="support">Get help →</button></div><p>Installation, activation, licensing and product assistance in one place.</p></article>
+  </div>
+</section>
+
+<section class="view" id="profile"><div class="section-title"><span class="eyebrow">MY PROFILE</span><h2>Manage your account information</h2><p>Keep your customer details current. Your email identity and licensing fields stay protected.</p></div><div id="profileCompletionNotice" class="profile-notice" hidden><strong>Complete your profile</strong><span>Add the missing details below to complete your account.</span></div><article class="panel profile-panel"><form id="customerProfileForm" class="profile-form"><label>Customer ID<input id="profileCustomerId" type="text" readonly><small>Protected account identifier</small></label><label>Email<input id="profileEmail" type="email" readonly><small>Email identity cannot be changed here</small></label><label>Full Name<input id="profileFullName" type="text" maxlength="120" required></label><label>Mobile<input id="profileMobile" type="tel" maxlength="40"></label><label>Company<input id="profileCompanyName" type="text" maxlength="160"></label><label>Country / Region<input id="profileCountry" type="text" maxlength="120"></label><div class="profile-actions"><button id="profileSaveBtn" class="primary" type="submit">Save Changes</button><span id="profileMessage" class="profile-message"></span></div></form></article></section>
+
+<section class="view" id="license"><div class="section-title"><span class="eyebrow">MY LICENSE</span><h2>Your Himanshu XL Tools license</h2><p>Plan, status, expiry and device allowance for your licensed account.</p></div><div class="license-card"><div><small>LICENSE KEY</small><h3>HXL-••••-••••-••••-••••</h3><p>Your full key is never displayed in the portal.</p></div><span class="pill">SIGN IN REQUIRED</span></div><div class="detail-grid"><article><small>PLAN</small><strong>—</strong></article><article><small>STATUS</small><strong>—</strong></article><article><small>EXPIRY</small><strong>—</strong></article><article><small>DEVICES</small><strong>— / 1</strong></article></div></section>
+
+<section class="view" id="downloads"><div class="section-title"><span class="eyebrow">DOWNLOAD CENTER</span><h2>Official Himanshu XL Tools installer</h2><p>Your approved production installer—no npm, localhost or development server required.</p></div><div class="download-card"><div class="download-icon">XL</div><div class="grow"><small>LATEST APPROVED RELEASE</small><h3 id="releaseName">Himanshu XL Tools for Excel</h3><p id="releaseMeta">Sign in to view the current approved release.</p><p class="hash" id="releaseHash"></p></div><button id="downloadInstallerBtn" class="primary gated">Sign in to Download</button></div><div class="safe-note">✓ Downloads are served only from the official Himanshu XL Tools production service.</div></section>
+
+<section class="view" id="devices"><div class="section-title"><span class="eyebrow">DEVICES</span><h2>License device management</h2><p>Review your device allowance and activation status.</p></div><div class="device-overview"><article class="panel"><small>ACTIVE DEVICES</small><strong id="devicesActiveCount">Sign in required</strong><p id="devicesActiveMeta">Device information is private.</p></article><article class="panel"><small>DEVICE LIMIT</small><strong id="devicesLimit">1</strong><p>Controlled by your licensed plan.</p></article></div><div class="empty-state"><div class="empty-icon">▣</div><h3>Your device is protected</h3><p>Detailed device information is shown only when supported by the secure licensing service.</p><button class="primary gated">Sign in</button></div></section>
+
+<section class="view" id="updates"><div class="section-title"><span class="eyebrow">PRODUCT UPDATES</span><h2>Latest versions & release notes</h2><p>Approved releases appear here automatically from the release service.</p></div><div class="timeline"><article><i></i><div><small>CURRENT RELEASE</small><h3 id="updateVersion">Himanshu XL Tools</h3><p id="updateNotes">Sign in to load the latest approved release notes.</p></div></article></div></section>
+
+<section class="view" id="orders"><div class="section-title"><span class="eyebrow">ORDERS & PAYMENTS</span><h2>Your purchase history</h2><p>Website orders associated with your secure customer account.</p></div><article class="panel order-panel"><div class="panel-head"><div><small>LATEST ORDER</small><h3>Purchase status</h3></div></div><p id="ordersPageStatus">Sign in to load your order history.</p></article></section>
+
+<section class="view" id="support"><div class="section-title"><span class="eyebrow">SUPPORT CENTER</span><h2>How can we help?</h2><p>Installation, license activation, renewal and product assistance.</p></div><div class="support-grid"><article><b>01</b><h3>Installation Help</h3><p>Guidance for installing and starting Himanshu XL Tools.</p></article><article><b>02</b><h3>License Help</h3><p>Activation, expiry and device assistance.</p></article><article><b>03</b><h3>Account Help</h3><p>Profile, purchase and secure account assistance.</p></article></div></section>
+
+<section class="view" id="security"><div class="section-title"><span class="eyebrow">SECURITY</span><h2>Protected customer access</h2><p>Your portal uses authenticated customer sessions and keeps sensitive license information masked.</p></div><div class="security-grid"><article class="panel"><span class="security-icon">✓</span><h3>Secure session</h3><p>Customer data loads only after successful authentication.</p></article><article class="panel"><span class="security-icon">◇</span><h3>Protected license</h3><p>The portal displays only the masked license key returned by the licensing service.</p></article><article class="panel"><span class="security-icon">▣</span><h3>Device control</h3><p>Your plan controls the permitted device count.</p></article></div></section>
+
+<footer><span>© 2026 Himanshu XL Tools</span><span>Secure licensing • Official downloads • Customer support</span></footer>
+</main>
+
+<div class="modal" id="loginModal" aria-hidden="true"><div class="modal-card"><button class="close" id="closeModal" aria-label="Close">×</button><span class="logo big">H</span><small>CUSTOMER ACCESS</small><h2>Sign in to Himanshu XL Tools</h2><p>Use the email address and license key registered with your account.</p><form id="customerLoginForm"><label>Email address<input name="email" type="email" autocomplete="email" placeholder="customer@example.com" required></label><label>License key<input name="licenseKey" type="password" autocomplete="off" placeholder="HXL-••••-••••-••••-••••" required></label><button class="primary" type="submit">Continue securely</button><small class="note" id="loginMessage">Your credentials are sent only to the secure licensing API.</small></form></div></div>
+<script src="customer-portal.js"></script>
+</body></html>

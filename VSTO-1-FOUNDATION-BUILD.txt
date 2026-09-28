@@ -1,0 +1,93 @@
+============================================================
+HIMANSHU XL TOOLS - VSTO 1 FOUNDATION BUILD
+DATE=2026-09-19 21:50:17
+============================================================
+
+--- PRECHECK ---
+DEVENV_PRESENT=True
+MSBUILD_PRESENT=True
+TEMPLATE_PRESENT=True
+PROJECT_ROOT_PRESENT=True
+
+--- TEMPLATE DEFINITION ---
+VSTEMPLATE_PRESENT=True
+VSTEMPLATE_LENGTH=2435
+<VSTemplate Version="3.0.0" Type="Project" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.microsoft.com/developer/vstemplate/2005">
+  <TemplateData>
+    <Name Package="{09CEFBAA-66D5-4FD2-B5BC-B9B2D7A8ADEF}" ID="123" />
+    <Description Package="{09CEFBAA-66D5-4FD2-B5BC-B9B2D7A8ADEF}" ID="124" />
+    <Icon Package="{09CEFBAA-66D5-4FD2-B5BC-B9B2D7A8ADEF}" ID="305" />
+    <TemplateID>VSTO_Excel15Template_CS</TemplateID>
+    <RequiredFrameworkVersion>4.0</RequiredFrameworkVersion>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>110</SortOrder>
+    <NumberOfParentCategoriesToRollUp>1</NumberOfParentCategoriesToRollUp>
+    <CreateNewFolder>true</CreateNewFolder>
+    <CreateInPlace>true</CreateInPlace>
+    <DefaultName>ExcelTemplate</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <PromptForSaveOnCreation>false</PromptForSaveOnCreation>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+  </TemplateData>
+  <TemplateContent>
+    <Project File="VSTOProject.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Properties\Resources.resx">Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\Resources.Designer.cs">Resources.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Properties\Settings.settings">Settings.settings</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Properties\Settings.Designer.cs">Settings.cs</ProjectItem>
+    </Project>
+    <CustomParameters>
+      <CustomParameter Name="VSTOLanguage" Value="CS" />
+      <CustomParameter Name="VSTODocumentType" Value="XLT" />
+      <CustomParameter Name="VSTOHostService" Value="{3F2B7691-D1D1-402F-9370-2704A737CF60}" />
+    </CustomParameters>
+  </TemplateContent>
+  <WizardExtension>
+    <Assembly>Microsoft.VisualStudio.Tools.Applications.Project, Version=17.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, Custom=null</Assembly>
+    <FullClassName>Microsoft.VisualStudio.Tools.Applications.Project.Wizard.Office15Wizard</FullClassName>
+  </WizardExtension>
+</VSTemplate>
+
+
+--- PROJECT DISCOVERY BEFORE ---
+PROJECT_FILES_BEFORE=0
+
+--- PROJECT CREATION ---
+CREATE_METHOD=VisualStudio_VSTO_Template
+DEVENV_TEMPLATE_AVAILABLE=True
+TEMPLATE_FILES_COPIED=True
+
+--- PROJECT DISCOVERY AFTER ---
+PROJECT_COUNT=1
+PROJECT=C:\Users\MY COMPUTER\HimanshuXLTools\windows-addin\HimanshuXLTools.VSTO\src\HimanshuXLTools.VSTO.csproj
+
+--- PROJECT STRUCTURE ---
+THISADDIN_COUNT=0
+
+--- FOUNDATION BUILD ---
+BUILD_PROJECT=C:\Users\MY COMPUTER\HimanshuXLTools\windows-addin\HimanshuXLTools.VSTO\src\HimanshuXLTools.VSTO.csproj
+
+C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\Microsoft.NETFramework.CurrentVersion.props(117,25): error MSB4184: The expression "[MSBuild]::VersionGreaterThanOrEquals(v$targetframeworkversion$, 4.0)" cannot be evaluated. Version string was not in a correct format. [C:\Users\MY COMPUTER\HimanshuXLTools\windows-addin\HimanshuXLTools.VSTO\src\HimanshuXLTools.VSTO.csproj]
+BUILD_EXIT=1
+
+--- BUILD OUTPUT ---
+OUTPUT_DLL_COUNT=0
+
+--- FINAL ---
+VSTO_1_FOUNDATION_PASS=False
+VSTO_1=NOT_YET_PASS
+NEXT=FIX_FOUNDATION_BUILD_ONLY
+
+--- SAFETY ---
+EXISTING_OFFICEJS_CHANGED=NO
+PRODUCTION_CHANGED=NO
+LICENSING_BACKEND_CHANGED=NO
+REGISTRY_CHANGED=NO
+EXCEL_ADDIN_REGISTERED=NO
+CURRENT_INSTALLER_CHANGED=NO
+D1_MUTATED=NO
+REAL_CUSTOMER_MUTATED=NO
+REAL_LICENSE_MUTATED=NO
+============================================================

@@ -1,0 +1,277 @@
+﻿# ========================================
+# Himanshu XL Tools - GitHub Safety Rules
+# ========================================
+
+# Dependencies / generated build
+node_modules/
+dist/
+
+# Environment files / secrets
+**/.env
+**/.env.*
+!**/.env.example
+
+# Private keys / certificates
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Secret / credential / password files
+*SECRET*
+*secret*
+*PASSWORD*
+*password*
+*TOKEN*
+*token*
+*CREDENTIAL*
+*credential*
+
+# Sensitive audit files
+*-SECRET-FIX.txt
+*-SECRET-AUDIT.txt
+*-SECRET-NAMES.txt
+S2-STEP66-LOCKED-CORRECT-PASSWORD.txt
+S2-STEP67B-NEW-PASSWORD-LOGIN.txt
+S2-STEP71L-SHOW-PASSWORD-RUNTIME-AUDIT.txt
+
+# Backup files
+*.bak
+
+# Local editor / OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# ========================================
+# Project audit / diagnostic reports
+# ========================================
+*-AUDIT.txt
+*-audit.txt
+*-Audit.txt
+*-DIAGNOSTIC.txt
+*-diagnostic.txt
+*-REPORT.txt
+*-report.txt
+*-QA.txt
+*-qa.txt
+*-CERTIFICATION.txt
+*-certification.txt
+*-RESULT.txt
+*-result.txt
+*-SOURCE.txt
+*-source.txt
+*-EXACT.txt
+*-exact.txt
+*-FINAL.txt
+*-final.txt
+*-CHECK.txt
+*-check.txt
+*-MAP.txt
+*-map.txt
+
+# ========================================
+# Database dumps / local data
+# ========================================
+*.sql
+*.sqlite
+*.sqlite3
+*.db
+
+# ========================================
+# Archives / generated packages
+# ========================================
+*.zip
+*.7z
+*.rar
+
+# ========================================
+# Project backup directories
+# ========================================
+*-BACKUP-*/
+*-backup-*/
+*BEFORE-*/
+*before-*/
+
+# ========================================
+# Historical source backups
+# ========================================
+*.BEFORE-*.js
+*.BEFORE-*.html
+*.BEFORE-*.css
+*.BEFORE-*.xml
+*.before-*.js
+*.before-*.html
+*.before-*.css
+*.before-*.xml
+*.backup.js
+*_backup.js
+*.backup.xml
+manifest_backup*.xml
+
+# ========================================
+# Explicit backup/reference folders
+# ========================================
+phase9-full-audit/
+PROD1-LOCALHOST-AUDIT/
+WEBSERVICECACHE-BACKUP/
+WEF-DUPLICATE-CLEANUP-BACKUP/
+SYSTEM-SETTINGS-TARGET-DESIGN-BASELINE-*/
+temp-step7-reference/
+PHASE6-FAST-READY/
+
+# ========================================
+# Installer / release generated binaries
+# ========================================
+installer/output/
+release/*/HimanshuXLTools-v1.0-Setup.exe
+release/New folder/
+
+# ========================================
+# Temporary / diagnostic files
+# ========================================
+temp-*.js
+temp-*.cjs
+test-dist/
+babel-check.js
+babel-locate-error.cjs
+brace-check.js
+find-babel-difference.cjs
+
+# ========================================
+# Local diagnostic / project history text
+# ========================================
+*-STEP*.txt
+STEP*.txt
+HIMANSHU-*.txt
+K7-*.txt
+S1-*.txt
+S2-*.txt
+PHASE*.txt
+RELEASE-*.txt
+SYSTEM-SETTINGS-*.txt
+PRODUCTION-*.txt
+MASTER-PROJECT-AUDIT-*.txt
+
+# ========================================
+# Additional historical source backups
+# ========================================
+*.PRE-*.js
+*.PRE-*.html
+*.PRE-*.css
+*.PRE-*.xml
+*.PRE-*.json
+*.PRE-*.cjs
+*.before-*.js
+*.before-*.html
+*.before-*.css
+*.before-*.xml
+*.before-*.json
+*.before-*.cjs
+
+*.BACKUP
+*.BACKUP.*
+*.backup
+*.backup.*
+*.K6-BACKUP*
+*.K76-BACKUP*
+*.step11-*-backup*
+*.STEP*-BACKUP*
+*_before_*.js
+*_before_*.html
+*_before_*.css
+*_before_*.xml
+*_before_*.json
+*_before_*.config.js
+
+# ========================================
+# Explicit backup/reference directories
+# ========================================
+PRODUCTION-NO-LOCALHOST-BACKUP/
+
+# ========================================
+# Additional old configuration backups
+# ========================================
+wrangler.*backup*.jsonc
+wrangler.*BACKUP*.jsonc
+webpack_before_*.config.js
+manifest.*BACKUP*.xml
+manifest.*backup*.xml
+manifest.*STEP*-BACKUP*.xml
+
+# ========================================
+# Old server source copies
+# ========================================
+server/server_before_*.js
+
+# ========================================
+# FINAL HISTORICAL FILE EXCLUSIONS
+# ========================================
+
+CATALOG-FULL-RIBBON-SAFE-BACKUP.xml
+central-sync-backup.txt
+manifest-before-production-host.xml
+src/New folder/commands.js backup.js
+
+src/admin-control-center/*.BEFORE-*
+src/admin-control-center/*.before-*
+
+src/commands/*-before-*
+src/license-api/*.K76-*
+src/license-api/*.before-*
+src/licensing/*.before-*
+src/taskpane/*.before-*
+src/website/*.K76-*
+src/website/*.before-*
+
+wrangler.before-*
+
+# ========================================
+# QA / TEST / DIAGNOSTIC ARTIFACTS
+# ========================================
+
+CUSTOMER-RELEASE-SYSTEM-QA-FIX1.txt
+DEV-SERVER-TASKPANE-CHECK.html
+DEVICE-BINDING-QA.mjs
+DEVICE-RESET-DB-QA.mjs
+DEVICE-RESET-QA.mjs
+
+K2-LIVE-ADMIN-CHECK.html
+K2-db-check.json
+K2-migration-check.json
+K2-protected-check.json
+
+PHASE6-FAST-BATCH1-PATCH.js
+PHASE6-STEP6.8-BH-PATCH.cjs
+k7-data-management-stage-a-patch.cjs
+
+manifest.LICENSE-BUTTON-TEST.xml
+manifest.LICENSE-TOOLS-TEST.xml
+qa-license-package.json
+
+# ========================================
+# FINAL LOCAL DIAGNOSTIC / LOCATION NOTES
+# ========================================
+
+TASKPANE-DEVICE-DIAGNOSTIC-SECTION.txt
+central-latest-location.txt
+
+# ========================================
+# FINAL LOCAL DIAGNOSTIC / LOCATION NOTES
+# ========================================
+
+TASKPANE-DEVICE-DIAGNOSTIC-SECTION.txt
+central-latest-location.txt
+
+# Local K2 test/protected license data - never commit
+K2-LICENSE-SCHEMA-FINAL.json
+K2-protected-license.json
+
+# Legacy/generated/local audit artifacts - keep local, never commit
+K2-live-admin.html
+K2-live-home.html
+central-final-locate.txt
+central-package-search.txt
+central-project-structure.txt
+duplicate_report.txt
+src/admin-control-center/desktop.ini

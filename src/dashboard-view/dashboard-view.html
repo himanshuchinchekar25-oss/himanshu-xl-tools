@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Himanshu XL Tools - View Dashboard</title>
+</head>
+<body>
+  <div id="dashboardViewApp" class="hxl-view-app">
+
+    <header class="hxl-view-titlebar">
+      <div class="hxl-view-brand">
+        <div class="hxl-view-logo">HX</div>
+
+        <div>
+          <div class="hxl-view-product">
+            Himanshu XL Tools
+          </div>
+
+          <div class="hxl-view-subtitle">
+            View Dashboard
+          </div>
+        </div>
+
+        <span id="viewStatus" class="hxl-view-status">
+          Ready
+        </span>
+      </div>
+
+      
+    </header>
+
+    <div class="hxl-view-toolbar">
+      <button id="editDashboardBtn" type="button">
+        Edit in Studio
+      </button>
+
+      <button id="refreshDashboardBtn" type="button">
+        Refresh
+      </button>
+
+      <button id="undoBtn" type="button" disabled>
+        Undo
+      </button>
+
+      <button id="redoBtn" type="button" disabled>
+        Redo
+      </button>
+
+      <button id="layoutEditBtn" type="button">
+        Arrange
+      </button>
+
+      <select id="screenModeSelect">
+        <option value="auto">Auto screen</option>
+        <option value="desktop">Desktop</option>
+        <option value="wide">Wide</option>
+        <option value="compact">Compact</option>
+      </select>
+
+      <button id="healthBtn" type="button">
+        Health
+      </button>
+
+      <span id="viewUpdatedAt">
+        Last refreshed: Never
+      </span>
+    </div>
+
+    <section id="healthPanel" hidden>
+      <strong>Dashboard Health</strong>
+      <span id="healthBadge">Ready</span>
+            <div id="healthGrid"></div>
+      <p id="screenCapacitySummary" role="status">
+        Screen measurements pending...
+      </p>
+    </section>
+
+    <main class="hxl-view-main">
+
+      <section class="hxl-view-dashboard-head hxl-view-card">
+        <div>
+          <div class="hxl-view-eyebrow">
+            POWER DASHBOARD
+          </div>
+
+          <h1 id="viewDashboardTitle">
+            Sales Performance Dashboard
+          </h1>
+
+          <p id="viewDashboardMeta">
+            Dashboard content preview
+          </p>
+        </div>
+
+        <div class="hxl-view-head-meta">
+          <span id="viewDashboardCurrency">INR</span>
+          <span id="viewFilterSummary">All data</span>
+        </div>
+      </section>
+
+      <section id="viewKpiContainer" class="hxl-view-kpis"></section>
+
+      <div class="hxl-view-content-grid">
+
+        <section class="hxl-view-card">
+          <div class="hxl-view-section-head">
+            <h2>Slicers</h2>
+            <span id="viewSlicerCount">0</span>
+          </div>
+
+          <div id="viewSlicerContainer"></div>
+        </section>
+
+        <section class="hxl-view-card">
+          <div class="hxl-view-section-head">
+            <h2>Charts</h2>
+            <span id="viewChartCount">0</span>
+          </div>
+
+          <div id="viewChartContainer"></div>
+        </section>
+
+      </div>
+
+      <section class="hxl-view-card hxl-view-table-card">
+        <div class="hxl-view-section-head">
+          <h2>Smart Tables</h2>
+          <span id="viewTableCount">0</span>
+        </div>
+
+        <div id="viewTableContainer"></div>
+      </section>
+
+      <section id="viewEmptyState" hidden>
+        <h2>Dashboard data is not available</h2>
+        <p>Open the dashboard from Power Dashboard Studio.</p>
+
+        <button id="emptyEditDashboardBtn" type="button">
+          Open Studio
+        </button>
+      </section>
+
+    </main>
+  </div>
+</body>
+</html>

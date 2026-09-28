@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AI Formula</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: #6b7280;
+      line-height: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    textarea,
+    input[type="text"] {
+      width: 100%;
+      padding: 11px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .range-box {
+      padding: 11px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafafa;
+      font-size: 14px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #refreshBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    #generateBtn {
+      flex: 1;
+      background: #217346;
+      color: white;
+    }
+
+    #insertBtn {
+      background: #2563eb;
+      color: white;
+    }
+
+    button:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      line-height: 20px;
+      white-space: pre-line;
+    }
+
+    #resultBox {
+      display: none;
+      margin-top: 14px;
+      padding: 12px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #ffffff;
+      font-family: Consolas, monospace;
+      font-size: 13px;
+      line-height: 19px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>AI Formula</h1>
+
+      <p class="subtitle">
+        Describe what you want to calculate and generate an Excel formula.
+      </p>
+
+
+      <div class="section">
+
+        <div class="label">
+          Selected Excel Range
+        </div>
+
+        <div
+          id="selectedRangeBox"
+          class="range-box">
+          Reading selection...
+        </div>
+
+      </div>
+
+
+      <div class="section">
+
+        <label
+          class="label"
+          for="promptInput">
+          What do you want to calculate?
+        </label>
+
+        <textarea
+          id="promptInput"
+          placeholder="Example: Calculate total sales by multiplying Quantity by Price for the current row."></textarea>
+
+      </div>
+
+
+      <div class="section">
+
+        <label
+          class="label"
+          for="formulaOutput">
+          Generated Formula
+        </label>
+
+        <input
+          id="formulaOutput"
+          type="text"
+          readonly
+          placeholder="Generated formula will appear here"
+        >
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          id="refreshBtn"
+          type="button">
+          Refresh Selection
+        </button>
+
+        <button
+          id="generateBtn"
+          type="button">
+          Generate Formula
+        </button>
+
+        <button
+          id="insertBtn"
+          type="button"
+          disabled>
+          Insert Formula
+        </button>
+
+      </div>
+
+
+      <div id="status">
+        Reading workbook...
+      </div>
+
+
+      <div id="resultBox"></div>
+
+
+      <div class="note">
+        The generated formula should always be reviewed before inserting it into the workbook.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,1993 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="TaskPaneApp">
+
+  <Id>7b23a408-7593-4ab6-b26b-48ada7ff1a08</Id>
+  <Version>1.0.0.7</Version>
+  <ProviderName>Himanshu</ProviderName>
+  <DefaultLocale>en-US</DefaultLocale>
+
+  <DisplayName DefaultValue="Himanshu XL Tools"/>
+  <Description DefaultValue="Smart Excel Productivity Toolkit"/>
+
+  <IconUrl DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-32.png"/>
+<HighResolutionIconUrl DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-80.png"/>
+  
+  <SupportUrl DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html"/>
+
+  <AppDomains>
+    <AppDomain>https://restless-shape-bea9.himanshuchinchekar25.workers.dev</AppDomain>
+  </AppDomains>
+
+  <Hosts>
+    <Host Name="Workbook"/>
+  </Hosts>
+
+  <DefaultSettings>
+    <SourceLocation DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html"/>
+  </DefaultSettings>
+
+  <Permissions>ReadWriteDocument</Permissions>
+
+  <VersionOverrides
+  xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides"
+  xsi:type="VersionOverridesV1_0">
+
+  <Description resid="GetStarted.Description"/>
+
+  <Requirements>
+    <bt:Sets DefaultMinVersion="1.3">
+      <bt:Set Name="ExcelApi"/>
+    </bt:Sets>
+  </Requirements>
+
+  <Hosts>
+
+    <Host xsi:type="Workbook">
+
+      <DesktopFormFactor>
+
+        <GetStarted>
+
+          <Title resid="GetStarted.Title"/>
+
+          <Description resid="GetStarted.Description"/>
+
+          <LearnMoreUrl resid="LearnMore.Url"/>
+
+        </GetStarted>
+        <FunctionFile resid="Commands.Url"/>
+
+        <ExtensionPoint
+          xsi:type="PrimaryCommandSurface">
+
+          <CustomTab id="HimanshuXLTools.Tab">
+
+  <!-- ============================= -->
+  <!-- DATA TOOLS -->
+  <!-- ============================= -->
+
+  <Group id="DataToolsGroup">
+
+    <Label resid="DataTools.GroupLabel"/>
+      <Icon>
+  <bt:Image size="16" resid="DataToolsGroup.16"/>
+  <bt:Image size="32" resid="DataToolsGroup.32"/>
+  <bt:Image size="80" resid="DataToolsGroup.80"/>
+    </Icon>
+    
+    <!-- SORT & FILTER -->
+
+    <Control
+  xsi:type="Button"
+  id="DataTools.SortFilter">
+
+  <Label resid="DataTools.SortFilter.Label"/>
+
+  <Supertip>
+    <Title resid="DataTools.SortFilter.Label"/>
+    <Description resid="DT.Sort.Tooltip"/>
+  </Supertip>
+
+  <Icon>
+    <bt:Image size="16" resid="SortFilter.16"/>
+    <bt:Image size="32" resid="SortFilter.32"/>
+    <bt:Image size="80" resid="SortFilter.80"/>
+  </Icon>
+
+  <Action xsi:type="ExecuteFunction">
+    <FunctionName>activateFilter</FunctionName>
+  </Action>
+
+</Control>
+
+
+    <!-- REMOVE DUPLICATES -->
+
+    <Control
+      xsi:type="Button"
+      id="DataTools.RemoveDuplicates">
+
+      <Label resid="DataTools.RemoveDuplicates.Label"/>
+
+      <Supertip>
+        <Title resid="DataTools.RemoveDuplicates.Label"/>
+        <Description resid="DT.Duplicates.Tooltip"/>
+      </Supertip>
+
+      <Icon>
+  <bt:Image size="16" resid="RemoveDuplicates.16"/>
+  <bt:Image size="32" resid="RemoveDuplicates.32"/>
+  <bt:Image size="80" resid="RemoveDuplicates.80"/>
+</Icon>
+
+      <Action xsi:type="ExecuteFunction">
+    <FunctionName>removeDuplicates</FunctionName>
+</Action>
+
+    </Control>
+
+
+    <!-- TEXT TO COLUMNS -->
+
+    <Control
+      xsi:type="Button"
+      id="DataTools.TextColumns">
+
+      <Label resid="DataTools.TextColumns.Label"/>
+
+      <Supertip>
+        <Title resid="DataTools.TextColumns.Label"/>
+        <Description resid="DT.TextColumns.Tooltip"/>
+      </Supertip>
+
+      
+        <Icon>
+  <bt:Image size="16" resid="TextColumns.16"/>
+  <bt:Image size="32" resid="TextColumns.32"/>
+  <bt:Image size="80" resid="TextColumns.80"/>
+</Icon>
+
+      <Action xsi:type="ExecuteFunction">
+  <FunctionName>textColumnsInfo</FunctionName>
+</Action>
+
+    </Control>
+
+
+    <!-- FLASH FILL -->
+
+    <Control
+      xsi:type="Button"
+      id="DataTools.FlashFill">
+
+      <Label resid="DataTools.FlashFill.Label"/>
+
+      <Supertip>
+        <Title resid="DataTools.FlashFill.Label"/>
+        <Description resid="DT.FlashFill.Tooltip"/>
+      </Supertip>
+
+      <Icon>
+  <bt:Image size="16" resid="FlashFill.16"/>
+  <bt:Image size="32" resid="FlashFill.32"/>
+  <bt:Image size="80" resid="FlashFill.80"/>
+</Icon>
+
+      <Action xsi:type="ExecuteFunction">
+    <FunctionName>flashFillInfo</FunctionName>
+</Action>
+
+    </Control>
+
+  </Group>
+
+
+  <Group id="AnalysisGroup">
+
+  <Label resid="Analysis.GroupLabel"/>
+  <Icon>
+  <bt:Image size="16" resid="Charts.16"/>
+  <bt:Image size="32" resid="Charts.32"/>
+  <bt:Image size="80" resid="Charts.80"/>
+</Icon>
+  <Control xsi:type="Button" id="Analysis.Dashboard">
+
+    <Label resid="Analysis.Dashboard.Label"/>
+
+    <Supertip>
+      <Title resid="Analysis.Dashboard.Label"/>
+      <Description resid="Analysis.Dashboard.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+  <bt:Image size="16" resid="Dashboard.16"/>
+  <bt:Image size="32" resid="Dashboard.32"/>
+  <bt:Image size="80" resid="Dashboard.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>dashboardInfo</FunctionName>
+</Action>
+
+  </Control>
+
+  <Control xsi:type="Button" id="Analysis.KPI">
+
+    <Label resid="Analysis.KPI.Label"/>
+
+    <Supertip>
+      <Title resid="Analysis.KPI.Label"/>
+      <Description resid="Analysis.KPI.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+  <bt:Image size="16" resid="KPI.16"/>
+  <bt:Image size="32" resid="KPI.32"/>
+  <bt:Image size="80" resid="KPI.80"/>
+</Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>createKPI</FunctionName>
+</Action>
+
+  </Control>
+
+  <Control xsi:type="Button" id="Analysis.Pivot">
+
+    <Label resid="Analysis.Pivot.Label"/>
+
+    <Supertip>
+      <Title resid="Analysis.Pivot.Label"/>
+      <Description resid="Analysis.Pivot.Tooltip"/>
+    </Supertip>
+
+     <Icon>
+  <bt:Image size="16" resid="Pivot.16"/>
+  <bt:Image size="32" resid="Pivot.32"/>
+  <bt:Image size="80" resid="Pivot.80"/>
+</Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>pivotInfo</FunctionName>
+</Action>
+
+  </Control>
+
+  <Control xsi:type="Button" id="Analysis.Charts">
+
+    <Label resid="Analysis.Charts.Label"/>
+
+    <Supertip>
+      <Title resid="Analysis.Charts.Label"/>
+      <Description resid="Analysis.Charts.Tooltip"/>
+    </Supertip>
+
+     <Icon>
+  <bt:Image size="16" resid="Charts.16"/>
+  <bt:Image size="32" resid="Charts.32"/>
+  <bt:Image size="80" resid="Charts.80"/>
+</Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>createChart</FunctionName>
+</Action>
+
+  </Control>
+
+</Group>
+
+
+<!-- ============================= -->
+<!-- LOOKUP & FORMULA -->
+<!-- ============================= -->
+
+<Group id="LookupFormulaGroup">
+
+  <Label resid="LookupFormula.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="XLOOKUP.16"/>
+    <bt:Image size="32" resid="XLOOKUP.32"/>
+    <bt:Image size="80" resid="XLOOKUP.80"/>
+  </Icon>
+
+  <!-- XLOOKUP -->
+
+  <Control
+    xsi:type="Button"
+    id="LookupFormula.XLOOKUP">
+
+    <Label resid="LookupFormula.XLOOKUP.Label"/>
+
+    <Supertip>
+      <Title resid="LookupFormula.XLOOKUP.Label"/>
+      <Description resid="LookupFormula.XLOOKUP.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="XLOOKUP.16"/>
+      <bt:Image size="32" resid="XLOOKUP.32"/>
+      <bt:Image size="80" resid="XLOOKUP.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>xlookupInfo</FunctionName>
+</Action>
+
+  </Control>
+
+
+  <!-- VLOOKUP -->
+
+  <Control
+    xsi:type="Button"
+    id="LookupFormula.VLOOKUP">
+
+    <Label resid="LookupFormula.VLOOKUP.Label"/>
+
+    <Supertip>
+      <Title resid="LookupFormula.VLOOKUP.Label"/>
+      <Description resid="LookupFormula.VLOOKUP.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="VLOOKUP.16"/>
+      <bt:Image size="32" resid="VLOOKUP.32"/>
+      <bt:Image size="80" resid="VLOOKUP.80"/>
+    </Icon>
+
+     <Action xsi:type="ExecuteFunction">
+  <FunctionName>vlookupInfo</FunctionName>
+</Action>
+
+  </Control>
+
+
+  <!-- SUMIFS -->
+
+  <Control
+    xsi:type="Button"
+    id="LookupFormula.SUMIFS">
+
+    <Label resid="LookupFormula.SUMIFS.Label"/>
+
+    <Supertip>
+      <Title resid="LookupFormula.SUMIFS.Label"/>
+      <Description resid="LookupFormula.SUMIFS.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="SUMIFS.16"/>
+      <bt:Image size="32" resid="SUMIFS.32"/>
+      <bt:Image size="80" resid="SUMIFS.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>sumifsInfo</FunctionName>
+</Action>
+
+  </Control>
+
+
+  <!-- COUNTIFS -->
+
+  <Control
+    xsi:type="Button"
+    id="LookupFormula.COUNTIFS">
+
+    <Label resid="LookupFormula.COUNTIFS.Label"/>
+
+    <Supertip>
+      <Title resid="LookupFormula.COUNTIFS.Label"/>
+      <Description resid="LookupFormula.COUNTIFS.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="COUNTIFS.16"/>
+      <bt:Image size="32" resid="COUNTIFS.32"/>
+      <bt:Image size="80" resid="COUNTIFS.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>countifsInfo</FunctionName>
+</Action>
+
+  </Control>
+
+</Group>
+
+
+
+  
+
+  <!-- ============================= -->
+<!-- EXCEL FORMATTING -->
+<!-- ============================= -->
+
+<Group id="ExcelFormattingGroup">
+
+  <Label resid="ExcelFormatting.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="ConditionalFormatting.16"/>
+    <bt:Image size="32" resid="ConditionalFormatting.32"/>
+    <bt:Image size="80" resid="ConditionalFormatting.80"/>
+  </Icon>
+
+  <!-- CONDITIONAL FORMATTING -->
+
+  <Control
+    xsi:type="Button"
+    id="ExcelFormatting.ConditionalFormatting">
+
+    <Label resid="EF.Conditional.Label"/>
+
+<Supertip>
+  <Title resid="EF.Conditional.Label"/>
+  <Description resid="EF.Conditional.Tip"/>
+</Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="ConditionalFormatting.16"/>
+      <bt:Image size="32" resid="ConditionalFormatting.32"/>
+      <bt:Image size="80" resid="ConditionalFormatting.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+    <FunctionName>conditionalFormatting</FunctionName>
+</Action>
+
+  </Control>
+
+
+  <!-- DATA VALIDATION -->
+
+  <Control
+    xsi:type="Button"
+    id="ExcelFormatting.DataValidation">
+
+    <Label resid="EF.Validation.Label"/>
+
+    <Supertip>
+      <Title resid="EF.Validation.Label"/>
+      <Description resid="EF.Validation.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="DataValidation.16"/>
+      <bt:Image size="32" resid="DataValidation.32"/>
+      <bt:Image size="80" resid="DataValidation.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+  <FunctionName>validationInfo</FunctionName>
+</Action>
+
+  </Control>
+
+
+  <!-- FREEZE PANES -->
+
+  <Control
+    xsi:type="Button"
+    id="ExcelFormatting.FreezePanes">
+
+    <Label resid="EF.Freeze.Label"/>
+
+    <Supertip>
+      <Title resid="EF.Freeze.Label"/>
+      <Description resid="EF.Freeze.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="FreezePanes.16"/>
+      <bt:Image size="32" resid="FreezePanes.32"/>
+      <bt:Image size="80" resid="FreezePanes.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+    <FunctionName>freezeTopRow</FunctionName>
+</Action>
+
+  </Control>
+
+
+  <!-- EXCEL TABLE -->
+
+  <Control
+    xsi:type="Button"
+    id="ExcelFormatting.ExcelTable">
+
+    <Label resid="EF.Table.Label"/>
+
+    <Supertip>
+      <Title resid="EF.Table.Label"/>
+      <Description resid="EF.Table.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="ExcelTable.16"/>
+      <bt:Image size="32" resid="ExcelTable.32"/>
+      <bt:Image size="80" resid="ExcelTable.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+    <FunctionName>createTable</FunctionName>
+</Action>
+
+  </Control>
+
+    </Group>   <!-- ExcelFormattingGroup end -->
+
+
+<!-- ============================= -->
+<!-- SMART VISUAL -->
+<!-- ============================= -->
+
+<Group id="SmartVisualGroup">
+
+  <Label resid="SmartVisual.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="SmartChart.16"/>
+    <bt:Image size="32" resid="SmartChart.32"/>
+    <bt:Image size="80" resid="SmartChart.80"/>
+  </Icon>
+
+
+  <!-- SMART CHART -->
+
+  <Control
+    xsi:type="Button"
+    id="SmartVisual.SmartChart">
+
+    <Label resid="SmartVisual.SmartChart.Label"/>
+
+    <Supertip>
+      <Title resid="SmartVisual.SmartChart.Label"/>
+      <Description resid="SmartVisual.SmartChart.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="SmartChart.16"/>
+      <bt:Image size="32" resid="SmartChart.32"/>
+      <bt:Image size="80" resid="SmartChart.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>smartChartInfo</FunctionName>
+    </Action>
+
+  </Control>
+
+
+  <!-- POWER DASHBOARD -->
+
+  <Control
+    xsi:type="Button"
+    id="SmartVisual.PowerDashboard">
+
+    <Label resid="SmartVisual.PowerDashboard.Label"/>
+
+    <Supertip>
+      <Title resid="SmartVisual.PowerDashboard.Label"/>
+      <Description resid="SmartVisual.PowerDashboard.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="PowerDashboard.16"/>
+      <bt:Image size="32" resid="PowerDashboard.32"/>
+      <bt:Image size="80" resid="PowerDashboard.80"/>
+    </Icon>
+
+    <Action xsi:type="ExecuteFunction">
+      <FunctionName>openPowerDashboardStudio</FunctionName>
+    </Action>
+
+  </Control>
+
+</Group>
+
+<!-- ============================= -->
+<!-- FILE TOOLS -->
+<!-- ============================= -->
+
+<Group id="FileToolsGroup">
+
+  <Label resid="FileTools.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="MergeFiles.16"/>
+    <bt:Image size="32" resid="MergeFiles.32"/>
+    <bt:Image size="80" resid="MergeFiles.80"/>
+  </Icon>
+
+  <Control
+    xsi:type="Menu"
+    id="FileTools.Menu">
+
+    <Label resid="FileTools.GroupLabel"/>
+
+    <Supertip>
+      <Title resid="FileTools.GroupLabel"/>
+      <Description resid="FileTools.Menu.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="MergeFiles.16"/>
+      <bt:Image size="32" resid="MergeFiles.32"/>
+      <bt:Image size="80" resid="MergeFiles.80"/>
+    </Icon>
+
+    <Items>
+
+      <!-- MERGE FILES -->
+
+      <Item id="FileTools.Menu.MergeFiles">
+
+        <Label resid="FileTools.MergeFiles.Label"/>
+
+        <Supertip>
+          <Title resid="FileTools.MergeFiles.Label"/>
+          <Description resid="FileTools.MergeFiles.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="MergeFiles.16"/>
+          <bt:Image size="32" resid="MergeFiles.32"/>
+          <bt:Image size="80" resid="MergeFiles.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+          <FunctionName>openMergeFilesDialog</FunctionName>
+        </Action>
+
+      </Item>
+
+
+      <!-- SPLIT WORKBOOK -->
+
+      <Item id="FileTools.Menu.SplitWorkbook">
+
+        <Label resid="FileTools.SplitWorkbook.Label"/>
+
+        <Supertip>
+          <Title resid="FileTools.SplitWorkbook.Label"/>
+          <Description resid="FileTools.SplitWorkbook.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="SplitWorkbook.16"/>
+          <bt:Image size="32" resid="SplitWorkbook.32"/>
+          <bt:Image size="80" resid="SplitWorkbook.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openSplitWorkbookDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- EXPORT PDF -->
+
+      <Item id="FileTools.Menu.ExportPDF">
+
+        <Label resid="FileTools.ExportPDF.Label"/>
+
+        <Supertip>
+          <Title resid="FileTools.ExportPDF.Label"/>
+          <Description resid="FileTools.ExportPDF.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="ExportPDF.16"/>
+          <bt:Image size="32" resid="ExportPDF.32"/>
+          <bt:Image size="80" resid="ExportPDF.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openExportPdfDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- BATCH RENAME -->
+
+      <Item id="FileTools.Menu.BatchRename">
+
+        <Label resid="FileTools.BatchRename.Label"/>
+
+        <Supertip>
+          <Title resid="FileTools.BatchRename.Label"/>
+          <Description resid="FileTools.BatchRename.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="BatchRename.16"/>
+          <bt:Image size="32" resid="BatchRename.32"/>
+          <bt:Image size="80" resid="BatchRename.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openBatchRenameDialog</FunctionName>
+</Action>
+
+      </Item>
+
+    </Items>
+
+  </Control>
+
+</Group>
+
+
+<!-- ============================= -->
+<!-- SHEET / WORKBOOK TOOLS -->
+<!-- ============================= -->
+
+<Group id="SheetWorkbookGroup">
+
+  <Label resid="SW.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="HideUnhideSheets.16"/>
+    <bt:Image size="32" resid="HideUnhideSheets.32"/>
+    <bt:Image size="80" resid="HideUnhideSheets.80"/>
+  </Icon>
+
+  <Control
+    xsi:type="Menu"
+    id="SheetWorkbook.Menu">
+
+    <Label resid="SW.GroupLabel"/>
+
+    <Supertip>
+      <Title resid="SW.GroupLabel"/>
+      <Description resid="SW.Menu.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="HideUnhideSheets.16"/>
+      <bt:Image size="32" resid="HideUnhideSheets.32"/>
+      <bt:Image size="80" resid="HideUnhideSheets.80"/>
+    </Icon>
+
+    <Items>
+
+      <Item id="SheetWorkbook.Menu.HideUnhide">
+
+        <Label resid="SW.HideUnhide.Label"/>
+
+        <Supertip>
+          <Title resid="SW.HideUnhide.Label"/>
+          <Description resid="SW.HideUnhide.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="HideUnhideSheets.16"/>
+          <bt:Image size="32" resid="HideUnhideSheets.32"/>
+          <bt:Image size="80" resid="HideUnhideSheets.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openHideUnhideSheetsDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <Item id="SheetWorkbook.Menu.Protect">
+
+        <Label resid="SW.Protect.Label"/>
+
+        <Supertip>
+          <Title resid="SW.Protect.Label"/>
+          <Description resid="SW.Protect.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="ProtectSheet.16"/>
+          <bt:Image size="32" resid="ProtectSheet.32"/>
+          <bt:Image size="80" resid="ProtectSheet.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openProtectSheetDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <Item id="SheetWorkbook.Menu.Rename">
+
+        <Label resid="SW.Rename.Label"/>
+
+        <Supertip>
+          <Title resid="SW.Rename.Label"/>
+          <Description resid="SW.Rename.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="RenameSheets.16"/>
+          <bt:Image size="32" resid="RenameSheets.32"/>
+          <bt:Image size="80" resid="RenameSheets.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openRenameSheetsDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <Item id="SheetWorkbook.Menu.CopyMove">
+
+        <Label resid="SW.CopyMove.Label"/>
+
+        <Supertip>
+          <Title resid="SW.CopyMove.Label"/>
+          <Description resid="SW.CopyMove.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="CopyMoveSheet.16"/>
+          <bt:Image size="32" resid="CopyMoveSheet.32"/>
+          <bt:Image size="80" resid="CopyMoveSheet.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openCopyMoveSheetDialog</FunctionName>
+</Action>
+
+      </Item>
+
+    </Items>
+
+  </Control>
+
+</Group>
+
+<!-- ============================= -->
+<!-- AUTOMATION -->
+<!-- ============================= -->
+
+<Group id="AutomationGroup">
+
+  <Label resid="Automation.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="QuickClean.16"/>
+    <bt:Image size="32" resid="QuickClean.32"/>
+    <bt:Image size="80" resid="QuickClean.80"/>
+  </Icon>
+
+  <Control
+    xsi:type="Menu"
+    id="Automation.Menu">
+
+    <Label resid="Automation.GroupLabel"/>
+
+    <Supertip>
+      <Title resid="Automation.GroupLabel"/>
+      <Description resid="Automation.Menu.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="QuickClean.16"/>
+      <bt:Image size="32" resid="QuickClean.32"/>
+      <bt:Image size="80" resid="QuickClean.80"/>
+    </Icon>
+
+    <Items>
+
+      <!-- QUICK CLEAN -->
+
+      <Item id="Automation.Menu.QuickClean">
+
+        <Label resid="Automation.QuickClean.Label"/>
+
+        <Supertip>
+          <Title resid="Automation.QuickClean.Label"/>
+          <Description resid="Automation.QuickClean.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="QuickClean.16"/>
+          <bt:Image size="32" resid="QuickClean.32"/>
+          <bt:Image size="80" resid="QuickClean.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openQuickCleanDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- FILL BLANKS -->
+
+      <Item id="Automation.Menu.FillBlanks">
+
+        <Label resid="Automation.FillBlanks.Label"/>
+
+        <Supertip>
+          <Title resid="Automation.FillBlanks.Label"/>
+          <Description resid="Automation.FillBlanks.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="FillBlanks.16"/>
+          <bt:Image size="32" resid="FillBlanks.32"/>
+          <bt:Image size="80" resid="FillBlanks.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openFillBlanksDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- FORMULA TOOLS -->
+
+      <Item id="Automation.Menu.FormulaTools">
+
+        <Label resid="Automation.FormulaTools.Label"/>
+
+        <Supertip>
+          <Title resid="Automation.FormulaTools.Label"/>
+          <Description resid="Automation.FormulaTools.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="FormulaTools.16"/>
+          <bt:Image size="32" resid="FormulaTools.32"/>
+          <bt:Image size="80" resid="FormulaTools.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openFormulaToolsDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- AUTO REFRESH -->
+
+      <Item id="Automation.Menu.AutoRefresh">
+
+        <Label resid="Automation.AutoRefresh.Label"/>
+
+        <Supertip>
+          <Title resid="Automation.AutoRefresh.Label"/>
+          <Description resid="Automation.AutoRefresh.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="AutoRefresh.16"/>
+          <bt:Image size="32" resid="AutoRefresh.32"/>
+          <bt:Image size="80" resid="AutoRefresh.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openAutoRefreshDialog</FunctionName>
+</Action>
+
+      </Item>
+
+    </Items>
+
+  </Control>
+
+</Group>
+
+  <!-- ============================= -->
+<!-- AI TOOLS -->
+<!-- ============================= -->
+
+<!-- ============================= -->
+<!-- AI TOOLS -->
+<!-- ============================= -->
+
+<Group id="AIToolsGroup">
+
+  <Label resid="AITools.GroupLabel"/>
+
+  <Icon>
+    <bt:Image size="16" resid="AIFormula.16"/>
+    <bt:Image size="32" resid="AIFormula.32"/>
+    <bt:Image size="80" resid="AIFormula.80"/>
+  </Icon>
+
+  <Control
+    xsi:type="Menu"
+    id="AITools.Menu">
+
+    <Label resid="AITools.GroupLabel"/>
+
+    <Supertip>
+      <Title resid="AITools.GroupLabel"/>
+      <Description resid="AITools.Menu.Tip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="AIFormula.16"/>
+      <bt:Image size="32" resid="AIFormula.32"/>
+      <bt:Image size="80" resid="AIFormula.80"/>
+    </Icon>
+
+    <Items>
+
+      <!-- AI FORMULA -->
+
+      <Item id="AITools.Menu.Formula">
+
+        <Label resid="AITools.Formula.Label"/>
+
+        <Supertip>
+          <Title resid="AITools.Formula.Label"/>
+          <Description resid="AITools.Formula.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="AIFormula.16"/>
+          <bt:Image size="32" resid="AIFormula.32"/>
+          <bt:Image size="80" resid="AIFormula.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openAIFormulaDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- EXPLAIN FORMULA -->
+
+      <Item id="AITools.Menu.ExplainFormula">
+
+        <Label resid="AITools.Explain.Label"/>
+
+        <Supertip>
+          <Title resid="AITools.Explain.Label"/>
+          <Description resid="AITools.Explain.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="ExplainFormula.16"/>
+          <bt:Image size="32" resid="ExplainFormula.32"/>
+          <bt:Image size="80" resid="ExplainFormula.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openExplainFormulaDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- FIX FORMULA -->
+
+      <Item id="AITools.Menu.FixFormula">
+
+        <Label resid="AITools.Fix.Label"/>
+
+        <Supertip>
+          <Title resid="AITools.Fix.Label"/>
+          <Description resid="AITools.Fix.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="FixFormula.16"/>
+          <bt:Image size="32" resid="FixFormula.32"/>
+          <bt:Image size="80" resid="FixFormula.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openFixFormulaDialog</FunctionName>
+</Action>
+
+      </Item>
+
+
+      <!-- AI ANALYSIS -->
+
+      <Item id="AITools.Menu.Analysis">
+
+        <Label resid="AITools.Analysis.Label"/>
+
+        <Supertip>
+          <Title resid="AITools.Analysis.Label"/>
+          <Description resid="AITools.Analysis.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="AIAnalysis.16"/>
+          <bt:Image size="32" resid="AIAnalysis.32"/>
+          <bt:Image size="80" resid="AIAnalysis.80"/>
+        </Icon>
+
+        <Action xsi:type="ExecuteFunction">
+  <FunctionName>openAIAnalysisDialog</FunctionName>
+</Action>
+
+      </Item>
+
+    </Items>
+
+  </Control>
+
+</Group>
+
+
+
+<!-- ============================= -->
+<!-- TOOLS / LICENSING -->
+<!-- ============================= -->
+
+<Group id="ToolsGroup">
+  <Label resid="Tools.Group"/>
+
+  <Icon>
+    <bt:Image size="16" resid="Icon.16x16"/>
+    <bt:Image size="32" resid="Icon.32x32"/>
+    <bt:Image size="80" resid="Icon.80x80"/>
+  </Icon>
+
+  <Control xsi:type="Menu" id="Tools.Menu">
+    <Label resid="Tools.Button"/>
+
+    <Supertip>
+      <Title resid="Tools.Button"/>
+      <Description resid="Tools.Tooltip"/>
+    </Supertip>
+
+    <Icon>
+      <bt:Image size="16" resid="Icon.16x16"/>
+      <bt:Image size="32" resid="Icon.32x32"/>
+      <bt:Image size="80" resid="Icon.80x80"/>
+    </Icon>
+
+    <Items>
+      <Item id="Tools.Menu.ActivateLicense">
+        <Label resid="License.Activate.Label"/>
+
+        <Supertip>
+          <Title resid="License.Activate.Label"/>
+          <Description resid="License.Activate.Tip"/>
+        </Supertip>
+
+        <Icon>
+          <bt:Image size="16" resid="AIFormula.16"/>
+          <bt:Image size="32" resid="AIFormula.32"/>
+          <bt:Image size="80" resid="AIFormula.80"/>
+        </Icon>
+
+        <Action xsi:type="ShowTaskpane">
+          <TaskpaneId>HimanshuXLTools.LicensePane</TaskpaneId>
+          <SourceLocation resid="Taskpane.Url"/>
+        </Action>
+      </Item>
+    </Items>
+  </Control>
+</Group>
+<Label resid="HimanshuXLTools.TabLabel"/>
+
+</CustomTab>
+
+        </ExtensionPoint>
+
+      </DesktopFormFactor>
+
+    </Host>
+
+  </Hosts>
+
+ <Resources>
+
+  <bt:Images>
+
+  <!-- ============================= -->
+<!-- AI TOOLS ICONS -->
+<!-- ============================= -->
+
+<bt:Image
+  id="AIFormula.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-formula-16.png"/>
+
+<bt:Image
+  id="AIFormula.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-formula-32.png"/>
+
+<bt:Image
+  id="AIFormula.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-formula-80.png"/>
+
+
+<bt:Image
+  id="ExplainFormula.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/explain-formula-16.png"/>
+
+<bt:Image
+  id="ExplainFormula.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/explain-formula-32.png"/>
+
+<bt:Image
+  id="ExplainFormula.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/explain-formula-80.png"/>
+
+
+<bt:Image
+  id="FixFormula.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/fix-formula-16.png"/>
+
+<bt:Image
+  id="FixFormula.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/fix-formula-32.png"/>
+
+<bt:Image
+  id="FixFormula.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/fix-formula-80.png"/>
+
+
+<bt:Image
+  id="AIAnalysis.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-analysis-16.png"/>
+
+<bt:Image
+  id="AIAnalysis.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-analysis-32.png"/>
+
+<bt:Image
+  id="AIAnalysis.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/ai-tools/ai-analysis-80.png"/>
+
+  <!-- ============================= -->
+<!-- AUTOMATION ICONS -->
+<!-- ============================= -->
+
+<bt:Image
+  id="QuickClean.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/quick-clean-16.png"/>
+
+<bt:Image
+  id="QuickClean.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/quick-clean-32.png"/>
+
+<bt:Image
+  id="QuickClean.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/quick-clean-80.png"/>
+
+
+<bt:Image
+  id="FillBlanks.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/fill-blanks-16.png"/>
+
+<bt:Image
+  id="FillBlanks.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/fill-blanks-32.png"/>
+
+<bt:Image
+  id="FillBlanks.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/fill-blanks-80.png"/>
+
+
+<bt:Image
+  id="FormulaTools.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/formula-tools-16.png"/>
+
+<bt:Image
+  id="FormulaTools.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/formula-tools-32.png"/>
+
+<bt:Image
+  id="FormulaTools.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/formula-tools-80.png"/>
+
+
+<bt:Image
+  id="AutoRefresh.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/auto-refresh-16.png"/>
+
+<bt:Image
+  id="AutoRefresh.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/auto-refresh-32.png"/>
+
+<bt:Image
+  id="AutoRefresh.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/automation/auto-refresh-80.png"/>
+
+
+  <!-- SHEET / WORKBOOK TOOLS ICONS -->
+
+<bt:Image
+  id="HideUnhideSheets.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/hide-unhide-sheets-16.png"/>
+
+<bt:Image
+  id="HideUnhideSheets.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/hide-unhide-sheets-32.png"/>
+
+<bt:Image
+  id="HideUnhideSheets.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/hide-unhide-sheets-80.png"/>
+
+
+<bt:Image
+  id="ProtectSheet.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/protect-sheet-16.png"/>
+
+<bt:Image
+  id="ProtectSheet.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/protect-sheet-32.png"/>
+
+<bt:Image
+  id="ProtectSheet.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/protect-sheet-80.png"/>
+
+
+<bt:Image
+  id="RenameSheets.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/rename-sheets-16.png"/>
+
+<bt:Image
+  id="RenameSheets.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/rename-sheets-32.png"/>
+
+<bt:Image
+  id="RenameSheets.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/rename-sheets-80.png"/>
+
+
+<bt:Image
+  id="CopyMoveSheet.16"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/copy-move-sheet-16.png"/>
+
+<bt:Image
+  id="CopyMoveSheet.32"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/copy-move-sheet-32.png"/>
+
+<bt:Image
+  id="CopyMoveSheet.80"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/sheet-workbook/copy-move-sheet-80.png"/>
+
+    <!-- COMMON ICONS -->
+
+    <bt:Image id="Icon.16x16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-16.png"/>
+
+    <bt:Image id="Icon.32x32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-32.png"/>
+
+    <bt:Image id="Icon.80x80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-80.png"/>
+
+
+    <!-- DATA TOOLS ICONS -->
+
+    <bt:Image id="DataToolsGroup.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-16.png"/>
+
+    <bt:Image id="DataToolsGroup.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-32.png"/>
+
+    <bt:Image id="DataToolsGroup.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/common/icon-80.png"/>
+
+    <bt:Image id="SortFilter.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/sort-filter-16.png"/>
+
+    <bt:Image id="SortFilter.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/sort-filter-32.png"/>
+
+    <bt:Image id="SortFilter.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/sort-filter-80.png"/>
+
+    <bt:Image id="RemoveDuplicates.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/remove-duplicates-16.png"/>
+
+    <bt:Image id="RemoveDuplicates.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/remove-duplicates-32.png"/>
+
+    <bt:Image id="RemoveDuplicates.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/remove-duplicates-80.png"/>
+
+    <bt:Image id="TextColumns.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/text-columns-16.png"/>
+
+    <bt:Image id="TextColumns.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/text-columns-32.png"/>
+
+    <bt:Image id="TextColumns.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/text-columns-80.png"/>
+
+    <bt:Image id="FlashFill.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/flash-fill-16.png"/>
+
+    <bt:Image id="FlashFill.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/flash-fill-32.png"/>
+
+    <bt:Image id="FlashFill.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/data-tools/flash-fill-80.png"/>
+
+
+    <!-- ANALYSIS ICONS -->
+
+    <bt:Image id="Dashboard.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/dashboard-16.png"/>
+
+    <bt:Image id="Dashboard.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/dashboard-32.png"/>
+
+    <bt:Image id="Dashboard.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/dashboard-80.png"/>
+
+    <bt:Image id="KPI.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/kpi-cards-16.png"/>
+
+    <bt:Image id="KPI.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/kpi-cards-32.png"/>
+
+    <bt:Image id="KPI.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/kpi-cards-80.png"/>
+
+    <bt:Image id="Pivot.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/pivot-table-16.png"/>
+
+    <bt:Image id="Pivot.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/pivot-table-32.png"/>
+
+    <bt:Image id="Pivot.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/pivot-table-80.png"/>
+
+    <bt:Image id="Charts.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/charts-16.png"/>
+
+    <bt:Image id="Charts.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/charts-32.png"/>
+
+    <bt:Image id="Charts.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/analysis/charts-80.png"/>
+
+
+    <!-- LOOKUP & FORMULA ICONS -->
+
+    <bt:Image id="XLOOKUP.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/xlookup-16.png"/>
+
+    <bt:Image id="XLOOKUP.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/xlookup-32.png"/>
+
+    <bt:Image id="XLOOKUP.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/xlookup-80.png"/>
+
+    <bt:Image id="VLOOKUP.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/vlookup-16.png"/>
+
+    <bt:Image id="VLOOKUP.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/vlookup-32.png"/>
+
+    <bt:Image id="VLOOKUP.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/vlookup-80.png"/>
+
+    <bt:Image id="SUMIFS.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/sumifs-16.png"/>
+
+    <bt:Image id="SUMIFS.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/sumifs-32.png"/>
+
+    <bt:Image id="SUMIFS.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/sumifs-80.png"/>
+
+    <bt:Image id="COUNTIFS.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/countifs-16.png"/>
+
+    <bt:Image id="COUNTIFS.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/countifs-32.png"/>
+
+    <bt:Image id="COUNTIFS.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/lookup-formula/countifs-80.png"/>
+
+
+    <!-- EXCEL FORMATTING ICONS -->
+
+    <bt:Image id="ConditionalFormatting.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/conditional-formatting-16.png"/>
+
+    <bt:Image id="ConditionalFormatting.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/conditional-formatting-32.png"/>
+
+    <bt:Image id="ConditionalFormatting.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/conditional-formatting-80.png"/>
+
+    <bt:Image id="DataValidation.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/data-validation-16.png"/>
+
+    <bt:Image id="DataValidation.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/data-validation-32.png"/>
+
+    <bt:Image id="DataValidation.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/data-validation-80.png"/>
+
+    <bt:Image id="FreezePanes.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/freeze-panes-16.png"/>
+
+    <bt:Image id="FreezePanes.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/freeze-panes-32.png"/>
+
+    <bt:Image id="FreezePanes.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/freeze-panes-80.png"/>
+
+    <bt:Image id="ExcelTable.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/excel-table-16.png"/>
+
+    <bt:Image id="ExcelTable.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/excel-table-32.png"/>
+
+    <bt:Image id="ExcelTable.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/excel-formatting/excel-table-80.png"/>
+
+
+    <!-- SMART VISUAL ICONS -->
+
+    <bt:Image id="SmartChart.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/smart-chart-16.png"/>
+
+    <bt:Image id="SmartChart.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/smart-chart-32.png"/>
+
+    <bt:Image id="SmartChart.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/smart-chart-80.png"/>
+
+    <bt:Image id="PowerDashboard.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/power-dashboard-16.png"/>
+
+    <bt:Image id="PowerDashboard.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/power-dashboard-32.png"/>
+
+    <bt:Image id="PowerDashboard.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/smart-visual/power-dashboard-80.png"/>
+
+
+    <!-- FILE TOOLS ICONS -->
+
+    <bt:Image id="MergeFiles.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/merge-files-16.png"/>
+
+    <bt:Image id="MergeFiles.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/merge-files-32.png"/>
+
+    <bt:Image id="MergeFiles.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/merge-files-80.png"/>
+
+    <bt:Image id="SplitWorkbook.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/split-workbook-16.png"/>
+
+    <bt:Image id="SplitWorkbook.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/split-workbook-32.png"/>
+
+    <bt:Image id="SplitWorkbook.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/split-workbook-80.png"/>
+
+    <bt:Image id="ExportPDF.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/export-pdf-16.png"/>
+
+    <bt:Image id="ExportPDF.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/export-pdf-32.png"/>
+
+    <bt:Image id="ExportPDF.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/export-pdf-80.png"/>
+
+    <bt:Image id="BatchRename.16"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/batch-rename-16.png"/>
+
+    <bt:Image id="BatchRename.32"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/batch-rename-32.png"/>
+
+    <bt:Image id="BatchRename.80"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/assets/file-tools/batch-rename-80.png"/>
+
+  </bt:Images>
+
+
+  <bt:Urls>
+
+  
+    <bt:Url
+      id="LearnMore.Url"
+      DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+
+    <bt:Url
+      id="Taskpane.Url"
+      DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html"/>
+
+      <bt:Url
+  id="PowerDashboard.Url"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/taskpane.html?action=powerDashboard"/>
+
+      <bt:Url
+  id="Commands.Url"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/commands.html"/>
+
+  <bt:Url
+  id="MergeFiles.Url"
+  DefaultValue="https://restless-shape-bea9.himanshuchinchekar25.workers.dev/merge-files.html"/>
+
+  </bt:Urls>
+
+            
+
+  <bt:ShortStrings>
+    <bt:String id="License.Activate.Label" DefaultValue="Activate License"/>
+
+  <!-- AI TOOLS -->
+
+<bt:String
+  id="AITools.GroupLabel"
+  DefaultValue="AI Tools"/>
+
+<bt:String
+  id="AITools.Formula.Label"
+  DefaultValue="AI Formula"/>
+
+<bt:String
+  id="AITools.Explain.Label"
+  DefaultValue="Explain Formula"/>
+
+<bt:String
+  id="AITools.Fix.Label"
+  DefaultValue="Fix Formula"/>
+
+<bt:String
+  id="AITools.Analysis.Label"
+  DefaultValue="AI Analysis"/>
+
+  <!-- AUTOMATION -->
+
+<bt:String
+  id="Automation.GroupLabel"
+  DefaultValue="Automation"/>
+
+<bt:String
+  id="Automation.QuickClean.Label"
+  DefaultValue="Quick Clean"/>
+
+<bt:String
+  id="Automation.FillBlanks.Label"
+  DefaultValue="Fill Blanks"/>
+
+<bt:String
+  id="Automation.FormulaTools.Label"
+  DefaultValue="Formula Tools"/>
+
+<bt:String
+  id="Automation.AutoRefresh.Label"
+  DefaultValue="Auto Refresh"/>
+
+      <!-- SHEET / WORKBOOK TOOLS -->
+
+<bt:String
+  id="SW.GroupLabel"
+  DefaultValue="Sheet / Workbook"/>
+
+<bt:String
+  id="SW.HideUnhide.Label"
+  DefaultValue="Hide / Unhide"/>
+
+<bt:String
+  id="SW.Protect.Label"
+  DefaultValue="Protect Sheet"/>
+
+<bt:String
+  id="SW.Rename.Label"
+  DefaultValue="Rename Sheets"/>
+
+<bt:String
+  id="SW.CopyMove.Label"
+  DefaultValue="Copy / Move Sheet"/>
+
+    <bt:String id="GetStarted.Title"
+      DefaultValue="Himanshu XL Tools"/>
+
+    <bt:String id="HimanshuXLTools.TabLabel"
+      DefaultValue="Himanshu XL Tools"/>
+
+    <bt:String id="Tools.TabLabel"
+      DefaultValue="Himanshu XL Tools"/>
+
+    <bt:String id="Tools.Group"
+      DefaultValue="Himanshu XL Tools"/>
+
+    <bt:String id="Tools.Button"
+      DefaultValue="Open Tools"/>
+
+
+    <!-- DATA TOOLS -->
+
+    <bt:String id="DataTools.GroupLabel"
+      DefaultValue="Data Tools"/>
+
+    <bt:String id="DataTools.SortFilter.Label"
+      DefaultValue="Sort &amp; Filter"/>
+
+    <bt:String id="DataTools.RemoveDuplicates.Label"
+      DefaultValue="Remove Duplicates"/>
+
+    <bt:String id="DataTools.TextColumns.Label"
+      DefaultValue="Text to Columns"/>
+
+    <bt:String id="DataTools.FlashFill.Label"
+      DefaultValue="Flash Fill"/>
+
+
+    <!-- ANALYSIS -->
+
+    <bt:String id="Analysis.GroupLabel"
+      DefaultValue="Analysis"/>
+
+    <bt:String id="Analysis.Dashboard.Label"
+      DefaultValue="Dashboard"/>
+
+    <bt:String id="Analysis.KPI.Label"
+      DefaultValue="KPI Cards"/>
+
+    <bt:String id="Analysis.Pivot.Label"
+      DefaultValue="Pivot Table"/>
+
+    <bt:String id="Analysis.Charts.Label"
+      DefaultValue="Charts"/>
+
+
+    <!-- LOOKUP & FORMULA -->
+
+    <bt:String id="LookupFormula.GroupLabel"
+      DefaultValue="Lookup &amp; Formula"/>
+
+    <bt:String id="LookupFormula.XLOOKUP.Label"
+      DefaultValue="XLOOKUP"/>
+
+    <bt:String id="LookupFormula.VLOOKUP.Label"
+      DefaultValue="VLOOKUP"/>
+
+    <bt:String id="LookupFormula.SUMIFS.Label"
+      DefaultValue="SUMIFS"/>
+
+    <bt:String id="LookupFormula.COUNTIFS.Label"
+      DefaultValue="COUNTIFS"/>
+
+
+    <!-- EXCEL FORMATTING -->
+
+    <bt:String id="ExcelFormatting.GroupLabel"
+      DefaultValue="Excel Formatting"/>
+
+    <bt:String id="EF.Conditional.Label"
+      DefaultValue="Conditional Formatting"/>
+
+    <bt:String id="EF.Validation.Label"
+      DefaultValue="Data Validation"/>
+
+    <bt:String id="EF.Freeze.Label"
+      DefaultValue="Freeze Panes"/>
+
+    <bt:String id="EF.Table.Label"
+      DefaultValue="Excel Table"/>
+
+
+    <!-- SMART VISUAL -->
+
+    <bt:String id="SmartVisual.GroupLabel"
+      DefaultValue="Smart Visual"/>
+
+    <bt:String id="SmartVisual.SmartChart.Label"
+      DefaultValue="Smart Chart"/>
+
+    <bt:String id="SmartVisual.PowerDashboard.Label"
+      DefaultValue="Power Dashboard"/>
+
+
+    <!-- FILE TOOLS -->
+
+    <bt:String id="FileTools.GroupLabel"
+      DefaultValue="File Tools"/>
+
+    <bt:String id="FileTools.MergeFiles.Label"
+      DefaultValue="Merge Files"/>
+
+    <bt:String id="FileTools.SplitWorkbook.Label"
+      DefaultValue="Split Workbook"/>
+
+    <bt:String id="FileTools.ExportPDF.Label"
+      DefaultValue="Export PDF"/>
+
+    <bt:String id="FileTools.BatchRename.Label"
+      DefaultValue="Batch Rename"/>
+
+  </bt:ShortStrings>
+
+
+  <bt:LongStrings>
+    <bt:String id="License.Activate.Tip" DefaultValue="Activate and manage your Himanshu XL Tools license."/>
+
+
+  <!-- AI TOOLS -->
+
+  <bt:String
+  id="AITools.Menu.Tip"
+  DefaultValue="Open AI-powered Excel tools"/>
+
+<bt:String
+  id="AITools.Formula.Tip"
+  DefaultValue="Generate Excel formulas using AI assistance"/>
+
+<bt:String
+  id="AITools.Explain.Tip"
+  DefaultValue="Explain the selected Excel formula in simple language"/>
+
+<bt:String
+  id="AITools.Fix.Tip"
+  DefaultValue="Detect and help fix problems in Excel formulas"/>
+
+<bt:String
+  id="AITools.Analysis.Tip"
+  DefaultValue="Analyze selected Excel data and generate useful insights"/>
+
+  <!-- AUTOMATION -->
+
+  <bt:String
+  id="Automation.Menu.Tip"
+  DefaultValue="Open Automation tools"/>
+
+<bt:String
+  id="Automation.QuickClean.Tip"
+  DefaultValue="Quickly clean and prepare selected Excel data"/>
+
+<bt:String
+  id="Automation.FillBlanks.Tip"
+  DefaultValue="Fill blank cells using smart automation options"/>
+
+<bt:String
+  id="Automation.FormulaTools.Tip"
+  DefaultValue="Manage and automate common Excel formula tasks"/>
+
+<bt:String
+  id="Automation.AutoRefresh.Tip"
+  DefaultValue="Refresh workbook data and connected content automatically"/>
+
+  <!-- SHEET / WORKBOOK TOOLS -->
+
+  <bt:String
+  id="SW.Menu.Tip"
+  DefaultValue="Open Sheet and Workbook tools"/>
+
+<bt:String
+  id="SW.HideUnhide.Tip"
+  DefaultValue="Hide or unhide worksheet tabs in the current workbook"/>
+
+<bt:String
+  id="SW.Protect.Tip"
+  DefaultValue="Protect the selected worksheet and manage protection settings"/>
+
+<bt:String
+  id="SW.Rename.Tip"
+  DefaultValue="Rename one or multiple worksheets quickly"/>
+
+<bt:String
+  id="SW.CopyMove.Tip"
+  DefaultValue="Copy or move worksheets within the workbook"/>
+
+    <bt:String id="GetStarted.Description"
+      DefaultValue="Smart Excel Productivity Toolkit"/>
+
+    <bt:String id="Tools.Tooltip"
+      DefaultValue="Open Himanshu XL Tools"/>
+
+
+    <!-- DATA TOOLS -->
+
+    <bt:String id="DT.Sort.Tooltip"
+      DefaultValue="Sort and filter the selected Excel data"/>
+
+    <bt:String id="DT.Duplicates.Tooltip"
+      DefaultValue="Remove duplicate rows from the selected data"/>
+
+    <bt:String id="DT.TextColumns.Tooltip"
+      DefaultValue="Split text into separate columns"/>
+
+    <bt:String id="DT.FlashFill.Tooltip"
+      DefaultValue="Fill data automatically based on a pattern"/>
+
+
+    <!-- ANALYSIS -->
+
+    <bt:String id="Analysis.Dashboard.Tooltip"
+      DefaultValue="Create or open dashboard tools"/>
+
+    <bt:String id="Analysis.KPI.Tooltip"
+      DefaultValue="Create KPI cards from selected Excel data"/>
+
+    <bt:String id="Analysis.Pivot.Tooltip"
+      DefaultValue="Create Pivot Table analysis from selected data"/>
+
+    <bt:String id="Analysis.Charts.Tooltip"
+      DefaultValue="Create charts from selected Excel data"/>
+
+
+    <!-- LOOKUP & FORMULA -->
+
+    <bt:String id="LookupFormula.XLOOKUP.Tooltip"
+      DefaultValue="Find and return matching values using XLOOKUP"/>
+
+    <bt:String id="LookupFormula.VLOOKUP.Tooltip"
+      DefaultValue="Find matching values using VLOOKUP"/>
+
+    <bt:String id="LookupFormula.SUMIFS.Tooltip"
+      DefaultValue="Sum values using one or more criteria"/>
+
+    <bt:String id="LookupFormula.COUNTIFS.Tooltip"
+      DefaultValue="Count rows using one or more criteria"/>
+
+
+    <!-- EXCEL FORMATTING -->
+
+    <bt:String id="EF.Conditional.Tip"
+      DefaultValue="Apply smart conditional formatting to selected Excel data"/>
+
+    <bt:String id="EF.Validation.Tip"
+      DefaultValue="Create and manage data validation rules"/>
+
+    <bt:String id="EF.Freeze.Tip"
+      DefaultValue="Freeze rows and columns for easier worksheet navigation"/>
+
+    <bt:String id="EF.Table.Tip"
+      DefaultValue="Convert the selected data range into an Excel table"/>
+
+
+    <!-- SMART VISUAL -->
+
+    <bt:String id="SmartVisual.SmartChart.Tip"
+      DefaultValue="Create an intelligent chart from selected Excel data"/>
+
+    <bt:String id="SmartVisual.PowerDashboard.Tip"
+      DefaultValue="Create a smart Power Dashboard from selected Excel data"/>
+
+
+    <!-- FILE TOOLS -->
+
+      <bt:String
+  id="FileTools.Menu.Tip"
+  DefaultValue="Open File Tools commands"/>
+
+    <bt:String id="FileTools.MergeFiles.Tip"
+      DefaultValue="Merge multiple Excel files into one workbook"/>
+
+    <bt:String id="FileTools.SplitWorkbook.Tip"
+      DefaultValue="Split workbook sheets into separate Excel files"/>
+
+    <bt:String id="FileTools.ExportPDF.Tip"
+      DefaultValue="Export the workbook or selected sheets as PDF"/>
+
+    <bt:String id="FileTools.BatchRename.Tip"
+      DefaultValue="Rename multiple files using a consistent naming pattern"/>
+
+  </bt:LongStrings>
+
+</Resources>
+
+</VersionOverrides>
+
+</OfficeApp>
+
+
+
+
+
+
+

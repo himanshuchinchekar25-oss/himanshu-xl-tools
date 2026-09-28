@@ -1,0 +1,2946 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+
+  <title>Himanshu XL Tools - Power Dashboard Studio</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+</head>
+
+<body>
+
+  <div class="pd-app">
+
+    <!-- ===================================================== -->
+    <!-- TOP HEADER -->
+    <!-- ===================================================== -->
+
+    <header class="pd-header">
+
+      <div class="pd-brand">
+
+        <div class="pd-logo">
+          HX
+        </div>
+
+        <div class="pd-brand-text">
+          <div class="pd-brand-name">
+            Himanshu XL Tools
+          </div>
+
+          <div class="pd-brand-subtitle">
+            Power Dashboard Studio
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="pd-header-center">
+
+                <div
+          class="pd-step active"
+          data-section="dataSetupSection">
+          <span>1</span>
+          Data & Setup
+        </div>
+
+        <div
+          class="pd-step"
+          data-section="kpiBuilderSection">
+          <span>2</span>
+          Builders
+        </div>
+
+        <div
+          class="pd-step"
+          data-section="reviewSection">
+          <span>3</span>
+          Review
+        </div>
+
+        <div
+  class="pd-step"
+  data-section="reviewSection"
+  data-scroll-target="buildDashboardBtn">
+  <span>4</span>
+  Build
+</div>
+
+      </div>
+
+
+      <div class="pd-header-actions">
+
+        <span
+          id="studioStatus"
+          class="pd-status">
+          Ready
+        </span>
+
+        <button
+          id="closeStudioBtn"
+          class="pd-icon-btn"
+          type="button"
+          title="Close Studio">
+          ✕
+        </button>
+
+      </div>
+
+    </header>
+
+
+    <!-- ===================================================== -->
+    <!-- MAIN WORKSPACE -->
+    <!-- ===================================================== -->
+
+    <main class="pd-workspace">
+
+
+      <!-- =================================================== -->
+      <!-- LEFT NAVIGATION -->
+      <!-- =================================================== -->
+
+      <aside class="pd-sidebar">
+
+        <div class="pd-sidebar-title">
+          POWER DASHBOARD
+        </div>
+
+        <div class="pd-sidebar-subtitle">
+          Build professional Excel dashboards
+        </div>
+
+
+        <nav class="pd-nav">
+
+          <button
+            class="pd-nav-item active"
+            data-section="dataSetupSection"
+            type="button">
+
+            <span class="pd-nav-icon">▦</span>
+
+            <span>
+              <strong>Data & Setup</strong>
+              <small>Source, title and engine</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="kpiBuilderSection"
+            type="button">
+
+            <span class="pd-nav-icon">K</span>
+
+            <span>
+              <strong>KPI Builder</strong>
+              <small>Create KPI cards</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="chartBuilderSection"
+            type="button">
+
+            <span class="pd-nav-icon">▥</span>
+
+            <span>
+              <strong>Chart Builder</strong>
+              <small>Create smart charts</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="slicerBuilderSection"
+            type="button">
+
+            <span class="pd-nav-icon">◇</span>
+
+            <span>
+              <strong>Slicer Builder</strong>
+              <small>Interactive slicers</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="smartTableSection"
+            type="button">
+
+            <span class="pd-nav-icon">▤</span>
+
+            <span>
+              <strong>Smart Table</strong>
+              <small>Summary tables</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="appearanceSection"
+            type="button">
+
+            <span class="pd-nav-icon">◐</span>
+
+            <span>
+              <strong>Appearance</strong>
+              <small>Theme and layout</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="securitySection"
+            type="button">
+
+            <span class="pd-nav-icon">🔒</span>
+
+            <span>
+              <strong>Security</strong>
+              <small>Protect dashboard</small>
+            </span>
+
+          </button>
+
+
+          <button
+            class="pd-nav-item"
+            data-section="reviewSection"
+            type="button">
+
+            <span class="pd-nav-icon">✓</span>
+
+            <span>
+              <strong>Review & Build</strong>
+              <small>Check and create</small>
+            </span>
+
+          </button>
+
+        </nav>
+
+
+        <div class="pd-sidebar-bottom">
+
+          <button
+            id="saveDraftBtn"
+            class="pd-sidebar-action"
+            type="button">
+            Save Draft
+          </button>
+
+        </div>
+
+      </aside>
+
+
+      <!-- =================================================== -->
+      <!-- CENTER CONFIGURATION -->
+      <!-- =================================================== -->
+
+      <section class="pd-config-panel">
+
+
+        <!-- ================================================= -->
+        <!-- DATA & SETUP -->
+        <!-- ================================================= -->
+
+        <div
+          id="dataSetupSection"
+          class="pd-section active">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                STEP 1
+              </div>
+
+              <h1>
+                Data & Setup
+              </h1>
+
+              <p>
+                Select Excel data and configure the dashboard foundation.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- DATA SOURCE CARD -->
+
+          <div class="pd-card">
+
+            <div class="pd-card-title-row">
+
+              <div>
+                <h3>Excel Data Source</h3>
+
+                <p>
+                  Select the worksheet range used for this dashboard.
+                </p>
+              </div>
+
+              <span class="pd-card-tag">
+                Required
+              </span>
+
+            </div>
+
+
+            <label class="pd-label">
+              Selected Range
+            </label>
+
+            <div class="pd-range-row">
+
+              <input
+                id="dataRangeInput"
+                class="pd-input"
+                type="text"
+                placeholder="No Excel range selected"
+                readonly
+              />
+
+              <button
+                id="selectRangeBtn"
+                class="pd-btn pd-btn-outline"
+                type="button">
+                Select Range
+              </button>
+
+            </div>
+
+
+            <div class="pd-data-info">
+
+              <div class="pd-info-box">
+                <strong id="rowCount">—</strong>
+                <span>Rows</span>
+              </div>
+
+              <div class="pd-info-box">
+                <strong id="columnCount">—</strong>
+                <span>Columns</span>
+              </div>
+
+              <div class="pd-info-box">
+                <strong id="headerDetected">—</strong>
+                <span>Header</span>
+              </div>
+
+              <div class="pd-info-box">
+                <strong id="dataTypeDetected">—</strong>
+                <span>Data Types</span>
+              </div>
+
+            </div>
+
+          </div>
+
+                    <!-- ================================================= -->
+          <!-- SMART DATA PROFILER -->
+          <!-- ================================================= -->
+
+          <div
+            id="dataProfilerCard"
+            class="pd-card pd-profiler-card">
+
+            <div class="pd-card-title-row">
+
+              <div>
+                <h3>Smart Data Profiler</h3>
+                <p>
+                  Review data types, quality, blanks,
+                  invalid values and duplicate rows.
+                </p>
+              </div>
+
+              <span
+                id="profilerQualityBadge"
+                class="pd-profiler-quality-badge">
+                Not Analyzed
+              </span>
+
+            </div>
+
+
+            <!-- PROFILER SUMMARY -->
+
+            <div class="pd-profiler-summary">
+
+              <div class="pd-profiler-stat">
+                <strong id="profilerRowCount">—</strong>
+                <span>Rows</span>
+              </div>
+
+              <div class="pd-profiler-stat">
+                <strong id="profilerColumnCount">—</strong>
+                <span>Columns</span>
+              </div>
+
+              <div class="pd-profiler-stat">
+                <strong id="profilerDuplicateCount">—</strong>
+                <span>Duplicate Rows</span>
+              </div>
+
+              <div class="pd-profiler-stat">
+                <strong id="profilerWarningCount">—</strong>
+                <span>Warnings</span>
+              </div>
+
+            </div>
+
+
+            <!-- DATA QUALITY SUMMARY -->
+
+            <div
+              id="profilerQualitySummary"
+              class="pd-profiler-quality-summary">
+
+              <div class="pd-profiler-quality-item">
+                <span>Errors</span>
+                <strong id="profilerErrorCount">—</strong>
+              </div>
+
+              <div class="pd-profiler-quality-item">
+                <span>Warnings</span>
+                <strong id="profilerQualityWarningCount">—</strong>
+              </div>
+
+              <div class="pd-profiler-quality-item">
+                <span>Info</span>
+                <strong id="profilerInfoCount">—</strong>
+              </div>
+
+            </div>
+
+
+            <!-- QUALITY WARNINGS -->
+
+            <div class="pd-profiler-block">
+
+              <div class="pd-profiler-block-title">
+                Data Quality
+              </div>
+
+              <div
+                id="profilerWarnings"
+                class="pd-profiler-warnings">
+
+                <div class="pd-profiler-empty">
+                  Select an Excel range to analyze data quality.
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- COLUMN PROFILES -->
+
+            <div class="pd-profiler-block">
+
+              <div class="pd-profiler-block-title">
+                Column Profiles
+              </div>
+
+              <div
+                id="profilerColumns"
+                class="pd-profiler-columns">
+
+                <div class="pd-profiler-empty">
+                  Column statistics will appear here.
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DASHBOARD SETTINGS -->
+
+          <div class="pd-card">
+
+            <div class="pd-card-title-row">
+
+              <div>
+                <h3>Dashboard Settings</h3>
+
+                <p>
+                  Configure the main dashboard display options.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="pd-form-grid">
+
+              <div class="pd-field pd-field-full">
+
+                <label
+                  class="pd-label"
+                  for="dashboardTitle">
+                  Dashboard Title
+                </label>
+
+                <input
+                  id="dashboardTitle"
+                  class="pd-input"
+                  type="text"
+                  value="Sales Performance Dashboard"
+                />
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label
+                  class="pd-label"
+                  for="themeSelect">
+                  Theme
+                </label>
+
+                <select
+                  id="themeSelect"
+                  class="pd-select">
+
+                  <option value="ocean">
+                    Ocean
+                  </option>
+
+                  <option value="emerald">
+                    Emerald
+                  </option>
+
+                  <option value="royal">
+                    Royal
+                  </option>
+
+                  <option value="slate">
+                    Slate
+                  </option>
+
+                  <option value="midnight">
+                    Midnight
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label
+                  class="pd-label"
+                  for="currencySelect">
+                  Currency
+                </label>
+
+                <select
+                  id="currencySelect"
+                  class="pd-select">
+
+                  <option value="INR">
+                    ₹ Indian Rupee
+                  </option>
+
+                  <option value="USD">
+                    $ US Dollar
+                  </option>
+
+                  <option value="EUR">
+                    € Euro
+                  </option>
+
+                  <option value="GBP">
+                    £ Pound
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label
+                  class="pd-label"
+                  for="gridlinesSelect">
+                  Gridlines
+                </label>
+
+                <select
+                  id="gridlinesSelect"
+                  class="pd-select">
+
+                  <option value="hide">
+                    Hide
+                  </option>
+
+                  <option value="show">
+                    Show
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label
+                  class="pd-label"
+                  for="layoutSelect">
+                  Dashboard Layout
+                </label>
+
+                <select
+                  id="layoutSelect"
+                  class="pd-select">
+
+                  <option value="executive">
+                    Executive
+                  </option>
+
+                  <option value="wide">
+                    Wide
+                  </option>
+
+                  <option value="compact">
+                    Compact
+                  </option>
+
+                  <option value="detailed">
+                    Detailed
+                  </option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+        
+
+          <!-- ================================================= -->
+<!-- SMART ADVISOR -->
+<!-- ================================================= -->
+
+<div
+  id="smartAdvisorCard"
+  class="pd-card">
+
+  <div class="pd-card-title-row">
+
+    <div>
+
+      <h3>
+        Smart Advisor
+      </h3>
+
+      <p id="smartAdvisorSummary">
+        Select Excel data to generate recommendations.
+      </p>
+
+    </div>
+
+    <span
+      id="smartAdvisorBadge"
+      class="pd-engine-badge">
+      Waiting
+    </span>
+
+  </div>
+
+
+  <div class="pd-review-grid">
+
+    <div class="pd-review-item">
+
+      <strong id="advisorKpiCount">
+        0
+      </strong>
+
+      <span>
+        KPI
+      </span>
+
+    </div>
+
+
+    <div class="pd-review-item">
+
+      <strong id="advisorChartCount">
+        0
+      </strong>
+
+      <span>
+        Charts
+      </span>
+
+    </div>
+
+
+    <div class="pd-review-item">
+
+      <strong id="advisorSlicerCount">
+        0
+      </strong>
+
+      <span>
+        Slicers
+      </span>
+
+    </div>
+
+
+    <div class="pd-review-item">
+
+      <strong id="advisorTableCount">
+        0
+      </strong>
+
+      <span>
+        Smart Tables
+      </span>
+
+    </div>
+
+      </div>
+
+
+  <div
+    id="smartAdvisorRecommendations"
+    class="pd-advisor-recommendations"
+    hidden>
+  </div>
+
+
+  <div class="pd-builder-footer">
+
+    <button
+      id="applyAdvisorRecommendationsBtn"
+      class="pd-btn pd-btn-primary"
+      type="button"
+      disabled>
+      Apply Recommendations
+    </button>
+
+  </div>
+
+</div>
+
+      <!-- DATA ENGINE -->
+
+          <div class="pd-card">
+
+            <div class="pd-card-title-row">
+
+              <div>
+                <h3>Data Engine</h3>
+
+                <p>
+                  Choose how the dashboard should process Excel data.
+                </p>
+              </div>
+
+            </div>
+
+
+            <div class="pd-engine-grid">
+
+              <button
+                class="pd-engine-card selected"
+                data-engine="classic"
+                type="button">
+
+                <div class="pd-engine-check">
+                  ✓
+                </div>
+
+                <strong>
+                  Smart Classic
+                </strong>
+
+                <span class="pd-engine-badge">
+                  Recommended
+                </span>
+
+                <p>
+                  Fast, offline and compatible with normal Excel workbooks.
+                </p>
+
+                <ul>
+                  <li>Automatic KPI calculations</li>
+                  <li>Charts and Pivot support</li>
+                  <li>Slicers and Smart Tables</li>
+                </ul>
+
+              </button>
+
+
+              <button
+                class="pd-engine-card"
+                data-engine="model"
+                type="button">
+
+                <div class="pd-engine-check">
+                  ○
+                </div>
+
+                <strong>
+                  Data Model
+                </strong>
+
+                <span class="pd-engine-badge secondary">
+                  Advanced
+                </span>
+
+                <p>
+                  Advanced data model for larger and relational datasets.
+                </p>
+
+                <ul>
+                  <li>Power Pivot relationships</li>
+                  <li>Measures and calculations</li>
+                  <li>Large dataset support</li>
+                </ul>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- KPI BUILDER -->
+        <!-- ================================================= -->
+
+        <div
+          id="kpiBuilderSection"
+          class="pd-section">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                BUILDER
+              </div>
+
+              <h1>
+                KPI Builder
+              </h1>
+
+              <p>
+                Add and configure performance indicator cards.
+              </p>
+
+            </div>
+
+            <button
+              id="addKpiBtn"
+              class="pd-btn pd-btn-primary"
+              type="button">
+              + Add KPI
+            </button>
+
+          </div>
+
+
+          <div class="pd-card">
+
+            <h3>KPI Configuration</h3>
+
+            <div class="pd-form-grid">
+
+              <div class="pd-field pd-field-full">
+
+                <label class="pd-label">
+                  KPI Title
+                </label>
+
+                <input
+                  id="kpiTitle"
+                  class="pd-input"
+                  value="Total Net Sales"
+                />
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Value Column
+                </label>
+
+                <select
+                  id="kpiColumn"
+                  class="pd-select">
+
+                  <option>
+                    Select Column
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Aggregation
+                </label>
+
+                <select
+                  id="kpiAggregation"
+                  class="pd-select">
+
+                  <option>SUM</option>
+                  <option>AVERAGE</option>
+                  <option>COUNT</option>
+                  <option>COUNTA</option>
+                  <option>MIN</option>
+                  <option>MAX</option>
+                  <option>UNIQUE COUNT</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Number Format
+                </label>
+
+                <select
+                  id="kpiFormat"
+                  class="pd-select">
+
+                  <option>Currency</option>
+                  <option>Number</option>
+                  <option>Percentage</option>
+                  <option>Auto</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Comparison
+                </label>
+
+                <select
+                  id="kpiComparison"
+                  class="pd-select">
+
+                  <option>None</option>
+                  <option>Previous Period</option>
+                  <option>Previous Year</option>
+                  <option>Target</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+<div class="pd-builder-footer">
+
+  <button
+    id="resetKpiBtn"
+    class="pd-btn pd-btn-outline"
+    type="button">
+    Reset
+  </button>
+
+  <button
+    id="saveKpiBtn"
+    class="pd-btn pd-btn-primary"
+    type="button">
+    Add KPI to Dashboard
+  </button>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ADDED KPI LIST -->
+<!-- ================================================= -->
+
+<div
+  id="kpiListCard"
+  class="pd-card"
+  style="margin-top:16px;">
+
+  <div class="pd-section-header">
+
+    <div>
+
+      <div class="pd-eyebrow">
+        DASHBOARD KPIs
+      </div>
+
+      <h3>
+        Added KPIs
+      </h3>
+
+    </div>
+
+    <div id="kpiListCount">
+      0 KPIs
+    </div>
+
+  </div>
+
+  <div id="kpiList">
+
+    <div class="pd-empty-state">
+      No KPIs added yet.
+    </div>
+
+  </div>
+
+</div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- CHART BUILDER -->
+        <!-- ================================================= -->
+
+        <div
+          id="chartBuilderSection"
+          class="pd-section">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                BUILDER
+              </div>
+
+              <h1>
+                Chart Builder
+              </h1>
+
+              <p>
+                Add interactive dashboard charts.
+              </p>
+
+            </div>
+
+<button
+  id="addChartBtn"
+  class="pd-btn pd-btn-primary"
+  type="button">
+  + Add Chart
+</button>
+
+</div>
+
+
+<div class="pd-card">
+
+  <h3>Chart Configuration</h3>
+
+  <div class="pd-form-grid">
+
+    <div class="pd-field pd-field-full">
+
+      <label class="pd-label">
+        Chart Title
+      </label>
+
+      <input
+        id="chartTitle"
+        class="pd-input"
+        value="Month Wise Net Sales"
+      />
+
+    </div>
+
+
+    <div class="pd-field">
+
+      <label class="pd-label">
+        Chart Type
+      </label>
+
+      <select
+        id="chartType"
+        class="pd-select">
+
+        <option>Column</option>
+        <option>Bar</option>
+        <option selected>Line</option>
+        <option>Area</option>
+        <option>Pie</option>
+        <option>Doughnut</option>
+        <option>Combo</option>
+        <option>Scatter</option>
+
+      </select>
+
+    </div>
+
+
+    <div class="pd-field">
+
+      <label class="pd-label">
+        X Axis
+      </label>
+
+      <select
+        id="chartXAxis"
+        class="pd-select">
+
+        <option value="">
+          Select Column
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="pd-field">
+
+      <label class="pd-label">
+        Y Axis
+      </label>
+
+      <select
+        id="chartYAxis"
+        class="pd-select">
+
+        <option value="">
+          Select Column
+        </option>
+
+      </select>
+
+    </div>
+
+
+    <div class="pd-field">
+
+  <label class="pd-label">
+    Aggregation
+  </label>
+
+  <select
+    id="chartAggregation"
+    class="pd-select">
+
+    <option>SUM</option>
+    <option>AVERAGE</option>
+    <option>COUNT</option>
+    <option>MIN</option>
+    <option>MAX</option>
+
+  </select>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- COMBO CHART SECONDARY SERIES -->
+<!-- ================================================= -->
+
+<div
+  id="comboSecondaryYAxisField"
+  class="pd-field"
+  hidden>
+
+  <label class="pd-label">
+    Secondary Y Axis
+  </label>
+
+  <select
+    id="chartSecondaryYAxis"
+    class="pd-select">
+
+    <option value="">
+      Select Secondary Value
+    </option>
+
+  </select>
+
+</div>
+
+
+<div
+  id="comboSecondaryAggregationField"
+  class="pd-field"
+  hidden>
+
+  <label class="pd-label">
+    Secondary Aggregation
+  </label>
+
+  <select
+    id="chartSecondaryAggregation"
+    class="pd-select">
+
+    <option>SUM</option>
+    <option>AVERAGE</option>
+    <option>COUNT</option>
+    <option>MIN</option>
+    <option>MAX</option>
+
+  </select>
+
+</div>
+
+
+<div class="pd-field">
+
+  <label class="pd-label">
+    Top / Bottom
+  </label>
+
+      <select
+        id="chartTopBottom"
+        class="pd-select">
+
+        <option>Show All</option>
+        <option>Top 5</option>
+        <option>Top 10</option>
+        <option>Bottom 5</option>
+        <option>Bottom 10</option>
+
+      </select>
+
+    </div>
+
+
+    <div class="pd-field">
+
+      <label class="pd-label">
+        Data Labels
+      </label>
+
+      <select
+        id="chartDataLabels"
+        class="pd-select">
+
+        <option>Show</option>
+        <option>Hide</option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <div class="pd-builder-footer">
+
+    <button
+      id="resetChartBtn"
+      class="pd-btn pd-btn-outline"
+      type="button">
+      Reset
+    </button>
+
+    <button
+      id="saveChartBtn"
+      class="pd-btn pd-btn-primary"
+      type="button">
+      Add Chart to Dashboard
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ADDED CHART LIST -->
+<!-- ================================================= -->
+
+<div
+  id="chartListCard"
+  class="pd-card"
+  style="margin-top:16px;">
+
+  <div class="pd-section-header">
+
+    <div>
+
+      <div class="pd-eyebrow">
+        DASHBOARD CHARTS
+      </div>
+
+      <h3>
+        Added Charts
+      </h3>
+
+    </div>
+
+    <div id="chartListCount">
+      0 Charts
+    </div>
+
+  </div>
+
+  <div id="chartList">
+
+    <div class="pd-empty-state">
+      No charts added yet.
+    </div>
+
+  </div>
+
+</div>
+
+</div>
+
+    
+
+
+        <!-- ================================================= -->
+        <!-- SLICER BUILDER -->
+        <!-- ================================================= -->
+
+        <div
+          id="slicerBuilderSection"
+          class="pd-section">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                CORE BUILDER
+              </div>
+
+              <h1>
+                Slicer Builder
+              </h1>
+
+              <p>
+                Create interactive Excel slicers and connect dashboard objects.
+              </p>
+
+            </div>
+
+            <button
+              id="addSlicerBtn"
+              class="pd-btn pd-btn-primary"
+              type="button">
+              + Add Slicer
+            </button>
+
+          </div>
+
+
+          <div class="pd-card pd-important-card">
+
+            <div class="pd-card-title-row">
+
+              <div>
+
+                <h3>Slicer Configuration</h3>
+
+                <p>
+                  Choose the field and connection behaviour.
+                </p>
+
+              </div>
+
+              <span class="pd-card-tag important">
+                Core Feature
+              </span>
+
+            </div>
+
+
+            <div class="pd-form-grid">
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Slicer Column
+                </label>
+
+                <select
+                  id="slicerColumn"
+                  class="pd-select">
+
+                  <option>Select Column</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Slicer Title
+                </label>
+
+                <input
+                  id="slicerTitle"
+                  class="pd-input"
+                  value="Zone"
+                />
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Slicer Type
+                </label>
+
+                <select
+                  id="slicerType"
+                  class="pd-select">
+
+                  <option>Category Slicer</option>
+                  <option>Region Slicer</option>
+                  <option>Product Slicer</option>
+                  <option>Customer Slicer</option>
+                  <option>Status Slicer</option>
+                  <option>Date Slicer</option>
+                  <option>Timeline</option>
+
+                </select>
+
+              </div>
+
+
+              <div
+                id="timelineGroupingField"
+                class="pd-field"
+                style="display:none;">
+
+                <label class="pd-label">
+                  Timeline Grouping
+                </label>
+
+                <select
+                  id="timelineGrouping"
+                  class="pd-select">
+
+                  <option value="Year">
+                    Year
+                  </option>
+
+                  <option value="Quarter">
+                    Quarter
+                  </option>
+
+                  <option value="Month" selected>
+                    Month
+                  </option>
+
+                  <option value="Date">
+                    Date
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Orientation
+                </label>
+
+                <select
+                  id="slicerOrientation"
+                  class="pd-select">
+
+                  <option>Vertical</option>
+                  <option>Horizontal</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Selection Mode
+                </label>
+
+                <select
+                  id="slicerSelectionMode"
+                  class="pd-select">
+
+                  <option>Multi Select</option>
+                  <option>Single Select</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Connect To
+                </label>
+
+                <select
+                  id="slicerConnection"
+                  class="pd-select">
+
+                  <option>All Charts & KPIs</option>
+                  <option>All Dashboard Objects</option>
+                  <option>Custom Connections</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+
+            <div class="pd-connection-box">
+
+              <div class="pd-connection-title">
+                Connection Targets
+              </div>
+
+              <label>
+                <input
+                  type="checkbox"
+                  checked
+                <div class="pd-connection-box">
+
+  <div class="pd-connection-title">
+    Connection Targets
+  </div>
+
+  <label>
+    <input
+      id="slicerTargetKpis"
+      type="checkbox"
+      checked
+    />
+    KPI Cards
+  </label>
+
+  <label>
+    <input
+      id="slicerTargetCharts"
+      type="checkbox"
+      checked
+    />
+    Charts
+  </label>
+
+  <label>
+    <input
+      id="slicerTargetTables"
+      type="checkbox"
+      checked
+    />
+    Smart Table
+  </label>
+
+</div>
+
+
+              <div class="pd-builder-footer">
+
+  <button
+    id="previewSlicerBtn"
+    class="pd-btn pd-btn-outline"
+    type="button">
+    Preview Slicer
+  </button>
+
+  <button
+    id="saveSlicerBtn"
+    class="pd-btn pd-btn-primary"
+    type="button">
+    Add Slicer to Dashboard
+  </button>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- ADDED SLICER LIST -->
+<!-- ================================================= -->
+
+<div
+  id="slicerListCard"
+  class="pd-card"
+  style="margin-top:16px;">
+
+  <div class="pd-section-header">
+
+    <div>
+
+      <div class="pd-eyebrow">
+        DASHBOARD SLICERS
+      </div>
+
+      <h3>
+        Added Slicers
+      </h3>
+
+    </div>
+
+    <div id="slicerListCount">
+      0 Slicers
+    </div>
+
+  </div>
+
+  <div id="slicerList">
+
+    <div class="pd-empty-state">
+      No slicers added yet.
+    </div>
+
+  </div>
+
+</div>
+          </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- SMART TABLE -->
+        <!-- ================================================= -->
+
+            <div
+  id="smartTableSection"
+  class="pd-section">
+
+  <div class="pd-section-header">
+
+    <div>
+
+      <div class="pd-eyebrow">
+        BUILDER
+      </div>
+
+      <h1>
+        Smart Table Builder
+      </h1>
+
+      <p>
+        Create summary and analysis tables.
+      </p>
+
+    </div>
+
+    <button
+      id="addTableBtn"
+      class="pd-btn pd-btn-primary"
+      type="button">
+      + Add Smart Table
+    </button>
+
+  </div>
+
+
+  <div class="pd-card">
+
+    <h3>
+      Table Configuration
+    </h3>
+
+    <div class="pd-form-grid">
+
+      <div class="pd-field pd-field-full">
+
+        <label class="pd-label">
+          Table Title
+        </label>
+
+        <input
+          id="tableTitle"
+          class="pd-input"
+          value="Sales Summary"
+        />
+
+      </div>
+
+
+      <div class="pd-field">
+
+        <label class="pd-label">
+          Data Engine
+        </label>
+
+        <select
+          id="tableDataEngine"
+          class="pd-select">
+
+          <option>Aggregated</option>
+          <option>Raw Data</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="pd-field">
+
+        <label class="pd-label">
+          Grand Total
+        </label>
+
+        <div class="pd-field">
+
+  <label class="pd-label">
+    Group By Column
+  </label>
+
+  <select
+    id="tableGroupColumn"
+    class="pd-select">
+
+    <option value="">
+      Select Group Column
+    </option>
+
+  </select>
+
+</div>
+
+
+<div class="pd-field">
+
+  <label class="pd-label">
+    Value Column
+  </label>
+
+  <select
+    id="tableValueColumn"
+    class="pd-select">
+
+    <option value="">
+      Select Value Column
+    </option>
+
+  </select>
+
+</div>
+
+
+<div class="pd-field">
+
+  <label class="pd-label">
+    Aggregation
+  </label>
+
+  <select
+    id="tableAggregation"
+    class="pd-select">
+
+    <option>SUM</option>
+    <option>COUNT</option>
+    <option>COUNTA</option>
+    <option>AVERAGE</option>
+    <option>MIN</option>
+    <option>MAX</option>
+
+  </select>
+
+</div>
+
+        <select
+          id="tableGrandTotal"
+          class="pd-select">
+
+          <option>Yes</option>
+          <option>No</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="pd-field">
+
+        <label class="pd-label">
+          Limit Data
+        </label>
+
+        <select
+          id="tableLimitData"
+          class="pd-select">
+
+          <option>Show All</option>
+          <option>Top 5</option>
+          <option>Top 10</option>
+          <option>Bottom 5</option>
+          <option>Bottom 10</option>
+
+        </select>
+
+      </div>
+
+
+      <div class="pd-field">
+
+        <label class="pd-label">
+          Visual Indicator
+        </label>
+
+        <select
+          id="tableVisualIndicator"
+          class="pd-select">
+
+          <option>None</option>
+          <option>Data Bars</option>
+          <option>Icons</option>
+          <option>Color Scale</option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+
+    <div class="pd-builder-footer">
+
+      <button
+        id="resetTableBtn"
+        class="pd-btn pd-btn-outline"
+        type="button">
+        Reset
+      </button>
+
+      <button
+        id="saveTableBtn"
+        class="pd-btn pd-btn-primary"
+        type="button">
+        Add Table to Dashboard
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ================================================= -->
+  <!-- ADDED TABLE LIST -->
+  <!-- ================================================= -->
+
+  <div
+    id="tableListCard"
+    class="pd-card"
+    style="margin-top:16px;">
+
+    <div class="pd-section-header">
+
+      <div>
+
+        <div class="pd-eyebrow">
+          DASHBOARD TABLES
+        </div>
+
+        <h3>
+          Added Tables
+        </h3>
+
+      </div>
+
+      <div id="tableListCount">
+        0 Tables
+      </div>
+
+    </div>
+
+    <div id="tableList">
+
+      <div class="pd-empty-state">
+        No smart tables added yet.
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+        <!-- ================================================= -->
+        <!-- APPEARANCE -->
+        <!-- ================================================= -->
+
+        <div
+          id="appearanceSection"
+          class="pd-section">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                DESIGN
+              </div>
+
+              <h1>
+                Appearance
+              </h1>
+
+              <p>
+                Customize the visual style of the dashboard.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="pd-card">
+
+            <div class="pd-form-grid">
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Theme
+                </label>
+
+                <select
+                  id="appearanceTheme"
+                  class="pd-select">
+
+                  <option>Ocean</option>
+                  <option>Emerald</option>
+                  <option>Royal</option>
+                  <option>Slate</option>
+                  <option>Midnight</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  KPI Style
+                </label>
+
+                <select id="appearanceKpiStyle" class="pd-select">
+
+                  <option>Modern Cards</option>
+                  <option>Flat Cards</option>
+                  <option>Compact Cards</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Chart Style
+                </label>
+
+                <select id="appearanceChartStyle"class="pd-select">
+
+                  <option>Clean</option>
+                  <option>Corporate</option>
+                  <option>Minimal</option>
+
+                </select>
+
+              </div>
+
+
+              <div class="pd-field">
+
+                <label class="pd-label">
+                  Background
+                </label>
+
+                <select id="appearanceBackground"class="pd-select">
+
+                  <option>Light</option>
+                  <option>Soft</option>
+                  <option>Dark</option>
+
+                </select>
+
+              </div>
+
+            </div>
+
+            <div class="pd-field">
+
+  <label class="pd-label">
+    Dashboard Canvas Mode
+  </label>
+
+  <select
+    id="appearanceCanvasMode"
+    class="pd-select">
+
+    <option value="auto">
+      Auto Fit
+    </option>
+
+    <option value="manual">
+      Manual Canvas
+    </option>
+
+  </select>
+
+</div>
+
+
+<div class="pd-field">
+
+  <label class="pd-label">
+    Canvas Preset
+  </label>
+
+  <select
+    id="appearanceCanvasPreset"
+    class="pd-select">
+
+    <option value="window">
+      Current Excel Window
+    </option>
+
+    <option value="16:9">
+      16:9 Dashboard
+    </option>
+
+    <option value="4:3">
+      4:3 Dashboard
+    </option>
+
+  </select>
+
+</div>
+
+
+<div
+  id="manualCanvasFields"
+  class="pd-canvas-manual"
+  hidden>
+
+  <div class="pd-field">
+
+    <label class="pd-label">
+      Start Cell
+    </label>
+
+    <input
+      id="appearanceCanvasStart"
+      class="pd-input"
+      type="text"
+      value="B2"/>
+
+  </div>
+
+  <div class="pd-field">
+
+    <label class="pd-label">
+      End Cell
+    </label>
+
+    <input
+      id="appearanceCanvasEnd"
+      class="pd-input"
+      type="text"
+      value="Y55"/>
+
+  </div>
+
+  <label class="pd-switch-row">
+
+    <span>
+      <strong>
+        Lock Dashboard Canvas
+      </strong>
+
+      <small>
+        Keep dashboard objects inside the selected boundary.
+      </small>
+    </span>
+
+    <input
+      id="appearanceLockCanvas"
+      type="checkbox"
+      checked/>
+
+  </label>
+
+</div>
+
+
+            <div class="pd-builder-footer">
+
+              <button
+                id="applyThemeBtn"
+                class="pd-btn pd-btn-primary"
+                type="button">
+                Apply Theme
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- SECURITY -->
+        <!-- ================================================= -->
+
+        <div
+          id="securitySection"
+          class="pd-section">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                SECURITY
+              </div>
+
+              <h1>
+                Dashboard Security
+              </h1>
+
+              <p>
+                Protect dashboard settings and backend sheets.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="pd-card">
+
+            <div class="pd-security-list">
+
+              <label class="pd-switch-row">
+
+                <span>
+                  <strong>
+                    Protect Dashboard Structure
+                  </strong>
+
+                  <small>
+                    Prevent accidental changes to dashboard layout.
+                  </small>
+                </span>
+
+                <input
+  id="protectDashboardToggle"
+  type="checkbox"
+  checked
+/>
+
+              </label>
+
+
+              <label class="pd-switch-row">
+
+                <span>
+                  <strong>
+                    Hide Backend Sheet
+                  </strong>
+
+                  <small>
+                    Keep dashboard engine data hidden from normal users.
+                  </small>
+                </span>
+
+                <input
+  id="hideBackendToggle"
+  type="checkbox"
+  checked
+/>
+
+              </label>
+
+
+              <label class="pd-switch-row">
+
+                <span>
+                  <strong>
+                    Lock Dashboard Settings
+                  </strong>
+
+                  <small>
+                    Prevent configuration changes after publishing.
+                  </small>
+                </span>
+
+                  <input
+  id="lockSettingsToggle"
+  type="checkbox"
+/>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- REVIEW -->
+        <!-- ================================================= -->
+
+        <div
+          id="reviewSection"
+          class="pd-section">
+
+          <div class="pd-section-header">
+
+            <div>
+
+              <div class="pd-eyebrow">
+                FINAL STEP
+              </div>
+
+              <h1>
+                Review & Build
+              </h1>
+
+              <p>
+                Review your dashboard configuration before creating it.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="pd-review-grid">
+
+            <div class="pd-card">
+
+              <h3>Data Summary</h3>
+
+              <div class="pd-review-row">
+                <span>Source Range</span>
+                <strong id="reviewRange">
+                  Not Selected
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Rows</span>
+                <strong id="reviewRows">
+                  —
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Columns</span>
+                <strong id="reviewColumns">
+                  —
+                </strong>
+              </div>
+
+            </div>
+
+
+                        <div class="pd-card">
+
+              <h3>Dashboard Summary</h3>
+
+              <div class="pd-review-row">
+                <span>Title</span>
+                <strong id="reviewTitle">
+                  Sales Performance Dashboard
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Theme</span>
+                <strong id="reviewTheme">
+                  Ocean
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Currency</span>
+                <strong id="reviewCurrency">
+                  INR
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Layout</span>
+                <strong id="reviewLayout">
+                  Executive
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Engine</span>
+                <strong id="reviewEngine">
+                  Smart Classic
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+                    <div class="pd-review-grid">
+
+            <div class="pd-card">
+
+              <h3>Appearance</h3>
+
+              <div class="pd-review-row">
+                <span>KPI Style</span>
+                <strong id="reviewKpiStyle">
+                  Modern Cards
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Chart Style</span>
+                <strong id="reviewChartStyle">
+                  Clean
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Background</span>
+                <strong id="reviewBackground">
+                  Light
+                </strong>
+              </div>
+
+            </div>
+
+
+            <div class="pd-card">
+
+              <h3>Security</h3>
+
+              <div class="pd-review-row">
+                <span>Protect Dashboard</span>
+                <strong id="reviewProtectDashboard">
+                  Yes
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Hide Backend</span>
+                <strong id="reviewHideBackend">
+                  Yes
+                </strong>
+              </div>
+
+              <div class="pd-review-row">
+                <span>Lock Settings</span>
+                <strong id="reviewLockSettings">
+                  No
+                </strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="pd-components-summary">
+
+            <div class="pd-component-box">
+
+              <strong id="reviewKpiCount">
+                6
+              </strong>
+
+              <span>KPI Cards</span>
+
+            </div>
+
+
+            <div class="pd-component-box">
+
+              <strong id="reviewChartCount">
+                3
+              </strong>
+
+              <span>Charts</span>
+
+            </div>
+
+
+            <div class="pd-component-box important">
+
+              <strong id="reviewSlicerCount">
+                3
+              </strong>
+
+              <span>Slicers</span>
+
+            </div>
+
+
+            <div class="pd-component-box">
+
+              <strong id="reviewTableCount">
+                1
+              </strong>
+
+              <span>Smart Table</span>
+
+            </div>
+
+          </div>
+
+
+          <div class="pd-build-box">
+
+            <div>
+
+              <h3>
+                Ready to Build
+              </h3>
+
+              <p>
+                Create the Native Excel Dashboard using the current settings.
+              </p>
+
+            </div>
+
+            <button
+              id="buildDashboardBtn"
+              class="pd-btn pd-btn-build"
+              type="button">
+              Build Dashboard
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- =================================================== -->
+      <!-- RIGHT LIVE PREVIEW -->
+      <!-- =================================================== -->
+
+      <aside class="pd-preview-panel">
+
+        <div class="pd-preview-toolbar">
+
+          <div>
+
+            <div class="pd-eyebrow">
+              LIVE PREVIEW
+            </div>
+
+            <strong>
+              Dashboard Preview
+            </strong>
+
+          </div>
+
+
+          <div class="pd-preview-actions">
+
+            <button
+              id="previewApplyThemeBtn"
+              class="pd-mini-btn"
+              type="button">
+              Apply Theme
+            </button>
+
+                        <button
+              id="previewRefreshBtn"
+              class="pd-mini-btn"
+              type="button">
+              Refresh
+            </button>
+
+            <span
+              id="previewLastRefreshed"
+              class="pd-last-refreshed">
+              Last Refreshed: Never
+            </span>
+
+            <button
+  id="viewDashboardBtn"
+  class="pd-mini-btn pd-view-dashboard-btn"
+  type="button">
+  View Dashboard
+</button>
+
+          </div>
+
+        </div>
+
+                <!-- BUILD PROGRESS -->
+
+        <div
+          id="buildProgressPanel"
+          class="pd-build-progress"
+          hidden>
+
+          <div class="pd-build-progress-head">
+
+            <div>
+
+              <div class="pd-build-kicker">
+                BUILD STATUS
+              </div>
+
+              <strong id="buildProgressTitle">
+                Building Dashboard
+              </strong>
+
+            </div>
+
+            <span id="buildProgressPercent">
+              Working...
+            </span>
+
+          </div>
+
+
+          <div class="pd-build-progress-track">
+
+            <div
+              id="buildProgressBar"
+              class="pd-build-progress-bar">
+            </div>
+
+          </div>
+
+
+          <div class="pd-build-step-list">
+
+            <div
+              id="buildStepEngine"
+              class="pd-build-step active">
+              Excel build engine running
+            </div>
+
+            <div
+              id="buildStepComponents"
+              class="pd-build-step">
+              Creating dashboard components
+            </div>
+
+            <div
+              id="buildStepFinish"
+              class="pd-build-step">
+              Applying appearance and security
+            </div>
+
+          </div>
+
+
+          <div
+            id="buildProgressSummary"
+            class="pd-build-summary">
+            Preparing dashboard...
+          </div>
+
+        </div>
+
+
+        <div
+          id="dashboardPreview"
+          class="pd-dashboard-preview">
+
+          <div class="pd-dashboard-head">
+
+            <div>
+
+              <h2 id="previewDashboardTitle">
+                Sales Performance Dashboard
+              </h2>
+
+              <p>
+                Live dashboard preview
+              </p>
+
+            </div>
+
+
+            <select
+              id="previewThemeSelect"
+              class="pd-preview-theme">
+
+              <option>
+                Ocean
+              </option>
+
+              <option>
+                Emerald
+              </option>
+
+              <option>
+                Royal
+              </option>
+
+            </select>
+
+            <button
+  id="closeDashboardViewBtn"
+  class="pd-mini-btn pd-close-dashboard-view-btn"
+  type="button"
+  hidden>
+  Close View
+</button>
+
+          </div>
+
+
+          <!-- KPI PREVIEW -->
+
+          <div
+  id="previewKpiContainer"
+  class="pd-preview-kpis">
+</div>
+
+
+          <!-- CHART + SLICER -->
+
+          <div class="pd-preview-grid">
+
+            <div
+  id="previewChartContainer"
+  class="pd-preview-charts">
+</div>
+
+
+    <div
+  id="previewSlicerContainer"
+  class="pd-widget pd-preview-slicer-panel">
+</div>
+
+          </div>
+
+
+          <!-- SECOND ROW -->
+
+          <div class="pd-preview-grid second-row">
+
+            <div class="pd-widget">
+
+              <div class="pd-widget-title">
+                Profit by Product
+              </div>
+
+              <div class="pd-donut-placeholder">
+
+                <div class="pd-donut">
+                  <div></div>
+                </div>
+
+                <div class="pd-donut-legend">
+
+                  <span>
+                    Product A
+                  </span>
+
+                  <span>
+                    Product B
+                  </span>
+
+                  <span>
+                    Product C
+                  </span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div
+  id="previewTableContainer"
+  class="pd-preview-tables">
+</div>
+
+            </div>
+
+          </div>
+
+
+          <!-- DASHBOARD ACTIONS -->
+
+          <div class="pd-dashboard-actions">
+
+            <div>
+
+              <label>
+                Theme
+              </label>
+
+              <select>
+                <option>
+                  Ocean
+                </option>
+              </select>
+
+            </div>
+
+
+            <button
+              id="dashboardApplyThemeBtn"
+              type="button">
+              Apply Theme
+            </button>
+
+
+                        <button
+              id="dashboardRefreshBtn"
+              type="button">
+              Refresh Data
+            </button>
+
+            <span
+              id="dashboardLastRefreshed"
+              class="pd-last-refreshed">
+              Last Refreshed: Never
+            </span>
+
+
+            <button
+              id="exportPdfBtn"
+              type="button">
+              Export PDF
+            </button>
+
+
+            <button
+              id="exportPptBtn"
+              type="button">
+              Export PPT
+            </button>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </main>
+
+
+    <!-- ===================================================== -->
+    <!-- BOTTOM BAR -->
+    <!-- ===================================================== -->
+
+    <footer class="pd-footer">
+
+      <div class="pd-footer-left">
+
+        <span class="pd-footer-dot"></span>
+
+        <span>
+          Smart Classic Engine
+        </span>
+
+      </div>
+
+
+      <div class="pd-footer-right">
+
+        <button
+          id="previousBtn"
+          class="pd-btn pd-btn-outline"
+          type="button">
+          Back
+        </button>
+
+        <button
+          id="nextBtn"
+          class="pd-btn pd-btn-primary"
+          type="button">
+          Continue
+        </button>
+
+      </div>
+
+    </footer>
+
+  </div>
+
+    <!-- ===================================================== -->
+  <!-- DASHBOARD RECOVERY MODAL -->
+  <!-- ===================================================== -->
+
+  <div
+    id="dashboardRecoveryModal"
+    class="pd-recovery-modal"
+    hidden>
+
+    <div
+      class="pd-recovery-backdrop">
+    </div>
+
+
+    <div
+      class="pd-recovery-dialog"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="dashboardRecoveryTitle">
+
+      <div class="pd-recovery-header">
+
+        <div>
+
+          <div class="pd-recovery-eyebrow">
+            Dashboard Recovery
+          </div>
+
+          <h2 id="dashboardRecoveryTitle">
+            Recovery Draft Found
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <div class="pd-recovery-body">
+
+        <p>
+          A newer unsaved dashboard draft was found.
+          Choose how you want to continue.
+        </p>
+
+
+        <div class="pd-recovery-info">
+
+          <div class="pd-recovery-info-row">
+
+            <span>
+              Dashboard
+            </span>
+
+            <strong id="recoveryDashboardTitle">
+              Power Dashboard
+            </strong>
+
+          </div>
+
+
+          <div class="pd-recovery-info-row">
+
+            <span>
+              Draft saved
+            </span>
+
+            <strong id="recoverySavedAt">
+              -
+            </strong>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="pd-recovery-actions">
+
+        <button
+          id="resumeRecoveryDraftBtn"
+          class="pd-btn pd-btn-primary"
+          type="button">
+          Resume Draft
+        </button>
+
+
+        <button
+          id="openPublishedDashboardBtn"
+          class="pd-btn pd-btn-outline"
+          type="button">
+          Open Published
+        </button>
+
+
+                <button
+          id="discardRecoveryDraftBtn"
+          class="pd-btn pd-btn-outline"
+          type="button">
+          Start New Dashboard
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

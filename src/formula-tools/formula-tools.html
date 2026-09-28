@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Formula Tools</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: #6b7280;
+      line-height: 20px;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 9px;
+      font-weight: 600;
+    }
+
+    .range-row,
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .option-card {
+      display: block;
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafafa;
+      cursor: pointer;
+    }
+
+    .option-card:hover {
+      background: #f3f4f6;
+    }
+
+    .option-card input {
+      margin-right: 7px;
+    }
+
+    .option-title {
+      font-weight: 600;
+    }
+
+    .option-help {
+      display: block;
+      margin-top: 5px;
+      margin-left: 23px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 17px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #refreshBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    #runBtn {
+      flex: 1;
+      background: #217346;
+      color: #ffffff;
+    }
+
+    #runBtn:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      line-height: 20px;
+      white-space: pre-line;
+    }
+
+    #resultBox {
+      display: none;
+      margin-top: 14px;
+      padding: 12px;
+      max-height: 220px;
+      overflow: auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #ffffff;
+      font-family: Consolas, monospace;
+      font-size: 12px;
+      line-height: 18px;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+    }
+
+    .warning {
+      margin-top: 12px;
+      padding: 11px 12px;
+      border-radius: 8px;
+      background: #fff7ed;
+      color: #9a3412;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Formula Tools</h1>
+
+      <p class="subtitle">
+        Inspect, convert, extend and troubleshoot Excel formulas.
+      </p>
+
+
+      <div class="section">
+
+        <div class="label">
+          Formula Range
+        </div>
+
+        <div class="range-row">
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaRange"
+              value="selection"
+              checked
+            >
+            <span class="option-title">
+              Selected Range
+            </span>
+
+            <span class="option-help">
+              Work only with the current Excel selection.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaRange"
+              value="usedRange"
+            >
+            <span class="option-title">
+              Used Range
+            </span>
+
+            <span class="option-help">
+              Work with the populated area of the active worksheet.
+            </span>
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div class="section">
+
+        <div class="label">
+          Formula Operation
+        </div>
+
+        <div class="tool-grid">
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaOperation"
+              value="show"
+              checked
+            >
+            <span class="option-title">
+              Show Formulas
+            </span>
+
+            <span class="option-help">
+              List formulas found in the selected range.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaOperation"
+              value="values"
+            >
+            <span class="option-title">
+              Convert Formulas to Values
+            </span>
+
+            <span class="option-help">
+              Replace formulas with their current calculated values.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaOperation"
+              value="fillDown"
+            >
+            <span class="option-title">
+              Fill Formula Down
+            </span>
+
+            <span class="option-help">
+              Extend the top formula down through the selection.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaOperation"
+              value="fillRight"
+            >
+            <span class="option-title">
+              Fill Formula Right
+            </span>
+
+            <span class="option-help">
+              Extend the left formula across the selection.
+            </span>
+          </label>
+
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="formulaOperation"
+              value="errors"
+            >
+            <span class="option-title">
+              Find Formula Errors
+            </span>
+
+            <span class="option-help">
+              Find cells returning errors such as #DIV/0!, #N/A and #VALUE!.
+            </span>
+          </label>
+
+        </div>
+
+
+        <div class="warning">
+          Convert Formulas to Values cannot be automatically reversed after the workbook is saved.
+        </div>
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          id="refreshBtn"
+          type="button">
+          Refresh
+        </button>
+
+        <button
+          id="runBtn"
+          type="button"
+          disabled>
+          Run Formula Tool
+        </button>
+
+      </div>
+
+
+      <div id="status">
+        Reading workbook...
+      </div>
+
+
+      <div id="resultBox"></div>
+
+
+      <div class="note">
+        Fill Down and Fill Right work best when the selected range includes the source formula cell.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

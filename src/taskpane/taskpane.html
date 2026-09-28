@@ -1,0 +1,298 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Himanshu XL Tools</title>
+
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fa;
+      color: #222;
+    }
+
+    .header {
+      background: #217346;
+      color: white;
+      padding: 18px;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .header p {
+      margin: 5px 0 0;
+      font-size: 12px;
+      opacity: 0.9;
+    }
+
+    .container {
+      padding: 14px;
+    }
+
+    .section-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin: 18px 0 8px;
+      color: #444;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    button {
+      border: 1px solid #d0d7de;
+      background: white;
+      border-radius: 6px;
+      padding: 11px 7px;
+      cursor: pointer;
+      font-size: 12px;
+      text-align: left;
+      transition: 0.15s;
+    }
+
+    button:hover {
+      background: #eef7f1;
+      border-color: #217346;
+    }
+
+    button .icon {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+
+    .primary {
+      width: 100%;
+      background: #217346;
+      color: white;
+      border: none;
+      text-align: center;
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    .primary:hover {
+      background: #185c37;
+      color: white;
+    }
+
+    .status {
+      margin-top: 14px;
+      padding: 10px;
+      border-radius: 6px;
+      background: white;
+      border: 1px solid #ddd;
+      font-size: 11px;
+      color: #555;
+    }
+
+    .footer {
+      margin-top: 20px;
+      padding: 10px;
+      text-align: center;
+      font-size: 10px;
+      color: #777;
+    }
+  </style>
+</head>
+
+
+  <body>
+
+  <div class="container">
+
+    <div style="
+      text-align:center;
+      margin-bottom:18px;
+    ">
+      <h2 style="
+        margin:0;
+        color:#217346;
+        font-size:22px;
+      ">
+        Himanshu XL Tools
+      </h2>
+
+      <p style="
+        margin:5px 0 0;
+        color:#666;
+        font-size:12px;
+      ">
+        License Management
+      </p>
+    </div>
+
+
+    <div style="
+      background:#ffffff;
+      border:1px solid #dfe3e6;
+      border-radius:10px;
+      padding:16px;
+      box-shadow:0 2px 8px rgba(0,0,0,.05);
+    ">
+
+      <div style="
+        font-size:13px;
+        font-weight:600;
+        margin-bottom:6px;
+      ">
+        License Status
+      </div>
+
+      <div
+        id="licenseStatus"
+        style="
+          padding:10px;
+          background:#f5f7fa;
+          border-radius:6px;
+          font-size:12px;
+          margin-bottom:16px;
+        "
+      >
+        Checking license...
+      </div>
+
+
+      <label
+        for="licenseKeyInput"
+        style="
+          display:block;
+          font-size:12px;
+          font-weight:600;
+          margin-bottom:6px;
+        "
+      >
+        License Key
+      </label>
+
+      <input
+        id="licenseKeyInput"
+        type="text"
+        autocomplete="off"
+        spellcheck="false"
+        placeholder="Enter your license key"
+        style="
+          width:100%;
+          padding:10px;
+          border:1px solid #d0d7de;
+          border-radius:6px;
+          font-size:12px;
+          margin-bottom:10px;
+        "
+      />
+
+
+      <button
+        id="activateLicenseBtn"
+        type="button"
+        class="primary"
+        style="
+          margin-top:0;
+          text-align:center;
+        "
+      >
+        Activate License
+      </button>
+
+
+      <div style="
+        border-top:1px solid #eeeeee;
+        margin:18px 0 14px;
+      "></div>
+
+
+      <div style="
+        font-size:12px;
+        line-height:1.9;
+      ">
+
+        <div>
+          <b>Device ID:</b>
+          <span id="licenseDeviceId">-</span>
+        </div>
+
+        <div>
+          <b>Plan:</b>
+          <span id="licensePlan">-</span>
+        </div>
+
+        <div>
+          <b>Expiry Date:</b>
+          <span id="licenseExpiry">-</span>
+        </div>
+
+        <div>
+          <b>Validation:</b>
+          <span id="licenseMode">-</span>
+        </div>
+
+      </div>
+
+
+      <button
+        id="refreshLicenseBtn"
+        type="button"
+        style="
+          width:100%;
+          margin-top:15px;
+          text-align:center;
+          font-weight:600;
+        "
+      >
+        Refresh License
+      </button>
+
+        </div>
+
+
+    <!-- START: TEMP DEVICE DIAGNOSTIC -->
+    <div
+      id="licenseMessage"
+      class="status"
+      style="
+        margin-top:10px;
+        font-size:11px;
+        word-break:break-all;
+      "
+    >
+      Device diagnostic waiting...
+    </div>
+    <!-- END: TEMP DEVICE DIAGNOSTIC -->
+
+
+    <div id="status" class="status">
+      License panel ready.
+    </div>
+
+
+    <div class="footer">
+      Himanshu XL Tools • Excel 2021+
+    </div>
+
+  </div>
+
+
+  <script src="../ai/ai-formula.js"></script>
+  <script src="taskpane.js"></script>
+
+</body>
+
+</html>
+

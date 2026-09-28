@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=Edge"
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Batch Rename</title>
+
+  
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 24px;
+      color: #6b7280;
+    }
+
+    .section {
+      margin-bottom: 20px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .checkbox-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .preview {
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #fafafa;
+      max-height: 220px;
+      overflow-y: auto;
+    }
+
+    .preview-row {
+      display: grid;
+      grid-template-columns: 1fr 30px 1fr;
+      gap: 8px;
+      padding: 9px 12px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 13px;
+      align-items: center;
+    }
+
+    .preview-row:last-child {
+      border-bottom: none;
+    }
+
+    .old-name {
+      color: #6b7280;
+      overflow-wrap: anywhere;
+    }
+
+    .new-name {
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .arrow {
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #previewBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    #renameBtn {
+      flex: 1;
+      background: #2563eb;
+      color: white;
+    }
+
+    #renameBtn:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Batch Rename</h1>
+
+      <p class="subtitle">
+        Rename multiple files using one consistent naming pattern.
+      </p>
+
+
+      <div class="section">
+
+        <label class="label">
+          Select files
+        </label>
+
+        <input
+          id="fileInput"
+          type="file"
+          multiple
+        >
+
+      </div>
+
+
+      <div class="section">
+
+        <label
+          class="label"
+          for="prefixInput">
+          Prefix
+        </label>
+
+        <input
+          id="prefixInput"
+          type="text"
+          value="File_"
+          placeholder="Example: Invoice_"
+        >
+
+      </div>
+
+
+      <div class="grid">
+
+        <div>
+
+          <label
+            class="label"
+            for="startNumberInput">
+            Start Number
+          </label>
+
+          <input
+            id="startNumberInput"
+            type="number"
+            min="0"
+            value="1"
+          >
+
+        </div>
+
+
+        <div>
+
+          <label
+            class="label"
+            for="paddingInput">
+            Number Padding
+          </label>
+
+          <input
+            id="paddingInput"
+            type="number"
+            min="1"
+            max="10"
+            value="3"
+          >
+
+        </div>
+
+      </div>
+
+
+      <div class="checkbox-row">
+
+        <input
+          id="keepOriginalInput"
+          type="checkbox"
+        >
+
+        <label for="keepOriginalInput">
+          Include original filename
+        </label>
+
+      </div>
+
+
+      <div class="section" style="margin-top: 22px;">
+
+        <div class="label">
+          Preview
+        </div>
+
+        <div
+          id="previewList"
+          class="preview">
+
+          <div class="preview-row">
+            Select files to preview renamed filenames.
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          id="previewBtn"
+          type="button">
+          Preview Names
+        </button>
+
+        <button
+          id="renameBtn"
+          type="button"
+          disabled>
+          Rename &amp; Download
+        </button>
+
+      </div>
+
+
+      <div id="status">
+        Select files to begin.
+      </div>
+
+
+      <div class="note">
+        Original files are not modified. Renamed copies will be downloaded.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

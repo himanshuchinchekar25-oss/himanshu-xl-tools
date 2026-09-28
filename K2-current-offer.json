@@ -1,0 +1,38 @@
+[
+  {
+    "results": [
+      {
+        "offer_id": "OFF-STANDARD",
+        "plan_code": "STANDARD",
+        "offer_name": "Diwali Offer",
+        "badge_text": "Diwali Special",
+        "enabled": 1,
+        "discount_type": "PERCENT",
+        "discount_percent_bps": 2000,
+        "discount_flat_minor": 0,
+        "starts_at": null,
+        "ends_at": null,
+        "created_at": "2026-09-21 05:33:39",
+        "updated_at": "2026-09-21 05:33:39"
+      }
+    ],
+    "success": true,
+    "meta": {
+      "served_by": "v3-prod",
+      "served_by_region": "APAC",
+      "served_by_colo": "SIN",
+      "served_by_primary": true,
+      "timings": {
+        "sql_duration_ms": 0.2433
+      },
+      "duration": 0.2433,
+      "changes": 0,
+      "last_row_id": 0,
+      "changed_db": false,
+      "size_after": 401408,
+      "rows_read": 1,
+      "rows_written": 0,
+      "total_attempts": 1
+    }
+  }
+]

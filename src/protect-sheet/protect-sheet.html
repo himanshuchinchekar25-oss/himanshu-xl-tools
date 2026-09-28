@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=Edge"
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>Protect Sheet</title>
+
+  <script
+    src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js">
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #f5f7fb;
+      color: #1f2937;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 18px rgba(0,0,0,.08);
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 25px;
+    }
+
+    .subtitle {
+      margin: 0 0 22px;
+      color: #6b7280;
+    }
+
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .label {
+      display: block;
+      margin-bottom: 7px;
+      font-weight: 600;
+    }
+
+    select,
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+    }
+
+    .mode-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .mode-option {
+      padding: 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .mode-option input {
+      margin-right: 7px;
+    }
+
+    .options-box {
+      padding: 14px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+
+    .option-row {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .option-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .option-row input {
+      margin-right: 8px;
+    }
+
+    .button-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    button {
+      border: none;
+      border-radius: 8px;
+      padding: 11px 18px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    #refreshBtn {
+      background: #e5e7eb;
+      color: #111827;
+    }
+
+    #applyBtn {
+      flex: 1;
+      background: #217346;
+      color: white;
+    }
+
+    #applyBtn:disabled {
+      opacity: .55;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      padding: 12px;
+      min-height: 44px;
+      border-radius: 8px;
+      background: #f3f4f6;
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    .note {
+      margin-top: 14px;
+      color: #6b7280;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <div class="card">
+
+      <h1>Protect Sheet</h1>
+
+      <p class="subtitle">
+        Protect or unprotect worksheets in the current workbook.
+      </p>
+
+
+      <div class="section">
+
+        <label
+          class="label"
+          for="sheetSelect">
+          Worksheet
+        </label>
+
+        <select id="sheetSelect">
+          <option value="">
+            Loading worksheets...
+          </option>
+        </select>
+
+      </div>
+
+
+      <div class="section">
+
+        <div class="label">
+          Action
+        </div>
+
+        <div class="mode-row">
+
+          <label class="mode-option">
+            <input
+              type="radio"
+              name="protectMode"
+              value="protect"
+              checked
+            >
+            Protect
+          </label>
+
+          <label class="mode-option">
+            <input
+              type="radio"
+              name="protectMode"
+              value="unprotect"
+            >
+            Unprotect
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div class="section">
+
+        <label
+          class="label"
+          for="passwordInput">
+          Password
+        </label>
+
+        <input
+          id="passwordInput"
+          type="password"
+          autocomplete="new-password"
+          placeholder="Enter password"
+        >
+
+      </div>
+
+
+      <div
+        id="confirmPasswordSection"
+        class="section">
+
+        <label
+          class="label"
+          for="confirmPasswordInput">
+          Confirm Password
+        </label>
+
+        <input
+          id="confirmPasswordInput"
+          type="password"
+          autocomplete="new-password"
+          placeholder="Confirm password"
+        >
+
+      </div>
+
+
+      <div
+        id="protectionOptions"
+        class="section">
+
+        <div class="label">
+          Protection Options
+        </div>
+
+        <div class="options-box">
+
+          <label class="option-row">
+            <input
+              id="allowFormatCells"
+              type="checkbox"
+            >
+            Allow formatting cells
+          </label>
+
+          <label class="option-row">
+            <input
+              id="allowInsertRows"
+              type="checkbox"
+            >
+            Allow inserting rows
+          </label>
+
+          <label class="option-row">
+            <input
+              id="allowDeleteRows"
+              type="checkbox"
+            >
+            Allow deleting rows
+          </label>
+
+          <label class="option-row">
+            <input
+              id="allowSort"
+              type="checkbox"
+            >
+            Allow sorting
+          </label>
+
+          <label class="option-row">
+            <input
+              id="allowAutoFilter"
+              type="checkbox"
+            >
+            Allow using AutoFilter
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <div class="button-row">
+
+        <button
+          id="refreshBtn"
+          type="button">
+          Refresh
+        </button>
+
+        <button
+          id="applyBtn"
+          type="button"
+          disabled>
+          Protect Sheet
+        </button>
+
+      </div>
+
+
+      <div id="status">
+        Reading workbook...
+      </div>
+
+
+      <div class="note">
+        Keep the password safe. A protected sheet may require the same password to unprotect it.
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>
